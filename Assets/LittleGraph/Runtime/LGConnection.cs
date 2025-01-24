@@ -24,13 +24,12 @@ namespace LittleGraph.Runtime
     {
         public string NodeId;
         public int PortIndex;
-        public string PortName;
-
+        
+        
         public LGConnectionPort(string nodeId, int portIndex)
         {
             NodeId = nodeId;
             PortIndex = portIndex;
-            PortName = "";
         }
     }
 }

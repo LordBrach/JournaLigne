@@ -9,23 +9,14 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
     [LGNodeInfo("Single Choice Dialogue", "Little Dialogue/Single Choice Dialogue", true, true, false, typeof (string))]
     public class LDSingleChoiceDialogueNode : LDDialogueNode
     {
+        public string ChoiceText = null;
+        
         protected override void ExecuteNode()
         {
             
             base.ExecuteNode();
         }
         
-    }
-    
-
-    public struct CustomOutputData
-    {
-        public Type Type;
-
-        public CustomOutputData(Type type)
-        {
-            Type = type;
-        }
     }
 #endif
 }

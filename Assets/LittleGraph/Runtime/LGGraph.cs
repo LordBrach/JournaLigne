@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LittleGraph.Runtime
 {
-    [CreateAssetMenu(fileName = "LGGraph", menuName = "Scriptable Objects/LGGraph")]
+    [CreateAssetMenu(fileName = "LGGraph", menuName = "Scriptable Objects/Little Graph/LGGraph")]
     public class LGGraph : ScriptableObject
     {
         //We serialize so that an instance can receive the data
