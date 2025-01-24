@@ -1,0 +1,18 @@
+{
+    "name": "LittleDialogue.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:90d0a610f03bce142a2898f9aa3bbc6f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
