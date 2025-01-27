@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,11 +10,38 @@ namespace LittleDialogue.Runtime
     public class DialogueBox : MonoBehaviour
     {
         [SerializeField] private GameObject m_dialogueBoxPanel;
+        
+        [Header("Environment")]
+        //Interlocutor
+        [SerializeField] private Image m_interlocutorImage;
+        //Background
+        [SerializeField] private Image m_backgroundImage;
+        
+        [Header("Dialogue & Choices")]
+        //Dialogue and Choices
         [SerializeField] private TextMeshProUGUI m_dialogueText;
         [SerializeField] private GameObject m_choiceButtonsParent;
         [SerializeField] private GameObject m_choiceButtonPrefab;
         [SerializeField] private List<Button> m_choiceButtons;
 
+        
+        // COROUTINES
+        private Coroutine m_updateTextCoroutine;
+        
+        [Header("Dialogue Text Writing")]
+        [SerializeField] private float m_textWritingSpeed;
+        
+        // PROPERTIES //
+
+        #region Properties
+
+        public Image InterlocutorImage => m_interlocutorImage;
+
+        public Image BackgroundImage => m_backgroundImage;
+
+        #endregion
+        
+        
         // public GameObject DialogueBoxPanel => m_dialogueBoxPanel;
         // public TextMeshProUGUI DialogueText => m_dialogueText;
         // public List<Button> ChoiceButtons => m_choiceButtons;
@@ -31,7 +58,35 @@ namespace LittleDialogue.Runtime
 
         public void UpdateText(string newText)
         {
-            m_dialogueText.text = newText;
+            if(m_updateTextCoroutine != null)
+            {
+                StopCoroutine(m_updateTextCoroutine);
+                m_updateTextCoroutine = null;
+            }
+
+            if (m_updateTextCoroutine == null)
+            {
+                m_updateTextCoroutine = StartCoroutine(UpdateTextCoroutine(newText));
+            }
+        }
+
+        private IEnumerator UpdateTextCoroutine(string newText)
+        {
+            m_dialogueText.text = "";
+
+            for (int i = 0; i < newText.Length; i++)
+            {
+                m_dialogueText.text += newText[i];
+
+                if (m_textWritingSpeed > 0)
+                {
+                    yield return new WaitForSeconds(1.0f / m_textWritingSpeed);
+                }
+                else
+                {
+                    yield return null;
+                }
+            }
         }
 
         public void ClearChoiceButtons()
@@ -52,6 +107,21 @@ namespace LittleDialogue.Runtime
             m_choiceButtons.Add(button);
         }
 
+
+        public void UpdateInterlocutorImage(Sprite inNewSprite)
+        {
+            if(!m_interlocutorImage) return;
+
+            m_interlocutorImage.sprite = inNewSprite;
+        }
+        
+        public void UpdateBackgroundImage(Sprite inNewSprite)
+        {
+            if(!m_backgroundImage) return;
+
+            m_backgroundImage.sprite = inNewSprite;
+        }
+        
         // public void UpdateChoiceButtonTexts(params string[] options)
         // {
         //     for (int i = 0; i < options.Length; i++)

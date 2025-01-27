@@ -77,17 +77,10 @@ namespace LittleDialogue.Runtime
                         m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas[0].ChoiceText);
                     }
                 }
-                
+
+                m_dialogueBox.UpdateInterlocutorImage(dialogueNode.InterlocutorSprite);
+                m_dialogueBox.UpdateBackgroundImage(dialogueNode.BackgroundSprite);
             }
-            // if (node is LDSingleChoiceDialogueNode singleChoiceNode)
-            // {
-            //     
-            //     
-            // }
-            // else if(node is LDMultipleChoiceDialogueNode multipleChoiceNode)
-            // {
-            //     m_dialogueBox.UpdateText(multipleChoiceNode.DialogueText);
-            // }
         }
     }
 }
