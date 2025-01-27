@@ -12,6 +12,7 @@ namespace LittleDialogue.Runtime
         [SerializeField] private GameObject m_dialogueBoxPanel;
         [SerializeField] private TextMeshProUGUI m_dialogueText;
         [SerializeField] private GameObject m_choiceButtonsParent;
+        [SerializeField] private GameObject m_choiceButtonPrefab;
         [SerializeField] private List<Button> m_choiceButtons;
 
         // public GameObject DialogueBoxPanel => m_dialogueBoxPanel;
@@ -33,11 +34,22 @@ namespace LittleDialogue.Runtime
             m_dialogueText.text = newText;
         }
 
-        public void UpdateButtonCallback(int index, UnityAction callback)
+        public void ClearChoiceButtons()
         {
-           if(index > m_choiceButtons.Count - 1) return;
-
-           m_choiceButtons[index].onClick.AddListener(callback);
+            for (int i = m_choiceButtons.Count - 1; i >= 0; i--)
+            {
+                Button button = m_choiceButtons[i];
+                m_choiceButtons.RemoveAt(i);
+                Destroy(button.gameObject);
+            }
+        }
+        
+        public void AddChoiceButton(string buttonText = "Null", UnityAction callback = null)
+        {
+            Button button = Instantiate(m_choiceButtonPrefab, m_choiceButtonsParent.transform).GetComponent<Button>();
+            button.GetComponentInChildren<TextMeshProUGUI>().text = buttonText;
+            button.onClick.AddListener(callback);
+            m_choiceButtons.Add(button);
         }
 
         // public void UpdateChoiceButtonTexts(params string[] options)

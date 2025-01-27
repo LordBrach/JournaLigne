@@ -2,7 +2,9 @@
     "name": "LittleDialogue.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:90d0a610f03bce142a2898f9aa3bbc6f"
+        "GUID:90d0a610f03bce142a2898f9aa3bbc6f",
+        "GUID:4b0cd4b70e6095741b99a5783d1503f0",
+        "GUID:c6a25c179422a4d4ba7dd96cf207fe83"
     ],
     "includePlatforms": [
         "Editor"

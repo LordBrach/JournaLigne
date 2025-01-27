@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using LittleGraph.Runtime.Attributes;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace LittleGraph.Runtime
@@ -12,12 +13,19 @@ namespace LittleGraph.Runtime
         [SerializeField] private string m_guid;
         [SerializeField] private Rect m_position;
 
+        [SerializeField] private int m_outputPortAmount;
         [SerializeField/*, HideInInspector*/] protected List<LGConnection> m_nodeConnections;
         
         public string TypeName;
         public string ID => m_guid;
         public Rect Position => m_position;
 
+        public int OutputPortAmount
+        {
+            get => m_outputPortAmount;
+            set => m_outputPortAmount = value;
+        }
+        
         public List<LGConnection> NodeConnections => m_nodeConnections;
 
         public Action ReceivedFlow;
@@ -28,6 +36,7 @@ namespace LittleGraph.Runtime
         {
             NewGUID();
             m_nodeConnections = new List<LGConnection>();
+            m_outputPortAmount = 1;
         }
 
         private void NewGUID()
@@ -39,7 +48,6 @@ namespace LittleGraph.Runtime
         {
             m_position = position;
         }
-
         public virtual void ReceiveFlow()
         {
             ExecuteNode();
