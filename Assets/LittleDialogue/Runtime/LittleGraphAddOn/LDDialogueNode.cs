@@ -11,8 +11,10 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
     {
         [ExposedProperty]
         public string DialogueText = "Dialogue";
-        
-        
+
+        [ExposedProperty] public Sprite InterlocutorSprite;
+        [ExposedProperty] public Sprite BackgroundSprite;
+
         // [ExposedProperty()] 
         // public LocalizationDatabase LocalizationDatabase;
         //

@@ -5,6 +5,7 @@ using LittleGraph.Runtime;
 using LittleGraph.Runtime.Attributes;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace LittleDialogue.Editor
@@ -59,6 +60,7 @@ namespace LittleDialogue.Editor
                 });
                 
                 outputPort.Add(textField);
+                
                 outputPort.portName = "";
                 outputPort.tooltip = "Flow output";
             }

@@ -19,6 +19,8 @@ MonoBehaviour:
   - rid: 8417688952049238092
   - rid: 8417688952049238093
   - rid: 8417688952049238094
+  - rid: 8417689019372535808
+  - rid: 8417689019372535810
   m_connections:
   - InputPort:
       NodeId: bf4b5d0c-a01e-406b-8b2f-f45dc6e58786
@@ -26,12 +28,6 @@ MonoBehaviour:
     OutputPort:
       NodeId: fe386e14-b84c-4132-b69a-ab7eab6a39c8
       PortIndex: 0
-  - InputPort:
-      NodeId: f33f6271-eb82-4ed1-bd58-abad24ebc8d2
-      PortIndex: 0
-    OutputPort:
-      NodeId: bf4b5d0c-a01e-406b-8b2f-f45dc6e58786
-      PortIndex: 1
   - InputPort:
       NodeId: ed04b039-6dc5-42c8-bf5b-9c1277ee389f
       PortIndex: 0
@@ -50,6 +46,12 @@ MonoBehaviour:
     OutputPort:
       NodeId: f33f6271-eb82-4ed1-bd58-abad24ebc8d2
       PortIndex: 1
+  - InputPort:
+      NodeId: f33f6271-eb82-4ed1-bd58-abad24ebc8d2
+      PortIndex: 0
+    OutputPort:
+      NodeId: bf4b5d0c-a01e-406b-8b2f-f45dc6e58786
+      PortIndex: 1
   references:
     version: 2
     RefIds:
@@ -59,18 +61,12 @@ MonoBehaviour:
         m_guid: f33f6271-eb82-4ed1-bd58-abad24ebc8d2
         m_position:
           serializedVersion: 2
-          x: 452
-          y: 267.2
+          x: 464
+          y: 336
           width: 264.8
-          height: 143.19998
+          height: 183.20001
         m_outputPortAmount: 3
         m_nodeConnections:
-        - InputPort:
-            NodeId: f33f6271-eb82-4ed1-bd58-abad24ebc8d2
-            PortIndex: 0
-          OutputPort:
-            NodeId: bf4b5d0c-a01e-406b-8b2f-f45dc6e58786
-            PortIndex: 1
         - InputPort:
             NodeId: ed04b039-6dc5-42c8-bf5b-9c1277ee389f
             PortIndex: 0
@@ -89,9 +85,17 @@ MonoBehaviour:
           OutputPort:
             NodeId: f33f6271-eb82-4ed1-bd58-abad24ebc8d2
             PortIndex: 1
+        - InputPort:
+            NodeId: f33f6271-eb82-4ed1-bd58-abad24ebc8d2
+            PortIndex: 0
+          OutputPort:
+            NodeId: bf4b5d0c-a01e-406b-8b2f-f45dc6e58786
+            PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDMultipleChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueText: BBBBBB
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
         ChoiceDatas:
         - OutputIndex: 1
           ChoiceText: BC
@@ -105,10 +109,10 @@ MonoBehaviour:
         m_guid: bf4b5d0c-a01e-406b-8b2f-f45dc6e58786
         m_position:
           serializedVersion: 2
-          x: 216
+          x: 187.2
           y: 213.6
-          width: 193.59999
-          height: 95.19998
+          width: 244.79999
+          height: 135.2
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
@@ -126,6 +130,8 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDSingleChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueText: AAAAAA
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
         ChoiceText: A
     - rid: 8417688952049238017
       type: {class: LGStartNode, ns: LittleGraph.Runtime.Types, asm: LittleGraph.Runtime}
@@ -168,6 +174,8 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDSingleChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueText: ccc
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
         ChoiceText: Out
     - rid: 8417688952049238093
       type: {class: LDSingleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
@@ -190,6 +198,8 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDSingleChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueText: ffff
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
         ChoiceText: Out
     - rid: 8417688952049238094
       type: {class: LDSingleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
@@ -212,4 +222,46 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDSingleChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueText: ggg
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
         ChoiceText: Out
+    - rid: 8417689019372535808
+      type: {class: LDMultipleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: da690e62-8c46-41c1-858c-f1dcfc4748d7
+        m_position:
+          serializedVersion: 2
+          x: 187.2
+          y: 401.59998
+          width: 264.8
+          height: 135.20001
+        m_outputPortAmount: 1
+        m_nodeConnections: []
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDMultipleChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueText: Dialogue
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ChoiceDatas:
+        - OutputIndex: 1
+          ChoiceText: Out
+    - rid: 8417689019372535810
+      type: {class: LDMultipleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 1f47e893-48a5-4545-ae36-ea4b6d9de465
+        m_position:
+          serializedVersion: 2
+          x: 215.2
+          y: 54.800014
+          width: 0
+          height: 0
+        m_outputPortAmount: 1
+        m_nodeConnections: []
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDMultipleChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueText: Dialogue
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ChoiceDatas:
+        - OutputIndex: 1
+          ChoiceText: Out

@@ -8,3 +8,8 @@ LGGraphView{
     --grid-background-color: rgb(35,35,35);
     --line-color: rgb(32,32,32);
 }
+
+Port.output.typeFlowPort.port
+{
+    align-items: stretch;
+}
