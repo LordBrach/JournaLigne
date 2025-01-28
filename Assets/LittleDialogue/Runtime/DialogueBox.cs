@@ -43,13 +43,23 @@ namespace LittleDialogue.Runtime
         private string m_cachedText;
         
         // ACTIONS & EVENTS//
+        
+        
+        //Text Update Events
+        public event UnityAction OnCharacterWritten;
         public event UnityAction OnTextUpdateEnded;
 
-        public event UnityAction OnUpdatingTextBoxTouched; 
-        public event UnityAction OnIdleTextBoxTouched; 
-        
-        [Header("Events")] 
+        [Header("Text Update Events")] [SerializeField]
+        private UnityEvent OnCharacterWrittenEvent;
         [SerializeField] private UnityEvent OnTextUpdateEndedEvent;
+        
+        //Touch Events
+        public event UnityAction OnUpdatingTextBoxTouched; 
+        public event UnityAction OnIdleTextBoxTouched;
+
+        [Header("Text Box Touch Events")]
+        [SerializeField] private UnityEvent OnTextBoxTouchedEvent;
+        
         
         // PROPERTIES //
 
@@ -68,14 +78,20 @@ namespace LittleDialogue.Runtime
 
         private void Awake()
         {
+            OnCharacterWrittenEvent.AddListener(() => OnCharacterWritten?.Invoke());
             OnTextUpdateEndedEvent.AddListener(() => OnTextUpdateEnded?.Invoke());
         }
 
-        public void ShowBox()
+        public void ShowDialoguePanel()
         {
             m_dialogueBoxPanel.gameObject.SetActive(true);
         }
 
+        public void HideDialoguePanel()
+        {
+            m_dialogueBoxPanel.gameObject.SetActive(false);
+        }
+        
         public void UpdateText(string newText)
         {
             //Interrupt Text update
@@ -101,6 +117,8 @@ namespace LittleDialogue.Runtime
             {
                 m_dialogueText.text += m_cachedText[i];
 
+                OnCharacterWrittenEvent.Invoke();
+                
                 if (m_textWritingSpeed > 0)
                 {
                     yield return new WaitForSeconds(1.0f / m_textWritingSpeed);
@@ -177,12 +195,16 @@ namespace LittleDialogue.Runtime
             {
                 case DialogueBoxState.Idle:
                     OnIdleTextBoxTouched?.Invoke();
-                    return;
+                    break;
                 case DialogueBoxState.UpdatingText:
                     UpdateTextEnd();
                     OnUpdatingTextBoxTouched?.Invoke();
-                    return;
+                    break;
+                default:
+                    break;
             }
+            
+            OnTextBoxTouchedEvent.Invoke();
         }
 
         #endregion

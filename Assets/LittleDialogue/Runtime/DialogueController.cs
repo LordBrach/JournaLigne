@@ -80,7 +80,10 @@ namespace LittleDialogue.Runtime
                 m_currentNode = dialogueNode;
                 if(m_currentNode == null)return;
                 
-                m_dialogueBox.ShowBox();
+                if(LDDialogueNodeActivatorFlag.Starter == (m_currentNode.DialogueNodeActivatorFlag & LDDialogueNodeActivatorFlag.Starter))
+                {
+                    m_dialogueBox.ShowDialoguePanel();
+                }
                 m_dialogueBox.ClearChoiceButtons();
                 
                 m_dialogueBox.UpdateText(m_currentNode.DialogueText);
@@ -129,6 +132,8 @@ namespace LittleDialogue.Runtime
         
         private void EmitFlowToNextNode()
         {
+            
+            
             if (m_currentNode is LDNoChoiceDialogueNode noChoiceDialogueNode)
             {
                 if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
@@ -136,7 +141,13 @@ namespace LittleDialogue.Runtime
                     LGConnection connection =
                         m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
                     
+                    if (LDDialogueNodeActivatorFlag.Stopper == (m_currentNode.DialogueNodeActivatorFlag & LDDialogueNodeActivatorFlag.Stopper))
+                    {
+                        m_dialogueBox.HideDialoguePanel();
+                    }
+                    
                     m_currentNode.EmitFlow(connection.InputPort.NodeId);
+                    
                 }
                 
                 return;
@@ -151,6 +162,11 @@ namespace LittleDialogue.Runtime
                     {
                         m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas.Find(x => x.OutputIndex == connection.OutputPort.PortIndex).ChoiceText, () =>
                         {
+                            if (LDDialogueNodeActivatorFlag.Stopper == (m_currentNode.DialogueNodeActivatorFlag & LDDialogueNodeActivatorFlag.Stopper))
+                            {
+                                m_dialogueBox.HideDialoguePanel();
+                            }
+                            
                             m_currentNode.EmitFlow(connection.InputPort.NodeId);
                             // m_currentNode.EmitFlow(connection.InputPort.NodeId);
                         });

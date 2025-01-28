@@ -9,8 +9,9 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
 #if LITTLE_GRAPH
     public abstract class LDDialogueNode : LGNode
     {
-        [ExposedProperty]
-        public string DialogueText = "Dialogue";
+        [ExposedProperty] public LDDialogueNodeActivatorFlag DialogueNodeActivatorFlag;
+        
+        [ExposedProperty] public string DialogueText = "Dialogue";
 
         [ExposedProperty] public Sprite InterlocutorSprite;
         [ExposedProperty] public Sprite BackgroundSprite;
