@@ -37,6 +37,9 @@ namespace LittleDialogue.Runtime
         // ACTIONS & EVENTS//
         public event UnityAction OnTextUpdateEnded;
 
+        public event UnityAction OnTextUpdateInterrupted; 
+        public event UnityAction OnCompletedTextTouched; 
+        
         [Header("Events")] 
         [SerializeField] private UnityEvent OnTextUpdateEndedEvent;
         
@@ -116,7 +119,6 @@ namespace LittleDialogue.Runtime
             m_dialogueText.text = m_cachedText;
             
             OnTextUpdateEndedEvent.Invoke();
-
         }
 
         public void ClearChoiceButtons()
@@ -165,7 +167,14 @@ namespace LittleDialogue.Runtime
 
         public void OnToucheDialogueBox()
         {
-            UpdateTextEnd();
+            if (m_updateTextCoroutine != null)
+            {
+                UpdateTextEnd();
+                OnTextUpdateInterrupted?.Invoke();
+                return;
+            }
+            
+            OnCompletedTextTouched?.Invoke();
         }
 
         #endregion

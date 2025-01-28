@@ -68,7 +68,9 @@ namespace LittleDialogue.Runtime
             
             //Subscribe to Dialogue Box Events
             m_dialogueBox.OnTextUpdateEnded += OnTextUpdateEnd;
+            m_dialogueBox.OnCompletedTextTouched += OnCompletedTextTouched;
         }
+
         private void OnDialogueNodeExecuted(LGNode node)
         {
             if(!m_dialogueBox) return;
@@ -89,6 +91,8 @@ namespace LittleDialogue.Runtime
 
         private void OnTextUpdateEnd()
         {
+            ClearTimerBeforeNextNode();
+
             // if (m_currentNode is LDSingleChoiceDialogueNode singleChoiceDialogueNode)
             // {
             //     if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
@@ -115,27 +119,14 @@ namespace LittleDialogue.Runtime
                 return;
             }
             
-            if (m_currentNode is LDMultipleChoiceDialogueNode multipleChoiceDialogueNode)
+            EmitFlowToNextNode();
+        }
+        
+        private void OnCompletedTextTouched()
+        {
+            if (m_currentNode is LDNoChoiceDialogueNode)
             {
-                if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
-                {
-                    int i = 0;
-                    foreach (LGConnection connection in m_currentNode.NodeConnections.FindAll(connection => connection.OutputPort.NodeId == m_currentNode.ID))
-                    {
-                        m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas.Find(x => x.OutputIndex == connection.OutputPort.PortIndex).ChoiceText, () =>
-                        {
-                            EmitFlowToNextNode(connection.InputPort.NodeId);
-                            // m_currentNode.EmitFlow(connection.InputPort.NodeId);
-                        });
-                        i++;
-                    }
-                }
-                else
-                {
-                    m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas[0].ChoiceText);
-                }
-                
-                return;
+                EmitFlowToNextNode();
             }
         }
 
@@ -149,16 +140,7 @@ namespace LittleDialogue.Runtime
         {
             ClearTimerBeforeNextNode();
 
-            if (m_currentNode is LDNoChoiceDialogueNode noChoiceDialogueNode)
-            {
-                if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
-                {
-                    LGConnection connection =
-                        m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
-                    
-                    EmitFlowToNextNode(connection.InputPort.NodeId);
-                }
-            }
+            EmitFlowToNextNode();
         }
         
         private void ClearTimerBeforeNextNode()
@@ -166,9 +148,43 @@ namespace LittleDialogue.Runtime
             m_isTimerBeforeNextNodeOn = false;
         }
         
-        private void EmitFlowToNextNode(string nextNodeId)
+        private void EmitFlowToNextNode()
         {
-            m_currentNode.EmitFlow(nextNodeId);
+            if (m_currentNode is LDNoChoiceDialogueNode noChoiceDialogueNode)
+            {
+                if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
+                {
+                    LGConnection connection =
+                        m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
+                    
+                    m_currentNode.EmitFlow(connection.InputPort.NodeId);
+                }
+                
+                return;
+            }
+            
+            if (m_currentNode is LDMultipleChoiceDialogueNode multipleChoiceDialogueNode)
+            {
+                if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
+                {
+                    int i = 0;
+                    foreach (LGConnection connection in m_currentNode.NodeConnections.FindAll(connection => connection.OutputPort.NodeId == m_currentNode.ID))
+                    {
+                        m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas.Find(x => x.OutputIndex == connection.OutputPort.PortIndex).ChoiceText, () =>
+                        {
+                            m_currentNode.EmitFlow(connection.InputPort.NodeId);
+                            // m_currentNode.EmitFlow(connection.InputPort.NodeId);
+                        });
+                        i++;
+                    }
+                }
+                else
+                {
+                    m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas[0].ChoiceText);
+                }
+                
+                return;
+            }
         }
 
 #endif
