@@ -19,6 +19,7 @@ MonoBehaviour:
   - rid: 8417689046309142528
   - rid: 8417689046309142529
   - rid: 8417689046309142530
+  - rid: 8417689046309142531
   m_connections:
   - InputPort:
       NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
@@ -26,12 +27,6 @@ MonoBehaviour:
     OutputPort:
       NodeId: fe386e14-b84c-4132-b69a-ab7eab6a39c8
       PortIndex: 0
-  - InputPort:
-      NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
-      PortIndex: 0
-    OutputPort:
-      NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
-      PortIndex: 1
   - InputPort:
       NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
       PortIndex: 0
@@ -50,6 +45,18 @@ MonoBehaviour:
     OutputPort:
       NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
       PortIndex: 2
+  - InputPort:
+      NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
+      PortIndex: 0
+    OutputPort:
+      NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
+      PortIndex: 1
+  - InputPort:
+      NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+      PortIndex: 0
+    OutputPort:
+      NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
+      PortIndex: 1
   references:
     version: 2
     RefIds:
@@ -79,9 +86,9 @@ MonoBehaviour:
         m_guid: f3ef1493-fa02-4d4e-815a-3f4272848a4f
         m_position:
           serializedVersion: 2
-          x: -29.599998
+          x: -132.8
           y: 258.4
-          width: 363.19998
+          width: 244.8
           height: 153.6
         m_outputPortAmount: 1
         m_nodeConnections:
@@ -92,7 +99,7 @@ MonoBehaviour:
             NodeId: fe386e14-b84c-4132-b69a-ab7eab6a39c8
             PortIndex: 0
         - InputPort:
-            NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+            NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
             PortIndex: 0
           OutputPort:
             NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
@@ -116,16 +123,16 @@ MonoBehaviour:
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
-            PortIndex: 0
-          OutputPort:
-            NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
-            PortIndex: 1
-        - InputPort:
             NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
             PortIndex: 0
           OutputPort:
             NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+            PortIndex: 1
+        - InputPort:
+            NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+            PortIndex: 0
+          OutputPort:
+            NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
             PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -222,3 +229,34 @@ MonoBehaviour:
         DialogueText: Choice B
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+    - rid: 8417689046309142531
+      type: {class: AddNoteBookEntryNode, ns: _Project.Scripts.RedactionSystem.LittleGraphAddOn, asm: Assembly-CSharp}
+      data:
+        m_guid: 83f96aa7-4329-4202-8078-d8989a0ef0ec
+        m_position:
+          serializedVersion: 2
+          x: 132
+          y: 252.00002
+          width: 223.99998
+          height: 165.59998
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
+            PortIndex: 0
+          OutputPort:
+            NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
+            PortIndex: 1
+        - InputPort:
+            NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+            PortIndex: 0
+          OutputPort:
+            NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
+            PortIndex: 1
+        TypeName: _Project.Scripts.RedactionSystem.LittleGraphAddOn.AddNoteBookEntryNode,
+          Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        NotebookText: Notebook Text
+        ArticleText: Article Text
+        PeopleAppreciation: 1
+        RebelsAppreciation: 1
+        GovernmentAppreciation: 1
