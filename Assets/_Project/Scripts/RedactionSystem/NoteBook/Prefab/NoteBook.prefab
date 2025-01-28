@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8692515605246490872}
   - component: {fileID: 7735063108860145029}
   - component: {fileID: 4484457818818545639}
-  - component: {fileID: 5485598440215753971}
   - component: {fileID: 1275346207068880313}
+  - component: {fileID: 5485598440215753971}
   m_Layer: 5
   m_Name: NoteBook
   m_TagString: Untagged
@@ -78,20 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5485598440215753971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8172267075970710833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04159647999fec34d8e434932b38cbba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entryPrefab: {fileID: 7318924229595714332, guid: edf941e6431493e448ebbe89c4940c51, type: 3}
-  contentParent: {fileID: 8692515605246490872}
 --- !u!114 &1275346207068880313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +104,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5485598440215753971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172267075970710833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04159647999fec34d8e434932b38cbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entryPrefab: {fileID: 7318924229595714332, guid: edf941e6431493e448ebbe89c4940c51, type: 3}
+  contentParent: {fileID: 8692515605246490872}
 --- !u!1001 &5210684019260587856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5052478023707768225, guid: edf941e6431493e448ebbe89c4940c51, type: 3}
       propertyPath: m_fontSize
-      value: 20.9
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5052478023707768225, guid: edf941e6431493e448ebbe89c4940c51, type: 3}
       propertyPath: m_margin.w

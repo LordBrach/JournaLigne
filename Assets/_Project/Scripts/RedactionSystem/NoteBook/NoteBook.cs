@@ -6,7 +6,7 @@ public class NotebookEntry
 {
     public string dialoguePhrase;
     public string associatedText;
-    public float rebels;          // Rebles
+    public float rebels;          // Rebeles
     public float people;          // people
     public float government;     // government
 }
@@ -60,6 +60,19 @@ public class NoteBook : MonoBehaviour
     public List<NotebookEntry> GetEntries()
     {
         return notebookEntries;
+    }
+
+    public NotebookEntry GetEntry(string dialoguePhrase)
+    {
+        foreach (var entry in notebookEntries)
+        {
+            if (entry.dialoguePhrase == dialoguePhrase)
+            {
+                return entry;
+            }
+        }
+        
+        return null;
     }
 
     /// <summary>
