@@ -31,6 +31,8 @@ namespace LittleDialogue.Runtime
         
         [Header("Dialogue Text Writing")]
         [SerializeField] private float m_textWritingSpeed;
+
+        private string m_cachedText;
         
         // ACTIONS & EVENTS//
         public event UnityAction OnTextUpdateEnded;
@@ -84,11 +86,12 @@ namespace LittleDialogue.Runtime
 
         private IEnumerator UpdateTextCoroutine(string newText)
         {
+            m_cachedText = newText;
             m_dialogueText.text = "";
 
-            for (int i = 0; i < newText.Length; i++)
+            for (int i = 0; i < m_cachedText.Length; i++)
             {
-                m_dialogueText.text += newText[i];
+                m_dialogueText.text += m_cachedText[i];
 
                 if (m_textWritingSpeed > 0)
                 {
@@ -105,13 +108,15 @@ namespace LittleDialogue.Runtime
 
         private void UpdateTextEnd()
         {
-            if(m_updateTextCoroutine != null)
-            {
-                StopCoroutine(m_updateTextCoroutine);
-                m_updateTextCoroutine = null;
-            }
+            if (m_updateTextCoroutine == null) return;
+            
+            StopCoroutine(m_updateTextCoroutine);
+            m_updateTextCoroutine = null;
+            
+            m_dialogueText.text = m_cachedText;
             
             OnTextUpdateEndedEvent.Invoke();
+
         }
 
         public void ClearChoiceButtons()
@@ -155,5 +160,14 @@ namespace LittleDialogue.Runtime
         //         m_choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = options[i];
         //     }
         // }
+
+        #region ReactToInputEvent Methods
+
+        public void OnToucheDialogueBox()
+        {
+            UpdateTextEnd();
+        }
+
+        #endregion
     }
 }

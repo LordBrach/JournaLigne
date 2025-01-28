@@ -170,6 +170,7 @@ namespace LittleDialogue.Runtime
         {
             m_currentNode.EmitFlow(nextNodeId);
         }
+
 #endif
     }
 }
