@@ -68,7 +68,7 @@ namespace LittleDialogue.Runtime
             
             //Subscribe to Dialogue Box Events
             m_dialogueBox.OnTextUpdateEnded += OnTextUpdateEnd;
-            m_dialogueBox.OnCompletedTextTouched += OnCompletedTextTouched;
+            m_dialogueBox.OnIdleTextBoxTouched += OnIdleTextBoxTouched;
         }
 
         private void OnDialogueNodeExecuted(LGNode node)
@@ -91,28 +91,6 @@ namespace LittleDialogue.Runtime
 
         private void OnTextUpdateEnd()
         {
-            ClearTimerBeforeNextNode();
-
-            // if (m_currentNode is LDSingleChoiceDialogueNode singleChoiceDialogueNode)
-            // {
-            //     if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
-            //     {
-            //         LGConnection connection =
-            //             m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
-            //         
-            //         m_dialogueBox.AddChoiceButton(singleChoiceDialogueNode.ChoiceText, () =>
-            //         {
-            //             m_currentNode.EmitFlow(connection.InputPort.NodeId);
-            //         });
-            //     }
-            //     else
-            //     {
-            //         m_dialogueBox.AddChoiceButton(singleChoiceDialogueNode.ChoiceText);
-            //     }
-            //         
-            // }
-
-
             if (m_currentNode is LDNoChoiceDialogueNode noChoiceDialogueNode)
             {
                 StartTimerBeforeNextNode();
@@ -122,10 +100,11 @@ namespace LittleDialogue.Runtime
             EmitFlowToNextNode();
         }
         
-        private void OnCompletedTextTouched()
+        private void OnIdleTextBoxTouched()
         {
             if (m_currentNode is LDNoChoiceDialogueNode)
             {
+                ClearTimerBeforeNextNode();
                 EmitFlowToNextNode();
             }
         }
@@ -177,10 +156,6 @@ namespace LittleDialogue.Runtime
                         });
                         i++;
                     }
-                }
-                else
-                {
-                    m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas[0].ChoiceText);
                 }
                 
                 return;

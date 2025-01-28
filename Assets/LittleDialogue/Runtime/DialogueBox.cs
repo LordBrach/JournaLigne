@@ -8,6 +8,13 @@ using UnityEngine.UI;
 
 namespace LittleDialogue.Runtime
 {
+    public enum DialogueBoxState
+    {
+        None, 
+        Idle,
+        UpdatingText
+    }
+    
     public class DialogueBox : MonoBehaviour
     {
         [SerializeField] private GameObject m_dialogueBoxPanel;
@@ -25,6 +32,7 @@ namespace LittleDialogue.Runtime
         [SerializeField] private GameObject m_choiceButtonPrefab;
         [SerializeField] private List<Button> m_choiceButtons;
 
+        private DialogueBoxState m_dialogueBoxState = DialogueBoxState.Idle;
         
         // COROUTINES //
         private Coroutine m_updateTextCoroutine;
@@ -37,8 +45,8 @@ namespace LittleDialogue.Runtime
         // ACTIONS & EVENTS//
         public event UnityAction OnTextUpdateEnded;
 
-        public event UnityAction OnTextUpdateInterrupted; 
-        public event UnityAction OnCompletedTextTouched; 
+        public event UnityAction OnUpdatingTextBoxTouched; 
+        public event UnityAction OnIdleTextBoxTouched; 
         
         [Header("Events")] 
         [SerializeField] private UnityEvent OnTextUpdateEndedEvent;
@@ -63,11 +71,6 @@ namespace LittleDialogue.Runtime
             OnTextUpdateEndedEvent.AddListener(() => OnTextUpdateEnded?.Invoke());
         }
 
-        private void OnEnable()
-        {
-            
-        }
-
         public void ShowBox()
         {
             m_dialogueBoxPanel.gameObject.SetActive(true);
@@ -75,6 +78,7 @@ namespace LittleDialogue.Runtime
 
         public void UpdateText(string newText)
         {
+            //Interrupt Text update
             if(m_updateTextCoroutine != null)
             {
                 StopCoroutine(m_updateTextCoroutine);
@@ -84,6 +88,7 @@ namespace LittleDialogue.Runtime
             if (m_updateTextCoroutine == null)
             {
                 m_updateTextCoroutine = StartCoroutine(UpdateTextCoroutine(newText));
+                m_dialogueBoxState = DialogueBoxState.UpdatingText;
             }
         }
 
@@ -116,6 +121,7 @@ namespace LittleDialogue.Runtime
             StopCoroutine(m_updateTextCoroutine);
             m_updateTextCoroutine = null;
             
+            m_dialogueBoxState = DialogueBoxState.Idle;
             m_dialogueText.text = m_cachedText;
             
             OnTextUpdateEndedEvent.Invoke();
@@ -167,14 +173,16 @@ namespace LittleDialogue.Runtime
 
         public void OnToucheDialogueBox()
         {
-            if (m_updateTextCoroutine != null)
+            switch (m_dialogueBoxState)
             {
-                UpdateTextEnd();
-                OnTextUpdateInterrupted?.Invoke();
-                return;
+                case DialogueBoxState.Idle:
+                    OnIdleTextBoxTouched?.Invoke();
+                    return;
+                case DialogueBoxState.UpdatingText:
+                    UpdateTextEnd();
+                    OnUpdatingTextBoxTouched?.Invoke();
+                    return;
             }
-            
-            OnCompletedTextTouched?.Invoke();
         }
 
         #endregion
