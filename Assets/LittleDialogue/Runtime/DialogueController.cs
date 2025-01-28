@@ -12,13 +12,44 @@ namespace LittleDialogue.Runtime
 {
     public class DialogueController : MonoBehaviour
     {
+        // FIELDS //
+        
 #if LITTLE_GRAPH
+        //Dialogue Nodes
         private List<LDDialogueNode> m_dialogueNodes;
         private LDDialogueNode m_currentNode;
 #endif
+        //Dialogue Box UI
         [SerializeField] private DialogueBox m_dialogueBox; 
        
+        // COROUTINES & TIMERS //
+        // Timer before next node
+        private bool m_isTimerBeforeNextNodeOn = false;
+        private float m_timerBeforeNextNode;
+        [SerializeField] private float m_timeBeforeNextNode;
+
+        
+        // METHODS //
+        
+        #region Monobehaviour Methods
+
+        private void Update()
+        {
+            if (m_isTimerBeforeNextNodeOn)
+            {
+                m_timerBeforeNextNode -= Time.deltaTime;
+                if (m_timerBeforeNextNode <= 0)
+                {
+                    EndTimerBeforeNextNode();
+                }
+            }
+        }
+
+        #endregion
+        
+        
 #if LITTLE_GRAPH
+        
         public void Init(List<LGGraphObject> graphObjects)
         {
             //Subscribe to all dialogue nodes
@@ -76,16 +107,7 @@ namespace LittleDialogue.Runtime
 
             if (m_currentNode is LDNoChoiceDialogueNode noChoiceDialogueNode)
             {
-                if (m_currentNode.NodeConnections.Exists(connection =>
-                        connection.OutputPort.NodeId == m_currentNode.ID))
-                {
-                    LGConnection connection = m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
-                    
-                    EmitFlowToNextNode(connection.InputPort.NodeId);
-                }
-
-                //Start a timer before emit
-                
+                StartTimerBeforeNextNode();
                 return;
             }
             
@@ -113,6 +135,33 @@ namespace LittleDialogue.Runtime
             }
         }
 
+        private void StartTimerBeforeNextNode()
+        {
+            m_timerBeforeNextNode = m_timeBeforeNextNode;
+            m_isTimerBeforeNextNodeOn = true;
+        }
+
+        private void EndTimerBeforeNextNode()
+        {
+            ClearTimerBeforeNextNode();
+
+            if (m_currentNode is LDNoChoiceDialogueNode noChoiceDialogueNode)
+            {
+                if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
+                {
+                    LGConnection connection =
+                        m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
+                    
+                    EmitFlowToNextNode(connection.InputPort.NodeId);
+                }
+            }
+        }
+        
+        private void ClearTimerBeforeNextNode()
+        {
+            m_isTimerBeforeNextNodeOn = false;
+        }
+        
         private void EmitFlowToNextNode(string nextNodeId)
         {
             m_currentNode.EmitFlow(nextNodeId);

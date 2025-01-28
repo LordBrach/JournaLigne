@@ -1146,6 +1146,10 @@ PrefabInstance:
       propertyPath: m_dialogueBox
       value: 
       objectReference: {fileID: 1982441289}
+    - target: {fileID: 2802568060457514240, guid: 135c62b17a238aa4ebb0ba6d577f0af7, type: 3}
+      propertyPath: m_timeBeforeNextNode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6346564573989966080, guid: 135c62b17a238aa4ebb0ba6d577f0af7, type: 3}
       propertyPath: m_Name
       value: DialogueController
