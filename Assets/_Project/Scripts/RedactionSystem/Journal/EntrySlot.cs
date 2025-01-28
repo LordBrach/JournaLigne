@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 public class EntrySlot : MonoBehaviour, IDropHandler
 {
     private TextMeshProUGUI _textMesh;
-    public NotebookEntry NotebookEntry { get; private set; }
+    private NotebookEntry _notebookEntry;
 
-    private void Start()
+    private void Awake()
     {
         _textMesh = GetComponentInChildren<TextMeshProUGUI>();
     }
@@ -16,14 +16,17 @@ public class EntrySlot : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition3D = GetComponent<RectTransform>().anchoredPosition;
-            
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+
             DraggableEntry draggableEntry = eventData.pointerDrag.GetComponent<DraggableEntry>();
-            if (draggableEntry != null)
+            if (draggableEntry && _textMesh)
             {
-                NotebookEntry = NoteBook.instance.GetEntry(draggableEntry.TextMesh.text);
-                _textMesh.text = NotebookEntry.associatedText;
+                _notebookEntry = NoteBook.instance.GetEntry(draggableEntry.text);
+                
+                if(_notebookEntry != null)
+                    _textMesh.text = _notebookEntry.associatedText;
             }
         }
     }
+    
 }

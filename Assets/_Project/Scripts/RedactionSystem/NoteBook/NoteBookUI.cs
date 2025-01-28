@@ -27,6 +27,12 @@ public class NoteBookUI : MonoBehaviour
             var text = newEntry.GetComponentInChildren<TextMeshProUGUI>();
 
             text.text = "- " + entry.dialoguePhrase;
+            
+            DraggableEntry dragEntry = newEntry.GetComponent<DraggableEntry>();
+            if (dragEntry)
+            {
+                dragEntry.text = entry.dialoguePhrase;
+            }
         }
     }
 }

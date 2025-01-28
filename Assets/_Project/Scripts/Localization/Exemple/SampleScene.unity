@@ -522,12 +522,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notebookEntries:
   - dialoguePhrase: thhhhhhhhhhhhhhhhhhh
-    associatedText: 
+    associatedText: ffgdfgdf
     rebels: 0
     people: 0
     government: 0
   - dialoguePhrase: tyjjtjt
-    associatedText: 
+    associatedText: ggggggggg
     rebels: 0
     people: 0
     government: 0
@@ -1328,13 +1328,13 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1605450411817692454, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3483585018940398361, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
       propertyPath: m_Name
       value: CanvasJournal
-      objectReference: {fileID: 0}
-    - target: {fileID: 3483585018940398361, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3957640908798021756, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
       propertyPath: entryPrefab
