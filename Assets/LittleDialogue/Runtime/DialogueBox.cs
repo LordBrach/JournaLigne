@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -25,11 +26,17 @@ namespace LittleDialogue.Runtime
         [SerializeField] private List<Button> m_choiceButtons;
 
         
-        // COROUTINES
+        // COROUTINES //
         private Coroutine m_updateTextCoroutine;
         
         [Header("Dialogue Text Writing")]
         [SerializeField] private float m_textWritingSpeed;
+        
+        // ACTIONS & EVENTS//
+        public event UnityAction OnTextUpdateEnded;
+
+        [Header("Events")] 
+        [SerializeField] private UnityEvent OnTextUpdateEndedEvent;
         
         // PROPERTIES //
 
@@ -45,6 +52,11 @@ namespace LittleDialogue.Runtime
         // public GameObject DialogueBoxPanel => m_dialogueBoxPanel;
         // public TextMeshProUGUI DialogueText => m_dialogueText;
         // public List<Button> ChoiceButtons => m_choiceButtons;
+
+        private void Awake()
+        {
+            OnTextUpdateEndedEvent.AddListener(() => OnTextUpdateEnded?.Invoke());
+        }
 
         private void OnEnable()
         {
@@ -87,6 +99,19 @@ namespace LittleDialogue.Runtime
                     yield return null;
                 }
             }
+
+            UpdateTextEnd();
+        }
+
+        private void UpdateTextEnd()
+        {
+            if(m_updateTextCoroutine != null)
+            {
+                StopCoroutine(m_updateTextCoroutine);
+                m_updateTextCoroutine = null;
+            }
+            
+            OnTextUpdateEndedEvent.Invoke();
         }
 
         public void ClearChoiceButtons()
