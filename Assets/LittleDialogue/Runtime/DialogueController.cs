@@ -26,7 +26,11 @@ namespace LittleDialogue.Runtime
         // Timer before next node
         private bool m_isTimerBeforeNextNodeOn = false;
         private float m_timerBeforeNextNode;
-        [SerializeField] private float m_timeBeforeNextNode;
+        
+        [Header("Timers")]
+        [SerializeField]
+        [Tooltip("After the text finished to be written, this is the time (s) to wait before showing the next text.")] 
+        private float m_timeBeforeNextNode;
 
         
         // METHODS //
