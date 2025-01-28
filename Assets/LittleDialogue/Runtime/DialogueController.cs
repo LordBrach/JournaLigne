@@ -56,24 +56,24 @@ namespace LittleDialogue.Runtime
         private void OnTextUpdateEnd()
         {
 #if LITTLE_GRAPH
-            if (m_currentNode is LDSingleChoiceDialogueNode singleChoiceDialogueNode)
-            {
-                if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
-                {
-                    LGConnection connection =
-                        m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
-                    
-                    m_dialogueBox.AddChoiceButton(singleChoiceDialogueNode.ChoiceText, () =>
-                    {
-                        m_currentNode.EmitFlow(connection.InputPort.NodeId);
-                    });
-                }
-                else
-                {
-                    m_dialogueBox.AddChoiceButton(singleChoiceDialogueNode.ChoiceText);
-                }
-                    
-            }
+            // if (m_currentNode is LDSingleChoiceDialogueNode singleChoiceDialogueNode)
+            // {
+            //     if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
+            //     {
+            //         LGConnection connection =
+            //             m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
+            //         
+            //         m_dialogueBox.AddChoiceButton(singleChoiceDialogueNode.ChoiceText, () =>
+            //         {
+            //             m_currentNode.EmitFlow(connection.InputPort.NodeId);
+            //         });
+            //     }
+            //     else
+            //     {
+            //         m_dialogueBox.AddChoiceButton(singleChoiceDialogueNode.ChoiceText);
+            //     }
+            //         
+            // }
 
             if (m_currentNode is LDMultipleChoiceDialogueNode multipleChoiceDialogueNode)
             {

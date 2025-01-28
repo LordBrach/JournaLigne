@@ -1,19 +1,11 @@
+using LittleGraph.Runtime.Attributes;
 using UnityEngine;
 
 namespace LittleDialogue.Runtime.LittleGraphAddOn
 {
+    [LGNodeInfo("No Choice Dialogue", "Little Dialogue/No Choice Dialogue", true, true)]
     public class LDNoChoiceDialogueNode : LDDialogueNode
     {
-        // Start is called before the first frame update
-        void Start()
-        {
         
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }

@@ -6,17 +6,17 @@ using UnityEngine;
 namespace LittleDialogue.Runtime.LittleGraphAddOn
 {
 #if LITTLE_GRAPH
-    [LGNodeInfo("Single Choice Dialogue", "Little Dialogue/Single Choice Dialogue", true, true, false, typeof (string))]
-    public class LDSingleChoiceDialogueNode : LDDialogueNode
-    {
-        public string ChoiceText = null;
-        
-        protected override void ExecuteNode()
-        {
-            
-            base.ExecuteNode();
-        }
-        
-    }
+    // [LGNodeInfo("Single Choice Dialogue", "Little Dialogue/Single Choice Dialogue", true, true, false, typeof (string))]
+    // public class LDSingleChoiceDialogueNode : LDDialogueNode
+    // {
+    //     public string ChoiceText = null;
+    //     
+    //     protected override void ExecuteNode()
+    //     {
+    //         
+    //         base.ExecuteNode();
+    //     }
+    //     
+    // }
 #endif
 }
