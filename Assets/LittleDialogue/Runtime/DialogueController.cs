@@ -12,11 +12,13 @@ namespace LittleDialogue.Runtime
 {
     public class DialogueController : MonoBehaviour
     {
+#if LITTLE_GRAPH
         private List<LDDialogueNode> m_dialogueNodes;
         private LDDialogueNode m_currentNode;
-
+#endif
         [SerializeField] private DialogueBox m_dialogueBox; 
-        
+       
+#if LITTLE_GRAPH
         public void Init(List<LGGraphObject> graphObjects)
         {
             //Subscribe to all dialogue nodes
@@ -49,9 +51,11 @@ namespace LittleDialogue.Runtime
                 m_dialogueBox.UpdateBackgroundImage(m_currentNode.BackgroundSprite);
             }
         }
+#endif
 
         private void OnTextUpdateEnd()
         {
+#if LITTLE_GRAPH
             if (m_currentNode is LDSingleChoiceDialogueNode singleChoiceDialogueNode)
             {
                 if (m_currentNode.NodeConnections.Exists(connection => connection.OutputPort.NodeId == m_currentNode.ID))
@@ -90,6 +94,7 @@ namespace LittleDialogue.Runtime
                     m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas[0].ChoiceText);
                 }
             }
+#endif
         }
     }
 }
