@@ -17,12 +17,10 @@ namespace _Project.Scripts.RedactionSystem.LittleGraphAddOn
         
         protected override void ExecuteNode()
         {
-            if(NoteBook.instance == null)
+            if(NoteBook.instance != null)
             {
-                Debug.LogError("Add Notebook Entry Node : No instance of Notebook");
-                return;
+                NoteBook.instance.AddEntry(NotebookText, ArticleText, RebelsAppreciation, PeopleAppreciation, GovernmentAppreciation);
             }
-            NoteBook.instance.AddEntry(NotebookText, ArticleText, RebelsAppreciation, PeopleAppreciation, GovernmentAppreciation);
 
             if (m_nodeConnections.Exists(connection => connection.OutputPort.NodeId == ID))
             {
