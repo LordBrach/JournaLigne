@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class NoteBook : MonoBehaviour
 
     [SerializeField] private List<NotebookEntry> notebookEntries = new List<NotebookEntry>();
     [SerializeField] private GameObject newsPaper;
+    
+    public event Action<Appreciations> OnNewsPaperValidate;
 
     private void Awake()
     {
@@ -106,5 +109,10 @@ public class NoteBook : MonoBehaviour
     {
         if (!newsPaper) return;
         newsPaper.SetActive(false);
+    }
+    
+    public void ValidateNewsPaper(Appreciations appreciation)
+    {
+        OnNewsPaperValidate?.Invoke(appreciation);
     }
 }
