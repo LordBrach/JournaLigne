@@ -69,6 +69,7 @@ namespace _Project.Scripts.Runtime.Story
                     m_dayGraphObject.ExecuteAsset();
                     break;
                 case DayType.Article:
+                    NoteBook.instance.ShowNewsPaper();
                     break;
                 case DayType.Review:
                     break;
@@ -86,7 +87,21 @@ namespace _Project.Scripts.Runtime.Story
         
         private void OnDayEndedEvent(Days dayEnded)
         {
-            
+            switch (dayEnded.dayType)
+            {
+                case DayType.Interview:
+                    break;
+                case DayType.Article:
+                    NoteBook.instance.RemoveEntries();
+                    NoteBook.instance.HideNewsPaper();
+                    break;
+                case DayType.Review:
+                    break;
+                case DayType.EndGame:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

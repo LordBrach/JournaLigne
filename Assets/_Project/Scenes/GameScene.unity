@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notebookEntries: []
+  newsPaper: {fileID: 0}
 --- !u!1 &1111474366
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +606,7 @@ MonoBehaviour:
     dayType: 1
     currentGraph: {fileID: 11400000, guid: 5db324e8db98a2547aea29b8f576f97a, type: 2}
   - day: 2
-    dayType: 1
+    dayType: 3
     currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
   graphs: []
 --- !u!1001 &2067270557
