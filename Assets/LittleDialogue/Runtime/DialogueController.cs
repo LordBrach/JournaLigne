@@ -12,7 +12,8 @@ namespace LittleDialogue.Runtime
 {
     public class DialogueController : MonoBehaviour
     {
-        private List<LDDialogueNode> m_dialogueNodes;
+        private List<LDDialogueNode> m_dialogueNodes;   
+
 
         [SerializeField] private DialogueBox m_dialogueBox; 
         
