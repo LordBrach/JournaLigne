@@ -93,10 +93,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b913a41700fd6014b9e36efa3af00717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appreciations:
-    rebelsAppreciation: 0
-    peopleAppreciation: 0
-    governmentAppreciation: 0
 --- !u!1001 &1270395207802635071
 PrefabInstance:
   m_ObjectHideFlags: 0

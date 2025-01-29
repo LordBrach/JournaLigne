@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 using static UnityEngine.GUILayout;
 
 public class Localization : EditorWindow
@@ -172,7 +171,7 @@ public class Localization : EditorWindow
 
                     bool currentIsTranslatable = translateComponent._isTranslatable;
 
-                    bool isTranslatable = EditorGUILayout.Toggle("Is Translatable", currentIsTranslatable, GUILayout.Width(150));
+                    bool isTranslatable = EditorGUILayout.Toggle(textMeshProComponent.name, currentIsTranslatable, GUILayout.Width(150));
                     if (isTranslatable != currentIsTranslatable)
                     {
                         translateComponent._isTranslatable = isTranslatable;
@@ -186,7 +185,7 @@ public class Localization : EditorWindow
                         if (currentIndex < 0) currentIndex = 0;
                     
                         int selectedIndex = EditorGUILayout.Popup(
-                            textMeshProComponent.name,
+                            "",
                             currentIndex,
                             keys.ToArray(),
                             GUILayout.Width(250)
@@ -220,25 +219,68 @@ public class Localization : EditorWindow
         private void FindAllTranslateObjects()
         {
             _translateObjects = new List<TMP_Text>();
-            var allObjects = Resources.FindObjectsOfTypeAll<TMP_Text>();
+
+            // Trouver les textes dans la scène
+            var allObjects = Resources.FindObjectsOfTypeAll<TextMeshProUGUI>();
 
             foreach (var obj in allObjects)
             {
                 if (obj == null || obj.gameObject == null)
                 {
-                    Debug.LogWarning("Found a null or destroyed object while searching for TMP_Text.");
+                    Debug.LogWarning("Found a null or destroyed object while searching for TextMeshProUGUI.");
                     continue;
                 }
 
-                if (obj.GetComponent<TranslationComponent>() != null)
+                if (obj.GetComponent<TranslationComponent>())
                 {
+                    if (!_translateObjects.Contains(obj))
+                        _translateObjects.Add(obj);
+                }
+                else if (obj.GetComponent<TextMeshProUGUI>()&& !obj.GetComponent<TranslationComponent>())
+                {
+                    obj.AddComponent<TranslationComponent>();
                     _translateObjects.Add(obj);
                 }
-                else
+            }
+
+#if UNITY_EDITOR
+            // Trouver les textes dans les prefabs
+            string[] prefabGuids = AssetDatabase.FindAssets("t:Prefab");
+
+            foreach (string guid in prefabGuids)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guid);
+                GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+
+                if (prefab != null)
                 {
-                    
+                    bool prefabModified = false;
+                    TextMeshProUGUI[] textsInPrefab = prefab.GetComponentsInChildren<TextMeshProUGUI>(true);
+
+                    foreach (var text in textsInPrefab)
+                    {
+                        if (text.GetComponent<TranslationComponent>())
+                        {
+                            if (!_translateObjects.Contains(text))
+                                _translateObjects.Add(text);
+                        }
+                        else
+                        {
+                            text.gameObject.AddComponent<TranslationComponent>();
+                            _translateObjects.Add(text);
+                            prefabModified = true;
+                        }
+                    }
+
+                    // Sauvegarde les modifications du prefab
+                    if (prefabModified)
+                    {
+                        EditorUtility.SetDirty(prefab);
+                        AssetDatabase.SaveAssets();
+                    }
                 }
             }
+#endif
 
             Debug.Log($"Found {_translateObjects.Count} TextMeshPro objects with TranslationComponent.");
         }

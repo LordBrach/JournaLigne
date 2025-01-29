@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public enum Factions
@@ -21,7 +20,7 @@ public class Appreciations
 public class Journal : MonoBehaviour
 {
     public Appreciations appreciations { get; private set; } = new Appreciations();
-
+    
     /// <summary>
     /// Increases or decreases the appreciation of a given faction.
     /// </summary>
@@ -48,5 +47,10 @@ public class Journal : MonoBehaviour
                   $"Rebels: {appreciations.rebelsAppreciation}, " +
                   $"People: {appreciations.peopleAppreciation}, " +
                   $"Government: {appreciations.governmentAppreciation}");
+    }
+
+    public void ValidateNewsPaper()
+    {
+        NoteBook.instance.ValidateNewsPaper(appreciations);
     }
 }
