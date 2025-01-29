@@ -1,4 +1,4 @@
-using TMPro;
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,14 +7,13 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
     private Vector3 _originalPosition;
-    
-    public TextMeshProUGUI TextMesh { get; private set; }
+
+    public String text;
 
     void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvasGroup = GetComponent<CanvasGroup>();
-        TextMesh = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -23,7 +22,6 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         _canvasGroup.alpha = 0.6f;
         _canvasGroup.blocksRaycasts = false;
 
-        //_rectTransform.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -33,8 +31,14 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        _rectTransform.position = _originalPosition;
         _canvasGroup.alpha = 1f;
-        _canvasGroup.blocksRaycasts = true;
+
+        if (eventData.pointerDrag == null || eventData.pointerDrag.GetComponent<EntrySlot>() == null)
+        {
+            _canvasGroup.blocksRaycasts = true;
+            _rectTransform.position = _originalPosition;
+        }
+        
     }
+    
 }
