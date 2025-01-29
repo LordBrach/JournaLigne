@@ -6,10 +6,14 @@ public class EntrySlot : MonoBehaviour, IDropHandler
 {
     private TextMeshProUGUI _textMesh;
     private NotebookEntry _notebookEntry;
+    private JournalBlock _multiplier;
+    private Journal _journal; 
 
     private void Awake()
     {
         _textMesh = GetComponentInChildren<TextMeshProUGUI>();
+        _multiplier = GetComponentInChildren<JournalBlock>();
+        _journal = GetComponentInParent<Journal>();
     }
     
     public void OnDrop(PointerEventData eventData)
@@ -25,6 +29,13 @@ public class EntrySlot : MonoBehaviour, IDropHandler
                 
                 if(_notebookEntry != null)
                     _textMesh.text = _notebookEntry.associatedText;
+
+                if (_journal && _multiplier && _notebookEntry != null)
+                {
+                    _journal.AddAppreciation(Factions.Government, _notebookEntry.government, _multiplier.multiplier);
+                    _journal.AddAppreciation(Factions.Rebels, _notebookEntry.rebels, _multiplier.multiplier);
+                    _journal.AddAppreciation(Factions.People, _notebookEntry.people, _multiplier.multiplier);
+                }
             }
         }
     }
