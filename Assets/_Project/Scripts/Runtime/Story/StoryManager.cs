@@ -42,7 +42,7 @@ namespace _Project.Scripts.Runtime.Story
             
             //Init Notebook
             NoteBook.instance.Initialize();
-
+            NoteBook.instance.OnNewsPaperValidate += OnNewsPaperValidateEvent;
             
             //InitDialogueController
             if (m_dialogueController)
@@ -78,6 +78,11 @@ namespace _Project.Scripts.Runtime.Story
                 default:
                     break;
             }
+        }
+        
+        private void OnNewsPaperValidateEvent(Appreciations appreciations)
+        {
+            DayManager.instance.NextDay();
         }
         
         private void OnDayChangedEvent(Days newDay)
