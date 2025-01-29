@@ -12,6 +12,8 @@ public class DayManager : MonoBehaviour
     private bool _isSkippingDays = false;
 
     private Dictionary<int, Action> _narrativeEvents = new Dictionary<int, Action>();
+    
+    public event Action<int> OnDayChanged;
 
     private void Awake()
     {
@@ -40,8 +42,8 @@ public class DayManager : MonoBehaviour
     public void NextDay()
     {
         CurrentDay++;
-        Debug.Log("Nous sommes maintenant au jour : " + CurrentDay);
-
+        
+        OnDayChanged?.Invoke(CurrentDay);
         CheckForEvent();
 
         if (CurrentDay % daysInWeek == 1)
@@ -92,5 +94,23 @@ public class DayManager : MonoBehaviour
             Debug.Log($"Un événement se déclenche au jour : {CurrentDay}");
             _narrativeEvents[CurrentDay]?.Invoke();
         }
+    }
+    
+    /// <summary>
+    /// Allows another script to subscribe to the day change.
+    /// </summary>
+    /// <param name="callback">Method to call when a day changes.</param>
+    public void SubscribeToDayChange(Action<int> callback)
+    {
+        OnDayChanged += callback;
+    }
+    
+    /// <summary>
+    /// Allows another script to unsubscribe from day change.
+    /// </summary>
+    /// <param name="callback">Method to remove from event.</param>
+    public void UnsubscribeFromDayChange(Action<int> callback)
+    {
+        OnDayChanged -= callback;
     }
 }
