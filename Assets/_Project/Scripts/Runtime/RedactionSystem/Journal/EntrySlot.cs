@@ -23,12 +23,15 @@ public class EntrySlot : MonoBehaviour, IDropHandler
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
 
             DraggableEntry draggableEntry = eventData.pointerDrag.GetComponent<DraggableEntry>();
-            if (draggableEntry && _textMesh)
+            if (draggableEntry && !draggableEntry.isUsed && _textMesh)
             {
                 _notebookEntry = NoteBook.instance.GetEntry(draggableEntry.text);
-                
-                if(_notebookEntry != null)
+
+                if (_notebookEntry != null)
+                {
                     _textMesh.text = _notebookEntry.associatedText;
+                    draggableEntry.isUsed = true;
+                }
 
                 if (_journal && _multiplier && _notebookEntry != null)
                 {

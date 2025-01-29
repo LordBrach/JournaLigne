@@ -16,6 +16,7 @@ public class NoteBook : MonoBehaviour
     public static NoteBook instance;
 
     [SerializeField] private List<NotebookEntry> notebookEntries = new List<NotebookEntry>();
+    [SerializeField] private GameObject newsPaper;
 
     private void Awake()
     {
@@ -57,6 +58,11 @@ public class NoteBook : MonoBehaviour
         Debug.Log($"Nouvelle entrée ajoutée : {dialoguePhrase}");
     }
 
+    public void RemoveEntries()
+    {
+        notebookEntries.Clear();
+    }
+
     /// <summary>
     /// Get all entry of notebook.
     /// </summary>
@@ -88,5 +94,17 @@ public class NoteBook : MonoBehaviour
         {
             Debug.Log($"Phrase : {entry.dialoguePhrase} | Texte : {entry.associatedText} | Values: {entry.rebels}, {entry.people}, {entry.government}");
         }
+    }
+
+    public void ShowNewsPaper()
+    {
+        if (!newsPaper) return;
+        newsPaper.SetActive(true);
+    }
+
+    public void HideNewsPaper()
+    {
+        if (!newsPaper) return;
+        newsPaper.SetActive(false);
     }
 }

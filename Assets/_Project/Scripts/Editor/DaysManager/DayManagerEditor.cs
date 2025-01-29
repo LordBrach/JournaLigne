@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using System.Collections.Generic;
 
 [CustomEditor(typeof(DayManager))]
 public class DayManagerEditor : Editor
@@ -38,7 +37,27 @@ public class DayManagerEditor : Editor
             
             dayNumber.intValue = EditorGUILayout.IntField("Day Number", dayNumber.intValue);
             dayType.enumValueIndex = EditorGUILayout.Popup("Day Type", dayType.enumValueIndex, dayType.enumDisplayNames);
-            EditorGUILayout.PropertyField(currentGraph, new GUIContent("Graph"));
+            
+            DayType selectedDayType = (DayType)dayType.enumValueIndex;
+
+            switch (selectedDayType)
+            {
+                case DayType.Article:
+                    EditorGUILayout.LabelField("Type: Article.");
+                    break;
+        
+                case DayType.Interview:
+                    EditorGUILayout.PropertyField(currentGraph, new GUIContent("Graph"));
+                    break;
+        
+                case DayType.Review:
+                    EditorGUILayout.LabelField("Type: Review.");
+                    break;
+        
+                case DayType.EndGame:
+                    EditorGUILayout.LabelField("Type: EndGame.");
+                    break;
+            }
 
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Remove Day"))
