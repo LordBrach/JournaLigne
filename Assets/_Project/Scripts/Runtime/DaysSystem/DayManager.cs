@@ -42,11 +42,6 @@ public class DayManager : MonoBehaviour
 
     private void Awake()
     {
-        Initialize();
-    }
-
-    public void Initialize()
-    {
         if (instance == null)
         {
             instance = this;
@@ -54,9 +49,11 @@ public class DayManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            return;
         }
+    }
 
+    public void Initialize()
+    {
         if (daysList.Count > 0)
         {
             CurrentDay = daysList[0];
@@ -68,19 +65,10 @@ public class DayManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        if (CurrentDay != null)
-        {
-            Debug.Log($"Le jeu commence au jour {CurrentDay.day}");
-            StartNewDay();
-        }
-    }
-
     /// <summary>
     /// Commence un nouveau jour.
     /// </summary>
-    private void StartNewDay()
+    public void StartNewDay()
     {
         if (CurrentDay == null) return;
 
@@ -93,7 +81,7 @@ public class DayManager : MonoBehaviour
     /// <summary>
     /// Termine la journée en cours.
     /// </summary>
-    private void EndCurrentDay()
+    public void EndCurrentDay()
     {
         if (CurrentDay == null) return;
 

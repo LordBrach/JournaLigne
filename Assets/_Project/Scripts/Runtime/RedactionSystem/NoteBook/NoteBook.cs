@@ -29,6 +29,11 @@ public class NoteBook : MonoBehaviour
         }
     }
 
+    public void Initialize()
+    {
+        
+    }
+
     /// <summary>
     /// New entry for notebook.
     /// </summary>
