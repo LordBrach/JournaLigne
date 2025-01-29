@@ -28,6 +28,12 @@ namespace _Project.Scripts.Runtime.Story
 
         private void Start()
         {
+            //Initialization of systems
+            DayManager.instance.Initialize();
+            //...
+            
+            
+            //Start first day
             
         }
     }
