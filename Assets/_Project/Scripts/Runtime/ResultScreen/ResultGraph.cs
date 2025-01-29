@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +31,9 @@ public class ResultGraph : MonoBehaviour
     PartyData civilData = new PartyData();
     PartyData dictData = new PartyData();
     PartyData rebelData = new PartyData();
-
+    // coroutine ref
+    Coroutine coroutine = null;
+    bool isCoroutineRunning = false;
     #region begin setup
     private void Awake()
     {
@@ -146,6 +149,19 @@ public class ResultGraph : MonoBehaviour
         _rectTransform.sizeDelta = new Vector2(dist, sizeLine);
         _rectTransform.anchoredPosition = _posOrigin + direction * dist * 0.5f;
         _rectTransform.localEulerAngles = new Vector3(0, 0, MakeAngleFromVector(direction));
+
+        if(isCoroutineRunning)
+        {
+            isCoroutineRunning = false;
+            StopCoroutine(coroutine);
+            // finish drawing the line
+        }
+        coroutine = StartCoroutine(DrawLine());
+    }
+
+    IEnumerator DrawLine()
+    {
+        yield return null;
     }
     #endregion
     #region utilities
