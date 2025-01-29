@@ -1,8 +1,7 @@
 using LittleGraph.Runtime;
 using LittleGraph.Runtime.Attributes;
-using UnityEngine;
 
-namespace _Project.Scripts.RedactionSystem.LittleGraphAddOn
+namespace _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn
 {
 #if LITTLE_GRAPH
     

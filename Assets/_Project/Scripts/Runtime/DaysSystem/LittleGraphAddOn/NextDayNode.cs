@@ -1,8 +1,7 @@
 using LittleGraph.Runtime;
 using LittleGraph.Runtime.Attributes;
-using UnityEngine;
 
-namespace _Project.Scripts.DaysSystem.LittleGraphAddOn
+namespace _Project.Scripts.Runtime.DaysSystem.LittleGraphAddOn
 {
 #if LITTLE_GRAPH
     [LGNodeInfo("Next Day", "Days System/Next Day")]

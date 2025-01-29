@@ -599,11 +599,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22844f41cf9cb2499e2a71e80b49f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  daysInWeek: 2
+  daysInWeek: 7
   daysList:
   - day: 1
     dayType: 1
-    currentGraph: {fileID: 11400000, guid: 7ae795a37ff26904eb70ba1e1dca935d, type: 2}
+    currentGraph: {fileID: 11400000, guid: 5db324e8db98a2547aea29b8f576f97a, type: 2}
+  - day: 2
+    dayType: 1
+    currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
   graphs: []
 --- !u!1001 &2067270557
 PrefabInstance:

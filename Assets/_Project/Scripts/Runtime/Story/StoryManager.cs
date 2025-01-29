@@ -81,12 +81,12 @@ namespace _Project.Scripts.Runtime.Story
         
         private void OnDayChangedEvent(Days newDay)
         {
-            throw new NotImplementedException();
+            
         }
         
         private void OnDayEndedEvent(Days dayEnded)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
