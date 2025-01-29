@@ -20,12 +20,13 @@ public class ResultGraph : MonoBehaviour
         int median => yMax / 2;
     [SerializeField] float sizeNode = 6.0f;
     [SerializeField] float sizeLine = 10.0f;
-
+    [SerializeField] bool ShowOnStart = true;
     // value for each step (length between two nodes on the graph ( o---------o )
     [SerializeField, Range(5,100)] float xSize = 50;
 
     // Non visible params
     float graphHeight = 1;
+    bool isGraphSetup = false;
     private RectTransform graphContainer;
     // Data
     PartyData civilData = new PartyData();
@@ -34,25 +35,68 @@ public class ResultGraph : MonoBehaviour
     // coroutine ref
     Coroutine coroutine = null;
     bool isCoroutineRunning = false;
+
+    #region Show/Hide
+    public void Show()
+    {
+        canvas.SetActive(true);
+    }
+    public void Hide()
+    {
+        canvas.SetActive(false);
+    }
+    #endregion
+
+
     #region begin setup
+
+    private void OnEnable()
+    {
+        NoteBook.instance.OnNewsPaperValidate += HandleNewsPaperValidation;
+    }
+
+
+    private void OnDisable()
+    {
+        NoteBook.instance.OnNewsPaperValidate -= HandleNewsPaperValidation;        
+    }
+
+    private void HandleNewsPaperValidation(Appreciations appreciations)
+    {
+        if(!isGraphSetup)
+        {
+            SetupFirstNodes();
+        }
+        canvas.SetActive(true);
+        AddSingleValue(appreciations.peopleAppreciation, PeopleRef, civilData);
+        
+        //AddSingleValue(appreciations.rebelsAppreciation, RebelsRef, rebelData);
+        //AddSingleValue(appreciations.governmentAppreciation, DictatorsRef, dictData);
+    }
     private void Awake()
     {
         graphContainer = canvas.GetComponent<RectTransform>();
         graphHeight = graphContainer.sizeDelta.y;
-        canvas.SetActive(false);
+        if(ShowOnStart)
+        {
+            Show();
+        }
     }
     // Start is called before the first frame update
     void Start()
     {
-        SetupFirstNodes();
-        canvas.SetActive(true);
+        if (!isGraphSetup)
+        {
+            SetupFirstNodes();
+        }
     }
 
     private void SetupFirstNodes()
     {
-        AddSingleValue(RebelsRef.currentGraphValue, RebelsRef, rebelData);
-        AddSingleValue(DictatorsRef.currentGraphValue, DictatorsRef, dictData);
         AddSingleValue(PeopleRef.currentGraphValue, PeopleRef, civilData);
+        isGraphSetup = true;
+        //AddSingleValue(RebelsRef.currentGraphValue, RebelsRef, rebelData);
+        //AddSingleValue(DictatorsRef.currentGraphValue, DictatorsRef, dictData);
     }
     #endregion
 
@@ -146,7 +190,6 @@ public class ResultGraph : MonoBehaviour
         float dist = Vector2.Distance(_posOrigin, _posTarget);
         _rectTransform.anchorMin = new Vector2(0, 0);
         _rectTransform.anchorMax = new Vector2(0, 0);
-        _rectTransform.sizeDelta = new Vector2(dist, sizeLine);
         _rectTransform.anchoredPosition = _posOrigin + direction * dist * 0.5f;
         _rectTransform.localEulerAngles = new Vector3(0, 0, MakeAngleFromVector(direction));
 
@@ -154,14 +197,24 @@ public class ResultGraph : MonoBehaviour
         {
             isCoroutineRunning = false;
             StopCoroutine(coroutine);
+            _rectTransform.sizeDelta = new Vector2(dist, sizeLine);
             // finish drawing the line
         }
-        coroutine = StartCoroutine(DrawLine());
+        coroutine = StartCoroutine(DrawLine(_rectTransform, dist));
     }
 
-    IEnumerator DrawLine()
+    IEnumerator DrawLine(RectTransform _inRectTransform, float dist)
     {
-        yield return null;
+        float duration = 1.0f;
+        float timestep = 0;
+        while(timestep <= duration)
+        {
+            timestep += Time.deltaTime;
+            float step = Mathf.Clamp01(timestep / duration);
+            _inRectTransform.sizeDelta = new Vector2(Mathf.Lerp(0, dist, step), sizeLine);
+            yield return null;
+        }
+        _inRectTransform.sizeDelta = new Vector2(dist, sizeLine);
     }
     #endregion
     #region utilities
