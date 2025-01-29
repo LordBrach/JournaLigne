@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace _Project.Scripts.Runtime.Core.AudioSystem
 {
     public class AudioManager : MonoBehaviour
     {
+        [SerializeField] private AudioMixer m_currentMixer;
+        
         #region Singleton
 
         private static AudioManager m_instance;
@@ -23,5 +26,10 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
         }
 
         #endregion
+
+        public void PlaySound2D(AudioClip audioClip, AudioMixerGroup audioMixerGroup = null)
+        {
+            
+        }
     }
 }
