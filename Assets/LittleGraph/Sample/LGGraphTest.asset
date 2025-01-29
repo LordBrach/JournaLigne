@@ -13,191 +13,184 @@ MonoBehaviour:
   m_Name: LGGraphTest
   m_EditorClassIdentifier: 
   m_nodes:
-  - rid: 8417688952049238017
-  - rid: 8417689041701699584
-  - rid: 8417689041701699585
-  - rid: 8417689046309142528
-  - rid: 8417689046309142529
-  - rid: 8417689046309142530
-  - rid: 8417689046309142531
+  - rid: 8417689067631935488
+  - rid: 8417689067631935489
+  - rid: 8417689067631935490
+  - rid: 8417689067631935491
+  - rid: 8417689067631935492
+  - rid: 8417689067631935493
   m_connections:
   - InputPort:
-      NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
+      NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
       PortIndex: 0
     OutputPort:
-      NodeId: fe386e14-b84c-4132-b69a-ab7eab6a39c8
+      NodeId: e9f330d6-d693-494b-aaba-65e993f03fe4
       PortIndex: 0
   - InputPort:
-      NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+      NodeId: 779b5cbf-2b20-48da-bf04-a927d7886074
       PortIndex: 0
     OutputPort:
-      NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+      NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
       PortIndex: 1
   - InputPort:
-      NodeId: f75541ec-9e6c-43ba-953f-41ed2fdd572f
+      NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
       PortIndex: 0
     OutputPort:
-      NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+      NodeId: 779b5cbf-2b20-48da-bf04-a927d7886074
       PortIndex: 1
   - InputPort:
-      NodeId: a29121c9-82de-442c-9231-632cd58ab6ab
+      NodeId: ee0015d5-6a0e-4447-b6d4-06dbad5865a7
       PortIndex: 0
     OutputPort:
-      NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+      NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
+      PortIndex: 1
+  - InputPort:
+      NodeId: 4f6f3600-807e-4101-8f7f-9bdd0c92b381
+      PortIndex: 0
+    OutputPort:
+      NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
       PortIndex: 2
-  - InputPort:
-      NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
-      PortIndex: 0
-    OutputPort:
-      NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
-      PortIndex: 1
-  - InputPort:
-      NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
-      PortIndex: 0
-    OutputPort:
-      NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
-      PortIndex: 1
   references:
     version: 2
     RefIds:
-    - rid: 8417688952049238017
+    - rid: 8417689067631935488
       type: {class: LGStartNode, ns: LittleGraph.Runtime.Types, asm: LittleGraph.Runtime}
       data:
-        m_guid: fe386e14-b84c-4132-b69a-ab7eab6a39c8
+        m_guid: e9f330d6-d693-494b-aaba-65e993f03fe4
         m_position:
           serializedVersion: 2
-          x: -221.6
-          y: 258.4
-          width: 75.2
-          height: 76.79999
+          x: -195.20001
+          y: 85.2
+          width: 0
+          height: 0
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
+            NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
             PortIndex: 0
           OutputPort:
-            NodeId: fe386e14-b84c-4132-b69a-ab7eab6a39c8
+            NodeId: e9f330d6-d693-494b-aaba-65e993f03fe4
             PortIndex: 0
         TypeName: LittleGraph.Runtime.Types.LGStartNode, LittleGraph.Runtime, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-    - rid: 8417689041701699584
+    - rid: 8417689067631935489
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
-        m_guid: f3ef1493-fa02-4d4e-815a-3f4272848a4f
+        m_guid: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
         m_position:
           serializedVersion: 2
-          x: -132.8
-          y: 258.4
-          width: 244.8
+          x: -67.200005
+          y: 84.8
+          width: 244.79999
           height: 153.6
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
+            NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
             PortIndex: 0
           OutputPort:
-            NodeId: fe386e14-b84c-4132-b69a-ab7eab6a39c8
+            NodeId: e9f330d6-d693-494b-aaba-65e993f03fe4
             PortIndex: 0
         - InputPort:
-            NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
+            NodeId: 779b5cbf-2b20-48da-bf04-a927d7886074
             PortIndex: 0
           OutputPort:
-            NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
+            NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
             PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueNodeActivatorFlag: 1
-        DialogueText: No choice haha
+        DialogueText: No choice
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
-    - rid: 8417689041701699585
+    - rid: 8417689067631935490
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
-        m_guid: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+        m_guid: 779b5cbf-2b20-48da-bf04-a927d7886074
         m_position:
           serializedVersion: 2
-          x: 436.80002
-          y: 258.4
-          width: 244.80002
+          x: 228.8
+          y: 84.8
+          width: 244.79999
           height: 153.6
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+            NodeId: 779b5cbf-2b20-48da-bf04-a927d7886074
             PortIndex: 0
           OutputPort:
-            NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+            NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
             PortIndex: 1
         - InputPort:
-            NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+            NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
             PortIndex: 0
           OutputPort:
-            NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
+            NodeId: 779b5cbf-2b20-48da-bf04-a927d7886074
             PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueNodeActivatorFlag: 0
-        DialogueText: No choice again lol
+        DialogueText: No choice again
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
-    - rid: 8417689046309142528
+    - rid: 8417689067631935491
       type: {class: LDMultipleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
-        m_guid: 3b38fd0e-e3d8-4289-b23d-4397373059db
+        m_guid: cde782ab-a59a-473f-8e4d-06c1801a18c1
         m_position:
           serializedVersion: 2
-          x: 723.2
-          y: 210.40001
+          x: 561.60004
+          y: 84.8
           width: 264.8
           height: 153.6
         m_outputPortAmount: 2
         m_nodeConnections:
         - InputPort:
-            NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+            NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
             PortIndex: 0
           OutputPort:
-            NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
+            NodeId: 779b5cbf-2b20-48da-bf04-a927d7886074
             PortIndex: 1
         - InputPort:
-            NodeId: f75541ec-9e6c-43ba-953f-41ed2fdd572f
+            NodeId: ee0015d5-6a0e-4447-b6d4-06dbad5865a7
             PortIndex: 0
           OutputPort:
-            NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+            NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
             PortIndex: 1
         - InputPort:
-            NodeId: a29121c9-82de-442c-9231-632cd58ab6ab
+            NodeId: 4f6f3600-807e-4101-8f7f-9bdd0c92b381
             PortIndex: 0
           OutputPort:
-            NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+            NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
             PortIndex: 2
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDMultipleChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueNodeActivatorFlag: 0
-        DialogueText: Choices !!!!
+        DialogueText: Choices !!
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
         ChoiceDatas:
         - OutputIndex: 1
           ChoiceText: AAAA
         - OutputIndex: 2
-          ChoiceText: BBB
-    - rid: 8417689046309142529
+          ChoiceText: BBBB
+    - rid: 8417689067631935492
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
-        m_guid: f75541ec-9e6c-43ba-953f-41ed2fdd572f
+        m_guid: ee0015d5-6a0e-4447-b6d4-06dbad5865a7
         m_position:
           serializedVersion: 2
-          x: 1087.2001
-          y: 230.79999
-          width: 0
-          height: 0
+          x: 890.4
+          y: -16
+          width: 244.79999
+          height: 153.6
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: f75541ec-9e6c-43ba-953f-41ed2fdd572f
+            NodeId: ee0015d5-6a0e-4447-b6d4-06dbad5865a7
             PortIndex: 0
           OutputPort:
-            NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+            NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
             PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -205,23 +198,23 @@ MonoBehaviour:
         DialogueText: Choice A
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
-    - rid: 8417689046309142530
+    - rid: 8417689067631935493
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
-        m_guid: a29121c9-82de-442c-9231-632cd58ab6ab
+        m_guid: 4f6f3600-807e-4101-8f7f-9bdd0c92b381
         m_position:
           serializedVersion: 2
-          x: 1087.2
-          y: 388
-          width: 244.80005
-          height: 153.59998
+          x: 963.2
+          y: 215.60002
+          width: 0
+          height: 0
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: a29121c9-82de-442c-9231-632cd58ab6ab
+            NodeId: 4f6f3600-807e-4101-8f7f-9bdd0c92b381
             PortIndex: 0
           OutputPort:
-            NodeId: 3b38fd0e-e3d8-4289-b23d-4397373059db
+            NodeId: cde782ab-a59a-473f-8e4d-06c1801a18c1
             PortIndex: 2
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -229,34 +222,3 @@ MonoBehaviour:
         DialogueText: Choice B
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
-    - rid: 8417689046309142531
-      type: {class: AddNoteBookEntryNode, ns: _Project.Scripts.RedactionSystem.LittleGraphAddOn, asm: Assembly-CSharp}
-      data:
-        m_guid: 83f96aa7-4329-4202-8078-d8989a0ef0ec
-        m_position:
-          serializedVersion: 2
-          x: 132
-          y: 252.00002
-          width: 223.99998
-          height: 165.59998
-        m_outputPortAmount: 1
-        m_nodeConnections:
-        - InputPort:
-            NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
-            PortIndex: 0
-          OutputPort:
-            NodeId: f3ef1493-fa02-4d4e-815a-3f4272848a4f
-            PortIndex: 1
-        - InputPort:
-            NodeId: 63eb4988-97ed-42c8-abb1-1ac4d803590f
-            PortIndex: 0
-          OutputPort:
-            NodeId: 83f96aa7-4329-4202-8078-d8989a0ef0ec
-            PortIndex: 1
-        TypeName: _Project.Scripts.RedactionSystem.LittleGraphAddOn.AddNoteBookEntryNode,
-          Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        NotebookText: Notebook Text
-        ArticleText: Article Text
-        PeopleAppreciation: 1
-        RebelsAppreciation: 1
-        GovernmentAppreciation: 1

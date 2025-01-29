@@ -71,6 +71,22 @@ namespace LittleDialogue.Runtime
             m_dialogueBox.OnIdleTextBoxTouched += OnIdleTextBoxTouched;
         }
 
+        public void Init()
+        {
+            //Subscribe to Dialogue Box Events
+            m_dialogueBox.OnTextUpdateEnded += OnTextUpdateEnd;
+            m_dialogueBox.OnIdleTextBoxTouched += OnIdleTextBoxTouched; 
+        }
+
+        public void SubscribeToGraphInstance(LGGraph graphInstance)
+        {
+            m_dialogueNodes = graphInstance.Nodes.OfType<LDDialogueNode>().ToList();
+            foreach (LDDialogueNode dialogueNode in m_dialogueNodes)
+            {
+                dialogueNode.Executed += OnDialogueNodeExecuted;
+            }
+        }
+
         private void OnDialogueNodeExecuted(LGNode node)
         {
             if(!m_dialogueBox) return;

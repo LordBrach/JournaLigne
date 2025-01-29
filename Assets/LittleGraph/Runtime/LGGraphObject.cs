@@ -18,8 +18,22 @@ namespace LittleGraph.Runtime
 
         public void Init()
         {
+            if(m_graph == null) return;
             m_graphInstance = Instantiate(m_graph);
             RegisterEvents();
+        }
+
+        private void UnInit()
+        {
+            UnRegisterEvents();
+            if(m_graphInstance != null) Destroy(m_graphInstance);
+        }
+        
+        public void ReplaceGraph(LGGraph newGraph)
+        {
+            UnInit();
+            m_graph = newGraph;
+            Init();
         }
         
         private void OnDisable()
@@ -37,7 +51,18 @@ namespace LittleGraph.Runtime
                 node.EmittedFlow += OnEmittedFlowAction;
             }
         }
-
+        
+        private void UnRegisterEvents()
+        {
+            if(m_graphInstance == null) return;
+            foreach (LGNode node in m_graphInstance.Nodes)
+            {
+                node.ReceivedFlow -= OnReceivedFlowAction;
+                node.Executed -= OnExecutedAction;
+                node.EmittedFlow -= OnEmittedFlowAction;
+            }
+        }
+        
         private void OnReceivedFlowAction()
         {
             //Doing nothing for now
@@ -53,15 +78,7 @@ namespace LittleGraph.Runtime
             m_graphInstance.GetNode(nextNodeId).ReceiveFlow();
         }
 
-        private void UnRegisterEvents()
-        {
-            foreach (LGNode node in m_graphInstance.Nodes)
-            {
-                node.ReceivedFlow -= OnReceivedFlowAction;
-                node.Executed -= OnExecutedAction;
-                node.EmittedFlow -= OnEmittedFlowAction;
-            }
-        }
+        
         
         public void ExecuteAsset()
         {
