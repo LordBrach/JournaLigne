@@ -50,9 +50,14 @@ public class ResultGraph : MonoBehaviour
 
     #region begin setup
 
-    private void OnEnable()
+    public void Init()
     {
         NoteBook.instance.OnNewsPaperValidate += HandleNewsPaperValidation;
+    }
+    
+    private void OnEnable()
+    {
+        // NoteBook.instance.OnNewsPaperValidate += HandleNewsPaperValidation;
     }
 
 

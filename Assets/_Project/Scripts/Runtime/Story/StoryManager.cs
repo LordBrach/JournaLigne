@@ -9,6 +9,7 @@ namespace _Project.Scripts.Runtime.Story
     {
         [SerializeField] private DialogueController m_dialogueController;
         [SerializeField] private LGGraphObject m_dayGraphObject;
+        [SerializeField] private ResultGraph m_resultGraph;
         
         #region Singleton
         private static StoryManager m_instance;
@@ -43,6 +44,9 @@ namespace _Project.Scripts.Runtime.Story
             //Init Notebook
             NoteBook.instance.Initialize();
             NoteBook.instance.OnNewsPaperValidate += OnNewsPaperValidateEvent;
+            
+            //Init ResultGraph
+            m_resultGraph.Init();
             
             //InitDialogueController
             if (m_dialogueController)
@@ -98,7 +102,8 @@ namespace _Project.Scripts.Runtime.Story
                     break;
                 case DayType.Article:
                     NoteBook.instance.RemoveEntries();
-                    NoteBook.instance.HideNewsPaper();
+                    // NoteBook.instance.HideNewsPaper();
+                    m_resultGraph.Hide();
                     break;
                 case DayType.Review:
                     break;
