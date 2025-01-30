@@ -82,10 +82,10 @@ public class ResultGraph : MonoBehaviour
     {
         graphContainer = canvas.GetComponent<RectTransform>();
         graphHeight = graphContainer.sizeDelta.y;
-        if(ShowOnStart)
-        {
-            Show();
-        }
+        // if(ShowOnStart)
+        // {
+        //     Show();
+        // }
     }
     // Start is called before the first frame update
     void Start()
