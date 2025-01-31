@@ -12,6 +12,9 @@ public class ConsequenceImage
 
 public class Consequences : MonoBehaviour
 {
+    // Change to Scriptable Alessendro
+    [SerializeField] private InfluenceData influence;
+    
     public float currentInfluence;
     public float currentMaxInfluence;
     
@@ -20,16 +23,17 @@ public class Consequences : MonoBehaviour
 
     public void Initialize()
     {
-        
+        currentInfluence = influence.influence;
+        currentMaxInfluence = influence.maxInfluence;
     }
 
-    public void ShowConsequences(float influence, float maxInfluence, string key)
+    public void ShowConsequences(Days currentDay)
     {
         gameObject.SetActive(true);
         
-        currentInfluence = influence;
-        currentMaxInfluence = maxInfluence;
-        GetConsequences(currentInfluence, currentMaxInfluence, key);
+        currentInfluence = influence.influence;
+        currentMaxInfluence = influence.maxInfluence;
+        GetConsequences(currentDay);
     }
     
     public void HideConsequences()
@@ -49,15 +53,15 @@ public class Consequences : MonoBehaviour
         return null;
     }
 
-    private void GetConsequences(float influence, float maxInfluence, string key)
+    private void GetConsequences( Days currentDay)
     {
-        if (influence > maxInfluence/2)
+        if (currentInfluence > currentMaxInfluence/2)
         {
-            imageComp.sprite = GetConsequenceImage(key);
+            imageComp.sprite = GetConsequenceImage(currentDay.keyFavorable);
         }
-        else if (influence < maxInfluence/2)
+        else if (currentInfluence < currentMaxInfluence/2)
         {
-            imageComp.sprite = GetConsequenceImage(key);
+            imageComp.sprite = GetConsequenceImage(currentDay.keyUnfavorable);
         }
     }
 }

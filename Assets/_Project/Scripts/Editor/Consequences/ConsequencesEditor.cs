@@ -9,6 +9,7 @@ public class ConsequencesEditor : Editor
     private SerializedProperty currentMaxInfluence;
     private SerializedProperty imageComp;
     private SerializedProperty consequencesImages;
+    private SerializedProperty influenceData;
 
     private void OnEnable()
     {
@@ -16,6 +17,7 @@ public class ConsequencesEditor : Editor
         currentMaxInfluence = serializedObject.FindProperty("currentMaxInfluence");
         imageComp = serializedObject.FindProperty("imageComp");
         consequencesImages = serializedObject.FindProperty("consequencesImages");
+        influenceData = serializedObject.FindProperty("influence");
     }
 
     public override void OnInspectorGUI()
@@ -23,8 +25,7 @@ public class ConsequencesEditor : Editor
         serializedObject.Update();
 
         EditorGUILayout.LabelField("Influence Settings", EditorStyles.boldLabel);
-        EditorGUILayout.PropertyField(currentInfluence);
-        EditorGUILayout.PropertyField(currentMaxInfluence);
+        EditorGUILayout.PropertyField(influenceData);
         EditorGUILayout.Space();
 
         EditorGUILayout.LabelField("UI Components", EditorStyles.boldLabel);

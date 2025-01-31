@@ -305,6 +305,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2698901376280677592}
     m_Modifications:
+    - target: {fileID: 386151722031174380, guid: 5092330513848344fb7b3da1c356db50, type: 3}
+      propertyPath: _isTranslatable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 530433758195258702, guid: 5092330513848344fb7b3da1c356db50, type: 3}
       propertyPath: m_Name
       value: BlockJournal (1)
@@ -407,6 +411,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2698901376280677592}
     m_Modifications:
+    - target: {fileID: 386151722031174380, guid: 5092330513848344fb7b3da1c356db50, type: 3}
+      propertyPath: _isTranslatable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 530433758195258702, guid: 5092330513848344fb7b3da1c356db50, type: 3}
       propertyPath: m_Name
       value: BlockJournal (3)

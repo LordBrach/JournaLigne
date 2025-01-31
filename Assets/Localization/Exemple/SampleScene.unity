@@ -1359,7 +1359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3697843705534623606, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.47388458
+      value: -0.4738922
       objectReference: {fileID: 0}
     - target: {fileID: 5616308655834898490, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1667,6 +1667,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: influence
+      value: 
+      objectReference: {fileID: 11400000, guid: c9b2493581a38494c8e8f9d6267d4286, type: 2}
     - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
       propertyPath: ConsequencesImages.Array.size
       value: 1
