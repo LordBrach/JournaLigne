@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PeopleRef: {fileID: 11400000, guid: 6d258045c77d96042bc19eed38ccdcfb, type: 2}
-  canvas: {fileID: 2052037855}
+  canvas: {fileID: 6980130023613130337}
   yMax: 100
   ColorAbvTreshhold: {r: 0, g: 0, b: 1, a: 1}
   ColorBlwTreshhold: {r: 1, g: 0, b: 0.05152273, a: 1}
