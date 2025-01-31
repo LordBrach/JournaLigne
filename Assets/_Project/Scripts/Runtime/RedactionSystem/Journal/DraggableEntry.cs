@@ -4,62 +4,78 @@ using UnityEngine.EventSystems;
 
 public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private RectTransform _rectTransform;
-    private CanvasGroup _canvasGroup;
-    private Vector3 _originalPosition;
+    private Canvas _canvas;
+    public RectTransform rectTransform;
+    public CanvasGroup canvasGroup;
+    public Transform originalPosition;
     public bool isUsed = false;
 
     public String text;
-    private GameObject _cloneInstance;
+    public GameObject cloneInstance;
+    private Transform _cloneTransform;
 
     void Awake()
     {
-        _rectTransform = GetComponent<RectTransform>();
-        _canvasGroup = GetComponent<CanvasGroup>();
+        rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        _canvas = GetComponentInParent<Canvas>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        StartDrag(eventData);
+    }
+
+    public void StartDrag(PointerEventData eventData)
+    {
         if (isUsed) return;
         
-        _originalPosition = _rectTransform.position;
-        _canvasGroup.alpha = 0.6f;
-        _canvasGroup.blocksRaycasts = false;
         CreateClone();
+        originalPosition = rectTransform;
+        canvasGroup.alpha = 0.6f;
+        canvasGroup.blocksRaycasts = false;
+
+        originalPosition.position = transform.parent.position;
+        transform.SetParent(_canvas.transform, true); 
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        UpdateDrag(eventData);
+    }
+
+    public void UpdateDrag(PointerEventData eventData)
+    {
         if (isUsed) return;
-        _rectTransform.anchoredPosition += eventData.delta / transform.root.GetComponent<Canvas>().scaleFactor;
+        
+        rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
-    {
-        _canvasGroup.alpha = 1f;
-        Destroy(_cloneInstance);
+    { 
+    }
 
-        if (eventData.pointerDrag == null || eventData.pointerDrag.GetComponent<EntrySlot>() == null)
-        {
-            _canvasGroup.blocksRaycasts = true;
-            _rectTransform.position = _originalPosition;
-        }
+    public void EndDrag()
+    {
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
         
+        transform.SetParent(cloneInstance.transform.parent, true);
+        rectTransform.position = originalPosition.position;
+        Destroy(cloneInstance);
     }
     
-    private void CreateClone()
+    public void CreateClone()
     {
         int originalIndex = transform.GetSiblingIndex();
-        _cloneInstance = Instantiate(gameObject, transform.parent);
-        _cloneInstance.transform.SetSiblingIndex(originalIndex);
+        cloneInstance = Instantiate(gameObject, transform.parent);
+        cloneInstance.transform.SetSiblingIndex(originalIndex);
+        _cloneTransform = cloneInstance.transform;
 
-        var cloneDraggable = _cloneInstance.GetComponent<DraggableEntry>();
-        if (cloneDraggable != null)
-        {
-            Destroy(cloneDraggable);
-        }
+        var cloneDraggable = cloneInstance.GetComponent<DraggableEntry>();
+        cloneDraggable.canvasGroup.blocksRaycasts = false;
 
-        var cloneCanvasGroup = _cloneInstance.GetComponent<CanvasGroup>();
+        var cloneCanvasGroup = cloneInstance.GetComponent<CanvasGroup>();
         if (cloneCanvasGroup != null)
         {
             cloneCanvasGroup.alpha = 1f;
