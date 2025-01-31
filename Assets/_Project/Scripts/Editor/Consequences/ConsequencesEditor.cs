@@ -8,6 +8,7 @@ public class ConsequencesEditor : Editor
     private SerializedProperty currentInfluence;
     private SerializedProperty currentMaxInfluence;
     private SerializedProperty imageComp;
+    private SerializedProperty containerComp;
     private SerializedProperty consequencesImages;
     private SerializedProperty influenceData;
 
@@ -18,6 +19,7 @@ public class ConsequencesEditor : Editor
         imageComp = serializedObject.FindProperty("imageComp");
         consequencesImages = serializedObject.FindProperty("consequencesImages");
         influenceData = serializedObject.FindProperty("influence");
+        containerComp = serializedObject.FindProperty("boxContainer");
     }
 
     public override void OnInspectorGUI()
@@ -30,6 +32,7 @@ public class ConsequencesEditor : Editor
 
         EditorGUILayout.LabelField("UI Components", EditorStyles.boldLabel);
         EditorGUILayout.PropertyField(imageComp);
+        EditorGUILayout.PropertyField(containerComp);
         EditorGUILayout.Space();
 
         EditorGUILayout.LabelField("Consequences Images", EditorStyles.boldLabel);
