@@ -29,7 +29,22 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
 
         public void PlaySound2D(AudioClip audioClip, AudioMixerGroup audioMixerGroup = null)
         {
+            GameObject tGo = new GameObject("One shot audio 2D");
+            tGo.transform.position = transform.position;
+            AudioSource audioSource = tGo.AddComponent<AudioSource>();
+
+            audioSource.clip = audioClip;
+            if (audioMixerGroup)
+            {
+                audioSource.outputAudioMixerGroup = audioMixerGroup;
+            }
+            else
+            {
+                audioSource.outputAudioMixerGroup = m_currentMixer.outputAudioMixerGroup;
+            }
             
+            audioSource.Play();
+            Destroy(tGo, audioClip.length);
         }
     }
 }
