@@ -9,6 +9,8 @@ public class SO_DataFeedback : ScriptableObject
     // parameters
     public string nameParty;
     public Color colorGraph;
-    public float currentGraphValue;
+    public float BaseGraphValue;
+    [HideInInspector]
+    public float CurrentGraphValue;
     public Parties party;
 }

@@ -74,7 +74,7 @@ public class ResultGraph : MonoBehaviour
         }
         canvas.SetActive(true);
         AddSingleValue(appreciations.peopleAppreciation, PeopleRef, civilData);
-        
+        GraphDataManager.Instance.CivilData = civilData;
         //AddSingleValue(appreciations.rebelsAppreciation, RebelsRef, rebelData);
         //AddSingleValue(appreciations.governmentAppreciation, DictatorsRef, dictData);
     }
@@ -98,7 +98,8 @@ public class ResultGraph : MonoBehaviour
 
     private void SetupFirstNodes()
     {
-        AddSingleValue(PeopleRef.currentGraphValue, PeopleRef, civilData);
+        AddSingleValue(PeopleRef.BaseGraphValue, PeopleRef, civilData);
+        GraphDataManager.Instance.CivilData = civilData;
         isGraphSetup = true;
         //AddSingleValue(RebelsRef.currentGraphValue, RebelsRef, rebelData);
         //AddSingleValue(DictatorsRef.currentGraphValue, DictatorsRef, dictData);
@@ -121,12 +122,15 @@ public class ResultGraph : MonoBehaviour
         {
             case global::Parties.Rebels:
                 AddSingleValue(_val, RebelsRef, rebelData);
+                GraphDataManager.Instance.RebelData = rebelData;
                 break;
             case global::Parties.Dictatorship:
                 AddSingleValue(_val, DictatorsRef, dictData);
+                GraphDataManager.Instance.DictData = dictData;
                 break;
             case global::Parties.People:
                 AddSingleValue(_val, PeopleRef, civilData);
+                GraphDataManager.Instance.CivilData = civilData;
                 break;
             default:
                 break;
@@ -239,6 +243,7 @@ public class ResultGraph : MonoBehaviour
         {
             float a = UnityEngine.Random.Range(-10, 10);
             AddSingleValue(a, PeopleRef, civilData);
+            GraphDataManager.Instance.CivilData = civilData;
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
