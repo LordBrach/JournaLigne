@@ -15,19 +15,28 @@ public class ResultGraph : MonoBehaviour
     [SerializeField] GameObject canvas;
     [Space(10)]
     [Header("Other Parameters")]
+    [SerializeField] typeGraph GraphType = typeGraph.Single;
     // the max value each line may reach (0 to X)
     [SerializeField] int yMax = 100;
         int median => yMax / 2;
+    [SerializeField] private Color ColorAbvTreshhold = Color.blue;
+    [SerializeField] private Color ColorBlwTreshhold = Color.blue;
+
     [SerializeField] float sizeNode = 6.0f;
     [SerializeField] float sizeLine = 10.0f;
-    [SerializeField] bool ShowOnStart = true;
-    // value for each step (length between two nodes on the graph ( o---------o )
+    // value for each step (length between two nodes on the lines graph ( o---------o )
     [SerializeField, Range(5,100)] float xSize = 50;
 
     // Non visible params
     float graphHeight = 1;
+    private float graphWidth;
+    private Color setColorSingle = Color.white;
+
     bool isGraphSetup = false;
     private RectTransform graphContainer;
+    // Values for single
+    private GameObject storedLine;
+    private GameObject storedNode;
     // Data
     PartyData civilData = new PartyData();
     PartyData dictData = new PartyData();
@@ -74,18 +83,12 @@ public class ResultGraph : MonoBehaviour
         }
         canvas.SetActive(true);
         AddSingleValue(appreciations.peopleAppreciation, PeopleRef, civilData);
-        GraphDataManager.Instance.CivilData = civilData;
-        //AddSingleValue(appreciations.rebelsAppreciation, RebelsRef, rebelData);
-        //AddSingleValue(appreciations.governmentAppreciation, DictatorsRef, dictData);
     }
     private void Awake()
     {
         graphContainer = canvas.GetComponent<RectTransform>();
         graphHeight = graphContainer.sizeDelta.y;
-        // if(ShowOnStart)
-        // {
-        //     Show();
-        // }
+        graphWidth = graphContainer.sizeDelta.x;
     }
     // Start is called before the first frame update
     void Start()
@@ -99,12 +102,10 @@ public class ResultGraph : MonoBehaviour
     private void SetupFirstNodes()
     {
         AddSingleValue(PeopleRef.BaseGraphValue, PeopleRef, civilData);
-        GraphDataManager.Instance.CivilData = civilData;
         isGraphSetup = true;
         //AddSingleValue(RebelsRef.currentGraphValue, RebelsRef, rebelData);
         //AddSingleValue(DictatorsRef.currentGraphValue, DictatorsRef, dictData);
     }
-    #endregion
 
 #if UNITY_EDITOR
     void Update()
@@ -112,6 +113,7 @@ public class ResultGraph : MonoBehaviour
         DebugKeys();
     }
 #endif
+    #endregion
 
 
     #region Graph
@@ -122,15 +124,12 @@ public class ResultGraph : MonoBehaviour
         {
             case global::Parties.Rebels:
                 AddSingleValue(_val, RebelsRef, rebelData);
-                GraphDataManager.Instance.RebelData = rebelData;
                 break;
             case global::Parties.Dictatorship:
                 AddSingleValue(_val, DictatorsRef, dictData);
-                GraphDataManager.Instance.DictData = dictData;
                 break;
             case global::Parties.People:
                 AddSingleValue(_val, PeopleRef, civilData);
-                GraphDataManager.Instance.CivilData = civilData;
                 break;
             default:
                 break;
@@ -151,58 +150,101 @@ public class ResultGraph : MonoBehaviour
     // Add one value to one line of the graph
     void AddSingleValue(float _inValue, SO_DataFeedback _InParty, PartyData data)
     {
-        Debug.Log(data.CurrentVal + " + " + _inValue);
-        float value = data.CurrentVal += _inValue;
-        value = Mathf.Clamp(value, 0, 100);
-        Debug.Log("= " + value);
-        float xPos = data.CurrentDecal * xSize;
-        if (xPos > graphContainer.sizeDelta.x)
-            xPos = graphContainer.sizeDelta.x;
+        float value = data.CurrentVal + _inValue;
+        float xPos = 0;
+        float yPos = 0;
 
-        float yPos = (value / yMax) * graphHeight;
-        CreateNode(value, _InParty, new Vector2(xPos, yPos), data);
-        data.StoredValues.Add(value);
+        Debug.Log(data.CurrentVal + " + " + _inValue);
+        value = Mathf.Clamp(value, -100, 100);
         data.CurrentVal = value;
-        data.CurrentDecal= data.CurrentDecal += 1;
+        Debug.Log("= " + value);
+
+        switch (GraphType)
+        {
+            case typeGraph.Lines:
+                xPos = data.CurrentDecal * xSize;
+                if (xPos > graphContainer.sizeDelta.x)
+                    xPos = graphContainer.sizeDelta.x;
+                yPos = (value / yMax) * graphHeight;
+                setColorSingle = _InParty.colorGraph;
+                CreateNode(value, _InParty, new Vector2(xPos, yPos), data, true);
+                data.StoredValues.Add(value);
+                data.CurrentVal = value;
+                data.CurrentDecal = data.CurrentDecal += 1;
+                break;
+            case typeGraph.Single:
+                xPos = graphWidth / 2;
+                yPos = ((value / yMax) * graphHeight);
+                yPos = Mathf.Clamp(yPos, 0, graphHeight);
+
+                if(yPos > graphHeight/2)
+                {
+                    setColorSingle = ColorAbvTreshhold;
+                } else
+                {
+                    setColorSingle = ColorBlwTreshhold;
+                }
+
+                CreateNode(value, _InParty, new Vector2(xPos, yPos), data, false);
+                data.CurrentVal = value;
+                break;
+            default:
+                break;
+        }
     }
+
     // Create a single graph node (intersections between lines)
-    void CreateNode(float _newVal, SO_DataFeedback _inParty, Vector2 _position, PartyData data)
+    void CreateNode(float _newVal, SO_DataFeedback _inParty, Vector2 _position, PartyData data, bool saveNode)
     {
         GameObject go = new GameObject("node", typeof(Image));
-        // set the node's values (color, pos, size)
-        go.transform.SetParent(canvas.transform, false);
-        RectTransform rectTransform = go.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = _position;
-        rectTransform.sizeDelta = new Vector2(sizeNode, sizeNode);
-        rectTransform.anchorMin = new Vector2(0, 0);
-        rectTransform.anchorMax = new Vector2(0, 0);
-        go.GetComponent<Image>().color = _inParty.colorGraph;
+        SetupNodeValues(_inParty, _position, go);
 
         if (data.ReffedObjects.Count > 0)
         {
             // Create connexion beween this new node and the previous
-            CreateConnexion(go.GetComponent<RectTransform>().anchoredPosition,
-                data.ReffedObjects[data.ReffedObjects.Count - 1].GetComponent<RectTransform>().anchoredPosition, _inParty.colorGraph);
+            CreateConnexion(
+                data.ReffedObjects[data.ReffedObjects.Count - 1].GetComponent<RectTransform>().anchoredPosition,
+                go.GetComponent<RectTransform>().anchoredPosition
+                );
         }
-        data.ReffedObjects.Add(go);
+        // delete previous node if needed (ie: when only wanting a single line)
+        if(saveNode == false && data.ReffedObjects.Count > 0)
+        {
+            Destroy(data.ReffedObjects[data.ReffedObjects.Count - 1]);
+            data.ReffedObjects.RemoveAt(data.ReffedObjects.Count - 1);
+        } else
+        {
+            data.ReffedObjects.Add(go);
+        }
         data.CurrentVal = _newVal;
     }
-
     // connect two graph nodes
-    void CreateConnexion(Vector2 _posOrigin, Vector2 _posTarget, Color _color)
+    void CreateConnexion(Vector2 _posOrigin, Vector2 _posTarget)
+    {
+        switch (GraphType)
+        {
+            case typeGraph.Single:
+                if(storedLine == null) {
+                    storedLine = BaseConnexionTwoNodes(_posOrigin, _posTarget, false);
+                } else {
+                    UpdateConnectionSingle(_posOrigin, _posTarget);
+                }
+                break;
+
+            default:
+                BaseConnexionTwoNodes(_posOrigin, _posTarget, true);
+
+                break;
+        }
+    }
+
+    private GameObject BaseConnexionTwoNodes(Vector2 _posOrigin, Vector2 _posTarget, bool Angled)
     {
         GameObject go = new GameObject("dotConnexion", typeof(Image));
-        go.transform.SetParent(canvas.transform, false);
-        go.GetComponent<Image>().color = _color;
         RectTransform _rectTransform = go.GetComponent<RectTransform>();
-        Vector2 direction = (_posTarget - _posOrigin).normalized;
-        float dist = Vector2.Distance(_posOrigin, _posTarget);
-        _rectTransform.anchorMin = new Vector2(0, 0);
-        _rectTransform.anchorMax = new Vector2(0, 0);
-        _rectTransform.anchoredPosition = _posOrigin + direction * dist * 0.5f;
-        _rectTransform.localEulerAngles = new Vector3(0, 0, MakeAngleFromVector(direction));
+        float dist = SetupConnexionValues(_posOrigin, _posTarget, go, _rectTransform, Angled);
 
-        if(isCoroutineRunning)
+        if (isCoroutineRunning)
         {
             isCoroutineRunning = false;
             StopCoroutine(coroutine);
@@ -210,10 +252,64 @@ public class ResultGraph : MonoBehaviour
             // finish drawing the line
         }
         coroutine = StartCoroutine(DrawLine(_rectTransform, dist));
+        return go;
+    }
+
+    private void UpdateConnectionSingle(Vector2 _posOrigin, Vector2 _posTarget)
+    {
+        RectTransform _rectTransform = storedLine.GetComponent<RectTransform>();
+        float dist = SetupConnexionValues(_posOrigin, _posTarget, storedLine, _rectTransform, false);
+        if (isCoroutineRunning)
+        {
+            isCoroutineRunning = false;
+            StopCoroutine(coroutine);
+            _rectTransform.sizeDelta = new Vector2(dist, sizeLine);
+            // finish drawing the line
+        }
+        coroutine = StartCoroutine(UpdateLine(_rectTransform, dist));
+    }
+
+    // set the node's values (color, pos, size)
+    private void SetupNodeValues(SO_DataFeedback _inParty, Vector2 _position, GameObject go)
+    {
+        go.transform.SetParent(canvas.transform, false);
+        RectTransform rectTransform = go.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = _position;
+        rectTransform.sizeDelta = new Vector2(sizeNode, sizeNode);
+        rectTransform.anchorMin = new Vector2(0, 0);
+        rectTransform.anchorMax = new Vector2(0, 0);
+        go.GetComponent<Image>().color = setColorSingle;
+    }
+
+    private float SetupConnexionValues(Vector2 _posOrigin, Vector2 _posTarget, GameObject go, RectTransform _rectTransform, bool Angled)
+    {
+        go.transform.SetParent(canvas.transform, false);
+        go.GetComponent<Image>().color = setColorSingle;
+        // Calculate direction and distance
+        Vector2 direction = (_posTarget - _posOrigin).normalized;
+        float dist = Vector2.Distance(_posOrigin, _posTarget);
+        if (Angled)
+            AngleConnexion(_posOrigin, _rectTransform, direction);
+        return dist;
+    }
+
+    private void AngleConnexion(Vector2 _posOrigin, RectTransform _rectTransform, Vector2 direction)
+    {
+        // Set the pivot to the left side (0, 0.5) for horizontal scaling
+        _rectTransform.pivot = new Vector2(0, 0.5f);
+        // Set the anchors to the same point (0, 0) to avoid anchor-related positioning issues
+        _rectTransform.anchorMin = new Vector2(0, 0);
+        _rectTransform.anchorMax = new Vector2(0, 0);
+        // Position the RectTransform at the origin point
+        _rectTransform.anchoredPosition = _posOrigin;
+        // Rotate the RectTransform to align with the direction
+        _rectTransform.localEulerAngles = new Vector3(0, 0, MakeAngleFromVector(direction));
     }
 
     IEnumerator DrawLine(RectTransform _inRectTransform, float dist)
     {
+        isCoroutineRunning = true;
+        _inRectTransform.pivot = new Vector2(0f, 0.5f);
         float duration = 1.0f;
         float timestep = 0;
         while(timestep <= duration)
@@ -225,29 +321,33 @@ public class ResultGraph : MonoBehaviour
         }
         _inRectTransform.sizeDelta = new Vector2(dist, sizeLine);
     }
+    IEnumerator UpdateLine(RectTransform _inRectTransform, float dist)
+    {
+        isCoroutineRunning = true;
+        _inRectTransform.pivot = new Vector2(0.5f, 0f);
+        float duration = 1.0f;
+        float timestep = 0;
+        while (timestep <= duration)
+        {
+            timestep += Time.deltaTime;
+            float step = Mathf.Clamp01(timestep / duration);
+            _inRectTransform.sizeDelta = new Vector2(sizeLine, Mathf.Lerp(0, dist, step));
+            yield return null;
+        }
+        _inRectTransform.sizeDelta = new Vector2(sizeLine, dist);
+    }
     #endregion
     #region utilities
     void DebugKeys()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            float a = UnityEngine.Random.Range(-30, 30);
-            AddSingleValue(a, RebelsRef, rebelData);
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            float a = UnityEngine.Random.Range(-20, 40);
-            AddSingleValue(a, DictatorsRef, dictData);
-        }
         if (Input.GetKeyDown(KeyCode.G))
         {
-            float a = UnityEngine.Random.Range(-10, 10);
+            float a = UnityEngine.Random.Range(-30, 60);
             AddSingleValue(a, PeopleRef, civilData);
-            GraphDataManager.Instance.CivilData = civilData;
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
-            foreach (var item in rebelData.StoredValues)
+            foreach (var item in civilData.StoredValues)
             {
                 Debug.Log("Stored val:" + item);
             }
@@ -268,6 +368,12 @@ public enum Parties
     People
 };
 
+[Serializable]
+public enum typeGraph
+{
+    Lines,
+    Single,
+};
 public class PartyData
 {
     int currentDecal = 0;
