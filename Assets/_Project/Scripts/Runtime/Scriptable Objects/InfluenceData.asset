@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: InfluenceData
   m_EditorClassIdentifier: 
   influence: 50
-  maxInfluence: 100
+  maxInfluence: 0
