@@ -208,14 +208,14 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDMultipleChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueNodeActivatorFlag: 0
-        DialogueText: Dialogue
+        DialogueText: No stop
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
         ChoiceDatas:
         - OutputIndex: 1
-          ChoiceText: Out
+          ChoiceText: Choice A
         - OutputIndex: 2
-          ChoiceText: Out
+          ChoiceText: Choice B
     - rid: 8417689088234881026
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -243,7 +243,7 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueNodeActivatorFlag: 2
-        DialogueText: No kill
+        DialogueText: Chose B
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
     - rid: 8417689088234881027
@@ -273,7 +273,7 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueNodeActivatorFlag: 2
-        DialogueText: Dialogue
+        DialogueText: Chose A
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
     - rid: 8417689088234881028
