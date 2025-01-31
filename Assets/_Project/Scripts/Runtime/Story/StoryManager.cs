@@ -10,6 +10,7 @@ namespace _Project.Scripts.Runtime.Story
         [SerializeField] private DialogueController m_dialogueController;
         [SerializeField] private LGGraphObject m_dayGraphObject;
         [SerializeField] private ResultGraph m_resultGraph;
+        [SerializeField] private Consequences m_consequences;
         
         #region Singleton
         private static StoryManager m_instance;
