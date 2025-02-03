@@ -21,7 +21,6 @@ public class ResultGraphSingle : MonoBehaviour
     float graphHeight = 1;
     private float graphWidth = 1;
     private Color graphColor = Color.white;
-    bool isGraphSetup = false;
     Vector2 originPos;
     float dist;
     // coroutine ref
@@ -35,6 +34,13 @@ public class ResultGraphSingle : MonoBehaviour
     GameObject lineReference;
     RectTransform graphContainer;
 
+    // Event Dispatcher
+    public static Action OnButtonClickedDispatcher;
+
+    public void OnButtonClicked()
+    {
+        OnButtonClickedDispatcher();
+    }
     #region Show/Hide
     public void Show()
     {
@@ -83,7 +89,6 @@ public class ResultGraphSingle : MonoBehaviour
         if (PeopleRef != null)
             CurrentVal = PeopleRef.BaseGraphValue;
         CreateLine();
-        isGraphSetup = true;
     }
 
     private void CreateLine()
