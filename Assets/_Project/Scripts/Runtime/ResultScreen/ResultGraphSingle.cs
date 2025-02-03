@@ -36,11 +36,11 @@ public class ResultGraphSingle : MonoBehaviour
     RectTransform graphContainer;
 
     // Event Dispatcher
-    public static Action OnButtonClickedDispatcher;
+    public event Action OnButtonClickedDispatcher;
 
     public void OnButtonClicked()
     {
-        OnButtonClickedDispatcher();
+        OnButtonClickedDispatcher?.Invoke();
     }
     #region Show/Hide
     public void Show()

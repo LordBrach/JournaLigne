@@ -9,7 +9,7 @@ namespace _Project.Scripts.Runtime.Story
     {
         [SerializeField] private DialogueController m_dialogueController;
         [SerializeField] private LGGraphObject m_dayGraphObject;
-        [SerializeField] private ResultGraph m_resultGraph;
+        [SerializeField] private ResultGraphSingle m_resultGraph;
         [SerializeField] private Consequences m_consequences;
         
         #region Singleton
@@ -48,6 +48,7 @@ namespace _Project.Scripts.Runtime.Story
             
             //Init ResultGraph
             m_resultGraph.Init();
+            m_resultGraph.OnButtonClickedDispatcher += OnResultGraphValidatedEvent;
             
             //InitDialogueController
             if (m_dialogueController)
@@ -120,6 +121,13 @@ namespace _Project.Scripts.Runtime.Story
         }
         
         private void OnNewsPaperValidateEvent(Appreciations appreciations)
+        {
+            // DayManager.instance.NextDay();
+            m_resultGraph.Show();
+            Debug.Log("Show Graph");
+        }
+
+        private void OnResultGraphValidatedEvent()
         {
             DayManager.instance.NextDay();
         }
