@@ -643,6 +643,7 @@ MonoBehaviour:
   m_dayGraphObject: {fileID: 2067270559}
   m_resultGraph: {fileID: 1863671083}
   m_consequences: {fileID: 2137282199}
+  m_mainMenuSceneName: MainMenu
 --- !u!1 &1117252057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +1028,21 @@ MonoBehaviour:
     keyUnfavorable: B
   - day: 4
     dayType: 1
+    currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
+    keyFavorable: 
+    keyUnfavorable: 
+  - day: 5
+    dayType: 3
+    currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
+    keyFavorable: 
+    keyUnfavorable: 
+  - day: 6
+    dayType: 2
+    currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
+    keyFavorable: A
+    keyUnfavorable: B
+  - day: 7
+    dayType: 4
     currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
     keyFavorable: 
     keyUnfavorable: 
