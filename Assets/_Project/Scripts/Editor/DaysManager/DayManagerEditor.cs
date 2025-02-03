@@ -31,6 +31,9 @@ public class DayManagerEditor : Editor
             SerializedProperty dayNumber = dayElement.FindPropertyRelative("day");
             SerializedProperty dayType = dayElement.FindPropertyRelative("dayType");
             SerializedProperty currentGraph = dayElement.FindPropertyRelative("currentGraph");
+            SerializedProperty keyFavorable = dayElement.FindPropertyRelative("keyFavorable");
+            SerializedProperty keyUnfavorable = dayElement.FindPropertyRelative("keyUnfavorable");
+
             
             EditorGUILayout.BeginVertical(EditorStyles.helpBox);
             EditorGUILayout.LabelField("Day " + (i + 1), EditorStyles.boldLabel);
@@ -51,7 +54,8 @@ public class DayManagerEditor : Editor
                     break;
         
                 case DayType.Review:
-                    EditorGUILayout.LabelField("Type: Review.");
+                    EditorGUILayout.PropertyField(keyFavorable, new GUIContent("Key Favorable"));
+                    EditorGUILayout.PropertyField(keyUnfavorable, new GUIContent("Key Unfavorable"));
                     break;
         
                 case DayType.EndGame:

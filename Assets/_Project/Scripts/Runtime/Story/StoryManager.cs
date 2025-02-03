@@ -10,6 +10,7 @@ namespace _Project.Scripts.Runtime.Story
         [SerializeField] private DialogueController m_dialogueController;
         [SerializeField] private LGGraphObject m_dayGraphObject;
         [SerializeField] private ResultGraph m_resultGraph;
+        [SerializeField] private Consequences m_consequences;
         
         #region Singleton
         private static StoryManager m_instance;
@@ -54,6 +55,13 @@ namespace _Project.Scripts.Runtime.Story
                 m_dialogueController.Init();
             }
             
+            //Init Consequences
+            if (m_consequences)
+            {
+                m_consequences.Initialize();
+                m_consequences.OnConsequencesHide += OnConsequenceHideEvent;
+            }
+            
             
             //Start first day
             DayManager.instance.StartNewDay();
@@ -76,17 +84,13 @@ namespace _Project.Scripts.Runtime.Story
                     NoteBook.instance.ShowNewsPaper();
                     break;
                 case DayType.Review:
+                    m_consequences.ShowConsequences(dayStarted);
                     break;
                 case DayType.EndGame:
                     break;
                 default:
                     break;
             }
-        }
-        
-        private void OnNewsPaperValidateEvent(Appreciations appreciations)
-        {
-            DayManager.instance.NextDay();
         }
         
         private void OnDayChangedEvent(Days newDay)
@@ -106,12 +110,23 @@ namespace _Project.Scripts.Runtime.Story
                     m_resultGraph.Hide();
                     break;
                 case DayType.Review:
+                    // m_consequences.HideConsequences();
                     break;
                 case DayType.EndGame:
                     break;
                 default:
                     break;
             }
+        }
+        
+        private void OnNewsPaperValidateEvent(Appreciations appreciations)
+        {
+            DayManager.instance.NextDay();
+        }
+        
+        private void OnConsequenceHideEvent(Days day)
+        {
+            DayManager.instance.NextDay();
         }
     }
 }

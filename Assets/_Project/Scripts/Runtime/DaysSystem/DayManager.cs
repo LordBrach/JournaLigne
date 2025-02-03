@@ -19,6 +19,8 @@ public class Days
     public int day = 1;
     public DayType dayType = DayType.None;
     public LGGraph currentGraph;
+    public string keyFavorable;
+    public string keyUnfavorable;
 }
 
 public class DayManager : MonoBehaviour
@@ -26,6 +28,7 @@ public class DayManager : MonoBehaviour
     public static DayManager instance;
 
     [SerializeField] private int daysInWeek = 2;
+    
     public Days CurrentDay { get; private set; }
     public List<Days> daysList = new List<Days>();
     
