@@ -1,4 +1,5 @@
 using System;
+using _Project.Scripts.Runtime.Core;
 using LittleDialogue.Runtime;
 using LittleGraph.Runtime;
 using UnityEngine;
@@ -7,10 +8,14 @@ namespace _Project.Scripts.Runtime.Story
 {
     public class StoryManager : MonoBehaviour
     {
+        [Header("Managers")]
         [SerializeField] private DialogueController m_dialogueController;
         [SerializeField] private LGGraphObject m_dayGraphObject;
         [SerializeField] private ResultGraphSingle m_resultGraph;
         [SerializeField] private Consequences m_consequences;
+
+        [Header("EndGame")]
+        [SerializeField] private string m_mainMenuSceneName;
         
         #region Singleton
         private static StoryManager m_instance;
@@ -88,12 +93,30 @@ namespace _Project.Scripts.Runtime.Story
                     m_consequences.ShowConsequences(dayStarted);
                     break;
                 case DayType.EndGame:
+                    EndGame();
+                    
                     break;
                 default:
                     break;
             }
         }
-        
+
+        private void EndGame()
+        {
+            NoteBook.instance.HideNewsPaper();
+            m_consequences.HideConsequences();
+            m_resultGraph.Hide();
+            
+            if (GameManager.Instance)
+            {
+                    GameManager.Instance.LoadScene(m_mainMenuSceneName);    
+            }
+            else
+            {
+                Debug.LogError("End Game : No Game Manager Instance");
+            }
+        }
+
         private void OnDayChangedEvent(Days newDay)
         {
             
