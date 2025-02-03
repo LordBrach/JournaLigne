@@ -13,7 +13,7 @@ public class ConsequenceImage
 public class Consequences : MonoBehaviour
 {
     // Change to Scriptable Alessendro
-    [SerializeField] private InfluenceData influence;
+    [SerializeField] private SO_DataFeedback influence;
     
     public float currentInfluence;
     public float currentMaxInfluence;
@@ -27,7 +27,7 @@ public class Consequences : MonoBehaviour
 
     public void Initialize()
     {
-        currentInfluence = influence.influence;
+        currentInfluence = influence.CurrentGraphValue;
         currentMaxInfluence = influence.maxInfluence;
     }
 
@@ -36,7 +36,7 @@ public class Consequences : MonoBehaviour
         boxContainer.SetActive(true);
         currentDay = day;
         
-        currentInfluence = influence.influence;
+        currentInfluence = influence.CurrentGraphValue;
         currentMaxInfluence = influence.maxInfluence;
         GetConsequences(currentDay);
     }

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameParty: '[N_Civils]'
   colorGraph: {r: 1, g: 0.97708035, b: 0, a: 1}
-  currentGraphValue: 51
-  party: 0
+  CurrentGraphValue: 50
+  party: 2
+  maxInfluence: 100
