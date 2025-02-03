@@ -101,7 +101,7 @@ public class ResultGraph : MonoBehaviour
 
     private void SetupFirstNodes()
     {
-        AddSingleValue(PeopleRef.BaseGraphValue, PeopleRef, civilData);
+        AddSingleValue(PeopleRef.CurrentGraphValue, PeopleRef, civilData);
         isGraphSetup = true;
         //AddSingleValue(RebelsRef.currentGraphValue, RebelsRef, rebelData);
         //AddSingleValue(DictatorsRef.currentGraphValue, DictatorsRef, dictData);
@@ -166,7 +166,7 @@ public class ResultGraph : MonoBehaviour
                 if (xPos > graphContainer.sizeDelta.x)
                     xPos = graphContainer.sizeDelta.x;
                 yPos = (value / yMax) * graphHeight;
-                setColorSingle = _InParty.colorGraph;
+                //setColorSingle = _InParty.colorGraph;
                 CreateNode(value, _InParty, new Vector2(xPos, yPos), data, true);
                 data.StoredValues.Add(value);
                 data.CurrentVal = value;

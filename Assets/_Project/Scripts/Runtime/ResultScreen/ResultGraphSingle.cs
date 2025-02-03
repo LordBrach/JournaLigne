@@ -16,7 +16,8 @@ public class ResultGraphSingle : MonoBehaviour
     [SerializeField] private Color ColorAbvTreshhold = Color.blue;
     [SerializeField] private Color ColorBlwTreshhold = Color.blue;
     [SerializeField] float sizeLine = 100.0f;
-
+    [SerializeField] bool showGraphImmediately = false;
+    
     // Non visible params
     float graphHeight = 1;
     private float graphWidth = 1;
@@ -87,7 +88,7 @@ public class ResultGraphSingle : MonoBehaviour
     private void SetupGraph()
     {
         if (PeopleRef != null)
-            CurrentVal = PeopleRef.BaseGraphValue;
+            CurrentVal = PeopleRef.CurrentGraphValue;
         CreateLine();
     }
 
@@ -103,6 +104,8 @@ public class ResultGraphSingle : MonoBehaviour
         _rectTransform.anchorMax = new Vector2(0, 0);
         _rectTransform.anchoredPosition = originPos;
         _rectTransform.sizeDelta = new Vector2(sizeLine, 0);
+        if (showGraphImmediately)
+            AddValue(0);
         //_rectTransform.localEulerAngles = new Vector3(0, 0, MakeAngleFromVector(direction));
     }
 
@@ -177,7 +180,12 @@ public class ResultGraphSingle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            float value = UnityEngine.Random.Range(-30, 60);
+            float value = UnityEngine.Random.Range(5, 30);
+            AddValue(value);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            float value = UnityEngine.Random.Range(-30, -5);
             AddValue(value);
         }
     }
