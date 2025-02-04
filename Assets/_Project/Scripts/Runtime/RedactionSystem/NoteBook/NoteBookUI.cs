@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +6,13 @@ public class NoteBookUI : MonoBehaviour
 {
     [SerializeField] private GameObject entryPrefab;
     [SerializeField] private Transform contentParent;
+    
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -35,4 +41,10 @@ public class NoteBookUI : MonoBehaviour
             }
         }
     }
+
+    public void ShowNotebook(bool show)
+    {
+        _animator.SetBool("OpenClose", show);
+    }
+    
 }

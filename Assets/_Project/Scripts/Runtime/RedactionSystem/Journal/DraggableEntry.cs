@@ -1,24 +1,30 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler
+public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Canvas _canvas;
-    public RectTransform rectTransform;
-    public CanvasGroup canvasGroup;
-    public Transform originalPosition;
-    public bool isUsed = false;
+    [HideInInspector] public RectTransform rectTransform;
+    [HideInInspector] public CanvasGroup canvasGroup;
+    [HideInInspector] public Transform originalPosition;
+    [HideInInspector] public bool isUsed = false;
 
     public String text;
-    public GameObject cloneInstance;
+    [SerializeField] private Image image;
+    
+    [HideInInspector] public GameObject cloneInstance;
     private Transform _cloneTransform;
+    
+    private Animator _animator;
 
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         _canvas = GetComponentInParent<Canvas>();
+        _animator = GetComponentInParent<Animator>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -36,7 +42,9 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler
         canvasGroup.blocksRaycasts = false;
 
         originalPosition.position = transform.parent.position;
-        transform.SetParent(_canvas.transform, true); 
+        transform.SetParent(_canvas.transform, true);
+        
+        _animator.SetBool("OpenClose", false);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -50,11 +58,19 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler
         
         rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
     }
+    
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (isUsed) return;
+        ResetPosition();
+    }
 
     public void EndDrag()
     {
-        if (isUsed) return;
+        image.gameObject.SetActive(isUsed);
         
+        if (isUsed) return;
+        _animator.SetBool("OpenClose", true);
         ResetPosition();
     }
 
@@ -66,6 +82,7 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler
         transform.SetParent(_cloneTransform, true);
         rectTransform.anchoredPosition = originalPosition.position;
         Destroy(cloneInstance);
+        
     }
     
     public void CreateClone()
@@ -85,5 +102,4 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler
             cloneCanvasGroup.blocksRaycasts = false;
         }
     }
-    
 }
