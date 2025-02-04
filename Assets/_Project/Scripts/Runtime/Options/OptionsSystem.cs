@@ -19,8 +19,13 @@ namespace _Project.Scripts.Runtime.Options
         [SerializeField] private Slider m_masterVolumeSlider;
         [SerializeField] private Slider m_musicVolumeSlider;
         [SerializeField] private Slider m_sfxVolumeSlider;
+        
         //Quality
         [SerializeField] private TMP_Dropdown m_qualityDropdown;
+        
+        //Language
+        
+        // METHODS //
         
         private void Start()
         {
@@ -49,6 +54,7 @@ namespace _Project.Scripts.Runtime.Options
             }
         }
 
+        #region SoundOptions
         public void SetMasterVolume(float newValue)
         {
             m_mainAudioMixer.SetFloat(m_masterVolumeParamName, newValue);
@@ -63,10 +69,26 @@ namespace _Project.Scripts.Runtime.Options
         {
             m_mainAudioMixer.SetFloat(m_sfxVolumeParamName, newValue);
         }
+        #endregion
         
+        #region QualityOptions
         public void SetQuality(int qualityIndex)
         {
             QualitySettings.SetQualityLevel(qualityIndex);
         }
+        #endregion
+        
+        #region LanguagesOptions
+
+        public void SetLanguage(string languageKey)
+        {
+            if (LocalizationManager.Instance)
+            {
+                LocalizationManager.Instance.SetLanguage(languageKey);
+            }
+            
+        }
+        
+        #endregion
     }
 }
