@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
     private Canvas _canvas;
     public RectTransform rectTransform;
@@ -31,7 +31,7 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (isUsed) return;
         
         CreateClone();
-        originalPosition = rectTransform;
+        originalPosition = rectTransform.parent;
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
 
@@ -51,17 +51,20 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
     }
 
-    public void OnEndDrag(PointerEventData eventData)
-    { 
+    public void EndDrag()
+    {
+        if (isUsed) return;
+        
+        ResetPosition();
     }
 
-    public void EndDrag()
+    public void ResetPosition()
     {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         
-        transform.SetParent(cloneInstance.transform.parent, true);
-        rectTransform.position = originalPosition.position;
+        transform.SetParent(_cloneTransform, true);
+        rectTransform.anchoredPosition = originalPosition.position;
         Destroy(cloneInstance);
     }
     
@@ -70,7 +73,7 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         int originalIndex = transform.GetSiblingIndex();
         cloneInstance = Instantiate(gameObject, transform.parent);
         cloneInstance.transform.SetSiblingIndex(originalIndex);
-        _cloneTransform = cloneInstance.transform;
+        _cloneTransform = cloneInstance.transform.parent;
 
         var cloneDraggable = cloneInstance.GetComponent<DraggableEntry>();
         cloneDraggable.canvasGroup.blocksRaycasts = false;
