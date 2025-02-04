@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
 namespace _Project.Scripts.Runtime.Core.AudioSystem
 {
+    
     public class AudioManager : MonoBehaviour
     {
         [Header("General")]
@@ -56,7 +58,9 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
 
         public void PlayMusic(AudioClip audioClip)
         {
-            
+            m_musicSource.Stop();
+            m_musicSource.clip = audioClip;
+            m_musicSource.Play();
         }
     }
 }
