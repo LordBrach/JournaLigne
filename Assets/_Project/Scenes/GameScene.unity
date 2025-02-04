@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1117252061}
     m_Modifications:
+    - target: {fileID: 3633801975105942519, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3936114951042477919, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
       propertyPath: m_Name
       value: ResultGraph
@@ -225,12 +229,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
 --- !u!224 &126323461 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7926277539611391190, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8344001536661342964, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
   m_PrefabInstance: {fileID: 126323460}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &126323462 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1907933575733019709, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2034631048507331365, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
   m_PrefabInstance: {fileID: 126323460}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

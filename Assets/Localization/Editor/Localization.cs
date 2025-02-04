@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GUILayout;
@@ -52,7 +51,7 @@ public class Localization : EditorWindow
         _scrollPosition = BeginScrollView(_scrollPosition, false, true);
     
         BeginHorizontal();
-        Label("Key", Width(200));
+        GUILayout.Label("Key", Width(200));
         for (int i = 0; i < _languages.Count; i++)
         {
             _languages[i] = EditorGUILayout.TextField(_languages[i], Width(76.8f));
