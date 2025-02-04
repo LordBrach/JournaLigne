@@ -238,7 +238,7 @@ public class Localization : EditorWindow
                 }
                 else if (obj.GetComponent<TextMeshProUGUI>()&& !obj.GetComponent<TranslationComponent>())
                 {
-                    obj.AddComponent<TranslationComponent>();
+                    obj.gameObject.AddComponent<TranslationComponent>();
                     _translateObjects.Add(obj);
                 }
             }

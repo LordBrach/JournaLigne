@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9eba3b76dba0904cb7587db1433b961, type: 3}
   m_Name: LocalizationDatabase
   m_EditorClassIdentifier: 
-  datas: []
+  datas:
+  - Key: A
+    Text: AAAAAA
+  - Key: B
+    Text: BBBBB

@@ -69,6 +69,9 @@ namespace LittleDialogue.Editor
                 });
                 
                 outputPort.Add(textField);
+                
+                
+                
                 outputPort.portName = "";
                 outputPort.tooltip = "Flow output";
             }

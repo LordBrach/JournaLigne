@@ -33,6 +33,40 @@
                     "translation": ""
                 }
             ]
+        },
+        {
+            "key": "B",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "B in english"
+                },
+                {
+                    "language": "fr",
+                    "translation": "B en français"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
+        },
+        {
+            "key": "A",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "A in english"
+                },
+                {
+                    "language": "fr",
+                    "translation": "A en français"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
         }
     ]
 }

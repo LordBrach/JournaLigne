@@ -175,35 +175,7 @@ namespace LittleGraph.Editor
         
                     extensionContainer.Add(field);
                     return field;
-                // case ExposedPropertyType.List:
-                //     Debug.Log("List Property Type");
-                //     Label listLabel = new Label(propertyName);
-                //     extensionContainer.Add(listLabel);
-                //     
-                //     Button addButton = new Button().CreateButton("d_Toolbar Plus", () =>
-                //     {
-                //         property.arraySize = Mathf.Max(0, property.arraySize + 1);
-                //         RefreshExpandedState();
-                //     });
-                //     extensionContainer.Add(addButton);
-                //     Button removeButton = new Button().CreateButton("d_Toolbar Minus", () =>
-                //     {
-                //         property.arraySize = Mathf.Max(0, property.arraySize - 1);
-                //         RefreshExpandedState();
-                //     });
-                //     extensionContainer.Add(removeButton);
-                //     
-                //     for (int i = 0; i < property.arraySize; i++)
-                //     {
-                //         SerializedProperty arrayElementProperty = property.GetArrayElementAtIndex(i);
-                //         PropertyField subField = new PropertyField(arrayElementProperty); 
-                //         subField.bindingPath = arrayElementProperty.propertyPath;
-                //
-                //         subField.enabledSelf = expositionInfo.EditableInGraph;
-                //         extensionContainer.Add(subField);
-                //     }
-                    
-                    // return null;
+                
                 case ExposedPropertyType.None:
                     Debug.Log("No Property Type");
                     return null;
