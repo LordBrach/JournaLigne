@@ -184,7 +184,12 @@ namespace LittleDialogue.Runtime
                     int i = 0;
                     foreach (LGConnection connection in m_currentNode.NodeConnections.FindAll(connection => connection.OutputPort.NodeId == m_currentNode.ID))
                     {
-                        m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas.Find(x => x.OutputIndex == connection.OutputPort.PortIndex).ChoiceText, () =>
+
+                        string key =
+                            multipleChoiceDialogueNode.ChoiceDatas.Find(x =>
+                                x.OutputIndex == connection.OutputPort.PortIndex).ChoiceText;
+                        
+                        m_dialogueBox.AddChoiceButton(LocalizationManager.Instance.GetTranslation(key), () =>
                         {
                             if (LDDialogueNodeActivatorFlag.Stopper == (m_currentNode.DialogueNodeActivatorFlag & LDDialogueNodeActivatorFlag.Stopper))
                             {
