@@ -1,11 +1,16 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
 namespace _Project.Scripts.Runtime.Core.AudioSystem
 {
+    
     public class AudioManager : MonoBehaviour
     {
+        [Header("General")]
         [SerializeField] private AudioMixer m_currentMixer;
+
+        [Header("Music")] [SerializeField] private AudioSource m_musicSource;
         
         #region Singleton
 
@@ -27,10 +32,14 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
 
         #endregion
 
-        public void PlaySound2D(AudioClip audioClip, AudioMixerGroup audioMixerGroup = null)
+        public void PlayOneShotSound2D(AudioClip audioClip, AudioMixerGroup audioMixerGroup = null)
         {
+            if(audioClip == null) return;
+            
             GameObject tGo = new GameObject("One shot audio 2D");
-            tGo.transform.position = transform.position;
+            tGo.transform.position = this.transform.position;
+            tGo.transform.SetParent(this.transform);
+            
             AudioSource audioSource = tGo.AddComponent<AudioSource>();
 
             audioSource.clip = audioClip;
@@ -45,6 +54,13 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
             
             audioSource.Play();
             Destroy(tGo, audioClip.length);
+        }
+
+        public void PlayMusic(AudioClip audioClip)
+        {
+            m_musicSource.Stop();
+            m_musicSource.clip = audioClip;
+            m_musicSource.Play();
         }
     }
 }
