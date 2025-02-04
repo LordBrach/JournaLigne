@@ -1,10 +1,9 @@
 {
-    "name": "LittleDialogue.Runtime",
+    "name": "Localization",
     "rootNamespace": "",
     "references": [
-        "GUID:c6a25c179422a4d4ba7dd96cf207fe83",
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:751a28b299c72da48be4bee70349527e"
+        "GUID:6546d7765b4165b40850b3667f981c26"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

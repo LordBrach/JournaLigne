@@ -11,8 +11,10 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
     {
         [ExposedProperty] public LDDialogueNodeActivatorFlag DialogueNodeActivatorFlag;
         
-        [ExposedProperty] public string DialogueText = "Dialogue";
+        // [ExposedProperty] public string DialogueText = "Dialogue";
 
+        [ExposedProperty] public string DialogueKey = "Key";
+        
         [ExposedProperty] public Sprite InterlocutorSprite;
         [ExposedProperty] public Sprite BackgroundSprite;
 

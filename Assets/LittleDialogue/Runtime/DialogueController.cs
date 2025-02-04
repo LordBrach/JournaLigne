@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using LittleDialogue.Runtime.LittleGraphAddOn;
+using LittleDialogue.Runtime.Localization;
 using LittleGraph.Runtime;
 using LittleGraph.Runtime.Attributes;
 using UnityEditor;
@@ -22,6 +23,10 @@ namespace LittleDialogue.Runtime
         //Dialogue Box UI
         [SerializeField] private DialogueBox m_dialogueBox; 
        
+        //Localization
+        // [Header("Localization Data")] 
+        // [SerializeField] private LocalizationDatabase m_localizationDatabase;
+        
         // COROUTINES & TIMERS //
         // Timer before next node
         private bool m_isTimerBeforeNextNodeOn = false;
@@ -101,8 +106,11 @@ namespace LittleDialogue.Runtime
                     m_dialogueBox.ShowDialoguePanel();
                 }
                 m_dialogueBox.ClearChoiceButtons();
+
                 
-                m_dialogueBox.UpdateText(m_currentNode.DialogueText);
+                
+                m_dialogueBox.UpdateText(LocalizationManager.Instance.GetTranslation(dialogueNode.DialogueKey));
+                
                 m_dialogueBox.UpdateInterlocutorImage(m_currentNode.InterlocutorSprite);
                 m_dialogueBox.UpdateBackgroundImage(m_currentNode.BackgroundSprite);
             }
@@ -176,7 +184,12 @@ namespace LittleDialogue.Runtime
                     int i = 0;
                     foreach (LGConnection connection in m_currentNode.NodeConnections.FindAll(connection => connection.OutputPort.NodeId == m_currentNode.ID))
                     {
-                        m_dialogueBox.AddChoiceButton(multipleChoiceDialogueNode.ChoiceDatas.Find(x => x.OutputIndex == connection.OutputPort.PortIndex).ChoiceText, () =>
+
+                        string key =
+                            multipleChoiceDialogueNode.ChoiceDatas.Find(x =>
+                                x.OutputIndex == connection.OutputPort.PortIndex).ChoiceText;
+                        
+                        m_dialogueBox.AddChoiceButton(LocalizationManager.Instance.GetTranslation(key), () =>
                         {
                             if (LDDialogueNodeActivatorFlag.Stopper == (m_currentNode.DialogueNodeActivatorFlag & LDDialogueNodeActivatorFlag.Stopper))
                             {
