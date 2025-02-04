@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: 
-  _isTranslatable: 1
+  _isTranslatable: 0
 --- !u!1 &628720409725893151
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7fd54a04162cb41b03bc2553ea59fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  influence: {fileID: 11400000, guid: c9b2493581a38494c8e8f9d6267d4286, type: 2}
+  influence: {fileID: 0}
   currentInfluence: 0
   currentMaxInfluence: 100
   imageComp: {fileID: 3544702987055215175}
@@ -689,4 +689,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: 
-  _isTranslatable: 1
+  _isTranslatable: 0
