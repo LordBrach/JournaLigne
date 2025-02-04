@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: 
-  _isTranslatable: 1
+  _isTranslatable: 0
 --- !u!1 &5922870302502065299
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,4 +941,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: 
-  _isTranslatable: 1
+  _isTranslatable: 0
