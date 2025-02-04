@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 
 namespace _Project.Scripts.Runtime.Core.AudioSystem
 {
@@ -9,8 +11,16 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
     {
         [Header("General")]
         [SerializeField] private AudioMixer m_currentMixer;
+        
+        [Header("Music")] 
+        [SerializeField] private AudioSource m_musicSource;
 
-        [Header("Music")] [SerializeField] private AudioSource m_musicSource;
+        [Space(10)]
+        [SerializeField, Tooltip("In seconds")] private float m_switchFadeOutSpeed = 1;
+        [SerializeField, Tooltip("In seconds")] private float m_switchFadeInSpeed = 1;
+
+        private Coroutine m_switchMusicCoroutine;
+        private Coroutine m_killMusicCoroutine;
         
         #region Singleton
 
@@ -31,6 +41,11 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
         }
 
         #endregion
+
+        private void Awake()
+        {
+            InitSingleton();
+        }
 
         public void PlayOneShotSound2D(AudioClip audioClip, AudioMixerGroup audioMixerGroup = null)
         {
@@ -58,9 +73,84 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
 
         public void PlayMusic(AudioClip audioClip)
         {
-            m_musicSource.Stop();
-            m_musicSource.clip = audioClip;
+            if(audioClip == null) return;
+            
+            StopKillMusic();
+            StopSwitchMusic();
+
+            m_switchMusicCoroutine = StartCoroutine(SwitchMusic(audioClip));
+        }
+        
+        public void StopMusic()
+        {
+            StopKillMusic();
+            StopSwitchMusic();
+            
+            m_killMusicCoroutine = StartCoroutine(KillMusic());
+        }
+
+        private IEnumerator SwitchMusic(AudioClip newAudioClip)
+        {
+            yield return KillMusic();
+            
+            m_musicSource.volume = 0;
+            m_musicSource.clip = newAudioClip;
+            
             m_musicSource.Play();
+            
+            if(m_switchFadeInSpeed != 0)
+            {
+                while (m_musicSource.volume < 1)
+                {
+                    m_musicSource.volume += Time.deltaTime / m_switchFadeInSpeed;
+                    
+                    yield return null;
+                }
+            }
+            else
+            {
+                m_musicSource.volume = 1;
+            }
+            
+            StopSwitchMusic();
+        }
+
+        private void StopSwitchMusic()
+        {
+            if (m_switchMusicCoroutine == null) return;
+            
+            StopCoroutine(m_switchMusicCoroutine);
+            m_switchMusicCoroutine = null;
+        }
+
+        
+
+        private IEnumerator KillMusic()
+        {
+            if(m_musicSource.isPlaying)
+            {
+                if (m_switchFadeOutSpeed != 0)
+                {
+                    while (m_musicSource.volume > 0)
+                    {
+                    
+                        m_musicSource.volume -=  Time.deltaTime / m_switchFadeOutSpeed;
+                        yield return null;
+                    }
+                }
+                
+                m_musicSource.Stop();
+            }
+            
+            StopKillMusic();
+        }
+
+        private void StopKillMusic()
+        {
+            if (m_killMusicCoroutine == null) return;
+            
+            StopCoroutine(m_killMusicCoroutine);
+            m_killMusicCoroutine = null;
         }
     }
 }
