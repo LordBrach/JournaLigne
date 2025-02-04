@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
@@ -8,13 +9,18 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private NotebookEntry _notebookEntry;
     private DraggableEntry _draggableEntry;
     private JournalBlock _multiplier;
-    private Journal _journal;
+    
+    [SerializeField] private Sprite rebelsIcon;
+    [SerializeField] private Sprite governmentIcon;
+    [SerializeField] private Image icon;
+    
+    [HideInInspector] public float currentAppreciation;
+    [HideInInspector] public bool haveAppreciation = false;
 
     private void Awake()
     {
         _textMesh = GetComponentInChildren<TextMeshProUGUI>();
-        _multiplier = GetComponentInChildren<JournalBlock>();
-        _journal = GetComponentInParent<Journal>();
+        _multiplier = GetComponentInParent<JournalBlock>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -23,6 +29,9 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         _draggableEntry.isUsed = false;
         _draggableEntry.canvasGroup.blocksRaycasts = false;
+
+        _draggableEntry.transform.position = gameObject.transform.position;
+        
         _draggableEntry.StartDrag(eventData);
         _textMesh.text = "";
     }
@@ -40,7 +49,8 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         _draggableEntry.EndDrag();
         _draggableEntry.canvasGroup.blocksRaycasts = true;
         
-        Debug.Log(eventData.pointerDrag.name);
+        icon.gameObject.SetActive(false);
+        haveAppreciation = false;
         
         _notebookEntry = null;
         _draggableEntry = null;
@@ -89,13 +99,23 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             _textMesh.text = _notebookEntry.associatedText;
             _draggableEntry.EndDrag();
             _draggableEntry.isUsed = true;
+            haveAppreciation = true;
         }
-
-        if (_journal == null || _multiplier == null || _notebookEntry == null) return;
-
-        _journal.AddAppreciation(Factions.Government, _notebookEntry.government, _multiplier.multiplier);
-        _journal.AddAppreciation(Factions.Rebels, _notebookEntry.rebels, _multiplier.multiplier);
-        _journal.AddAppreciation(Factions.People, _notebookEntry.people, _multiplier.multiplier);
+        
+        if (_multiplier == null || _notebookEntry == null) return;
+        
+        currentAppreciation = _notebookEntry.people * _multiplier.multiplier;
+        
+        if (currentAppreciation > 0)
+        {
+            icon.gameObject.SetActive(true);
+            icon.sprite = rebelsIcon;
+        }
+        else if (currentAppreciation < 0)
+        {
+            icon.gameObject.SetActive(true);
+            icon.sprite = governmentIcon;
+        }
     }
     
 }

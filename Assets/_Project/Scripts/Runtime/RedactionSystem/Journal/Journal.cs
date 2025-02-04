@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum Factions
@@ -21,6 +23,13 @@ public class Journal : MonoBehaviour
 {
     public Appreciations appreciations { get; private set; } = new Appreciations();
     
+    private EntrySlot[] _entries;
+
+    private void OnEnable()
+    {
+        _entries = GetComponentsInChildren<EntrySlot>();
+    }
+
     /// <summary>
     /// Increases or decreases the appreciation of a given faction.
     /// </summary>
@@ -51,6 +60,15 @@ public class Journal : MonoBehaviour
 
     public void ValidateNewsPaper()
     {
+        foreach (var entry in _entries)
+        {
+            if (entry.haveAppreciation)
+            {
+                appreciations.peopleAppreciation += entry.currentAppreciation;
+            }
+        }
+        
+        Debug.Log(appreciations.peopleAppreciation);
         NoteBook.instance.ValidateNewsPaper(appreciations);
     }
 }

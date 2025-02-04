@@ -22,7 +22,7 @@ public class Consequences : MonoBehaviour
     [SerializeField] private GameObject boxContainer;
     public List<ConsequenceImage> consequencesImages = new List<ConsequenceImage>();
 
-    private Days currentDay;
+    private Days _currentDay;
     public event Action<Days> OnConsequencesHide;
 
     public void Initialize()
@@ -34,17 +34,17 @@ public class Consequences : MonoBehaviour
     public void ShowConsequences(Days day)
     {
         boxContainer.SetActive(true);
-        currentDay = day;
+        _currentDay = day;
         
         currentInfluence = influence.CurrentGraphValue;
         currentMaxInfluence = influence.maxInfluence;
-        GetConsequences(currentDay);
+        GetConsequences(_currentDay);
     }
     
     public void HideConsequences()
     {
         boxContainer.SetActive(false);
-        OnConsequencesHide?.Invoke(currentDay);
+        OnConsequencesHide?.Invoke(_currentDay);
     }
 
     Sprite GetConsequenceImage(string key)
