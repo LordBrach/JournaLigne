@@ -291,13 +291,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile-UI_23
+      name: Tile-UI_7
       rect:
         serializedVersion: 2
-        x: 211
+        x: 212
         y: 835
-        width: 94
-        height: 124
+        width: 92
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -861,10 +861,10 @@ TextureImporter:
       name: Tile-UI_4
       rect:
         serializedVersion: 2
-        x: 307
+        x: 308
         y: 835
-        width: 94
-        height: 124
+        width: 92
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -882,10 +882,10 @@ TextureImporter:
       name: Tile-UI_5
       rect:
         serializedVersion: 2
-        x: 402
+        x: 403
         y: 835
-        width: 94
-        height: 124
+        width: 92
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -903,10 +903,10 @@ TextureImporter:
       name: Tile-UI_6
       rect:
         serializedVersion: 2
-        x: 497
+        x: 498
         y: 835
-        width: 94
-        height: 124
+        width: 92
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -947,7 +947,6 @@ TextureImporter:
       Tile-UI_20: 1724558987
       Tile-UI_21: 1573941021
       Tile-UI_22: -885664820
-      Tile-UI_23: 791395224
       Tile-UI_24: 452918721
       Tile-UI_25: 883398282
       Tile-UI_26: 410560418
@@ -989,7 +988,7 @@ TextureImporter:
       Tile-UI_59: -537875029
       Tile-UI_6: -1570066280
       Tile-UI_60: -107322545
-      Tile-UI_7: -1138454768
+      Tile-UI_7: 791395224
       Tile-UI_8: -423941507
       Tile-UI_9: 1559192871
   mipmapLimitGroupName: 
