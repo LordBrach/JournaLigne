@@ -521,6 +521,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8201425148367807305, guid: 7d4105dd75995ad4bb1d8177eecff105, type: 3}
   m_PrefabInstance: {fileID: 236361377}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &236361379 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 802529341488991250, guid: 7d4105dd75995ad4bb1d8177eecff105, type: 3}
+  m_PrefabInstance: {fileID: 236361377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &260435496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2240,8 @@ GameObject:
   - component: {fileID: 674477579}
   - component: {fileID: 674477581}
   - component: {fileID: 674477580}
+  - component: {fileID: 674477582}
+  - component: {fileID: 674477583}
   m_Layer: 5
   m_Name: LanguageButton
   m_TagString: Untagged
@@ -2301,6 +2308,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674477578}
   m_CullTransparentMesh: 1
+--- !u!114 &674477582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674477578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 674477580}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1692577540}
+        m_TargetAssemblyTypeName: _Project.Scripts.Runtime.Options.OptionsSystem,
+          JournaLigne.Runtime
+        m_MethodName: SwitchLanguage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &674477583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674477578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b37cd91fe5cfb4092dcf1024549434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_englishAnimator: {fileID: 236361379}
+  m_englishSelectAnimName: Ang_Select
+  m_englishUnselectAnimName: Ang
+  m_frenchAnimator: {fileID: 692804523}
+  m_frenchSelectAnimName: Fr_Select
+  m_frenchUnselectAnimName: Fr
 --- !u!1001 &692804521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2401,6 +2483,11 @@ PrefabInstance:
 --- !u!224 &692804522 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4356862821848676468, guid: 83db17c6d4c567242a7d5c727e3e0fd6, type: 3}
+  m_PrefabInstance: {fileID: 692804521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &692804523 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2211093267416091993, guid: 83db17c6d4c567242a7d5c727e3e0fd6, type: 3}
   m_PrefabInstance: {fileID: 692804521}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &713641110
@@ -4500,6 +4587,9 @@ MonoBehaviour:
   m_musicVolumeSlider: {fileID: 1413715001}
   m_sfxVolumeSlider: {fileID: 0}
   m_qualityDropdown: {fileID: 302732571}
+  m_englishLanguageKey: en
+  m_frenchLanguageKey: fr
+  m_languageButtonUI: {fileID: 674477583}
 --- !u!1 &1731423353
 GameObject:
   m_ObjectHideFlags: 0

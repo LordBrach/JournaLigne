@@ -10,6 +10,10 @@
                 {
                     "language": "fr",
                     "translation": "Jouer"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
                 }
             ]
         },
@@ -23,6 +27,10 @@
                 {
                     "language": "fr",
                     "translation": "B en français"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
                 }
             ]
         },
@@ -36,6 +44,10 @@
                 {
                     "language": "fr",
                     "translation": "A en français"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
                 }
             ]
         },
@@ -49,6 +61,61 @@
                 {
                     "language": "fr",
                     "translation": "en"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
+        },
+        {
+            "key": "MasterSlider",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "Master"
+                },
+                {
+                    "language": "fr",
+                    "translation": "Principal"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
+        },
+        {
+            "key": "MusicSlider",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "Music"
+                },
+                {
+                    "language": "fr",
+                    "translation": "Musique"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
+        },
+        {
+            "key": "SFXSlider",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "SFX"
+                },
+                {
+                    "language": "fr",
+                    "translation": "SFX"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
                 }
             ]
         }
