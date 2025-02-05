@@ -1,5 +1,6 @@
 using System;
 using _Project.Scripts.Runtime.Core;
+using _Project.Scripts.Runtime.TransitionSystem;
 using LittleDialogue.Runtime;
 using LittleGraph.Runtime;
 using UnityEngine;
@@ -65,14 +66,13 @@ namespace _Project.Scripts.Runtime.Story
             if (m_consequences)
             {
                 m_consequences.Initialize();
-                m_consequences.OnConsequencesHide += OnConsequenceHideEvent;
+                m_consequences.OnConsequencesValidate += OnConsequenceValidateEvent;
             }
             
             
             //Start first day
             DayManager.instance.StartNewDay();
             
-            //Start Dialogue of new day
         }
 
         private void OnDayStartedEvent(Days dayStarted)
@@ -84,6 +84,8 @@ namespace _Project.Scripts.Runtime.Story
             
                     m_dialogueController.SubscribeToGraphInstance(m_dayGraphObject.GraphInstance);
             
+                    m_dialogueController.ShowDialogue();
+                    
                     m_dayGraphObject.ExecuteAsset();
                     break;
                 case DayType.Article:
@@ -106,6 +108,7 @@ namespace _Project.Scripts.Runtime.Story
             NoteBook.instance.HideNewsPaper();
             m_consequences.HideConsequences();
             m_resultGraph.Hide();
+            m_dialogueController.HideDialogue();
             
             if (GameManager.Instance)
             {
@@ -127,6 +130,7 @@ namespace _Project.Scripts.Runtime.Story
             switch (dayEnded.dayType)
             {
                 case DayType.Interview:
+                    m_dialogueController.HideDialogue();
                     break;
                 case DayType.Article:
                     NoteBook.instance.RemoveEntries();
@@ -134,7 +138,7 @@ namespace _Project.Scripts.Runtime.Story
                     m_resultGraph.Hide();
                     break;
                 case DayType.Review:
-                    // m_consequences.HideConsequences();
+                    m_consequences.HideConsequences();
                     break;
                 case DayType.EndGame:
                     break;
@@ -155,7 +159,7 @@ namespace _Project.Scripts.Runtime.Story
             DayManager.instance.NextDay();
         }
         
-        private void OnConsequenceHideEvent(Days day)
+        private void OnConsequenceValidateEvent(Days day)
         {
             DayManager.instance.NextDay();
         }

@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7fd54a04162cb41b03bc2553ea59fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  influence: {fileID: 0}
+  influence: {fileID: 11400000, guid: 6d258045c77d96042bc19eed38ccdcfb, type: 2}
   currentInfluence: 0
   currentMaxInfluence: 100
   imageComp: {fileID: 3544702987055215175}
@@ -340,7 +340,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3620977845833389083}
         m_TargetAssemblyTypeName: Consequences, JournaLigne.Runtime
-        m_MethodName: HideConsequences
+        m_MethodName: ValidateConsequences
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

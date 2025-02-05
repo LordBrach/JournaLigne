@@ -24,6 +24,7 @@ public class Consequences : MonoBehaviour
 
     private Days _currentDay;
     public event Action<Days> OnConsequencesHide;
+    public event Action<Days> OnConsequencesValidate;
 
     public void Initialize()
     {
@@ -39,6 +40,11 @@ public class Consequences : MonoBehaviour
         currentInfluence = influence.CurrentGraphValue;
         currentMaxInfluence = influence.maxInfluence;
         GetConsequences(_currentDay);
+    }
+
+    public void ValidateConsequences()
+    {
+        OnConsequencesValidate?.Invoke(_currentDay);
     }
     
     public void HideConsequences()
