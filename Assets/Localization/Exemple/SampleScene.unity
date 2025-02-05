@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: Btn-Language
-  _isTranslatable: 0
+  _isTranslatable: 1
 --- !u!1 &943618788
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: Text-Play
-  _isTranslatable: 0
+  _isTranslatable: 1
 --- !u!1 &989161214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,6 +1350,10 @@ PrefabInstance:
     - target: {fileID: 3483585018940398361, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
       propertyPath: m_Name
       value: NewsPaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483585018940398361, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4857454272331261511, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
       propertyPath: m_AnchoredPosition.y

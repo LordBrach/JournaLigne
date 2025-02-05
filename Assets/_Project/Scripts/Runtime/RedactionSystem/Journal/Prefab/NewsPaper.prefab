@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: 
-  _isTranslatable: 1
+  _isTranslatable: 0
 --- !u!114 &1309027710948451793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: 
-  _isTranslatable: 1
+  _isTranslatable: 0
 --- !u!114 &4548537997999316785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: 
-  _isTranslatable: 1
+  _isTranslatable: 0
 --- !u!114 &6906421717113121793
 MonoBehaviour:
   m_ObjectHideFlags: 0

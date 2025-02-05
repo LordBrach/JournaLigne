@@ -1,0 +1,56 @@
+{
+    "translations": [
+        {
+            "key": "Text-Play",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "Play"
+                },
+                {
+                    "language": "fr",
+                    "translation": "Jouer"
+                }
+            ]
+        },
+        {
+            "key": "B",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "B in english"
+                },
+                {
+                    "language": "fr",
+                    "translation": "B en français"
+                }
+            ]
+        },
+        {
+            "key": "A",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "A in english"
+                },
+                {
+                    "language": "fr",
+                    "translation": "A en français"
+                }
+            ]
+        },
+        {
+            "key": "Btn-Language",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "fr"
+                },
+                {
+                    "language": "fr",
+                    "translation": "en"
+                }
+            ]
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 [DefaultExecutionOrder(-1000)]
@@ -68,7 +69,7 @@ public class LocalizationManager : MonoBehaviour
     
     public void LoadTranslations()
     {
-        string filePath = "Assets/Resources/translations.json";
+        string filePath = Path.Combine(Application.streamingAssetsPath, "translations", "translations.json");
 
         if (System.IO.File.Exists(filePath))
         {

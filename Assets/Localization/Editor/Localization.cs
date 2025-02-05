@@ -366,12 +366,18 @@ public class Localization : EditorWindow
     /*- Saving -*/
         private void SaveTranslations()
         {
-            string filePath = "Assets/Resources/translations.json";
+            string directoryPath = Path.Combine(Application.streamingAssetsPath, "translations");
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+            
+            string filePath = Path.Combine(directoryPath, "translations.json");
             if (!File.Exists(filePath))
             {
-                Directory.CreateDirectory("Assets/Resources");
                 File.Create(filePath).Close();
             }
+
     
             TranslationList translationList = new TranslationList();
             foreach (var keyValuePair in _translations)
@@ -395,13 +401,13 @@ public class Localization : EditorWindow
         /*- Load Translation -*/
         private void LoadTranslations()
         {
-            string filePath = "Assets/Resources/translations.json";
-    
+            string filePath = Path.Combine(Application.streamingAssetsPath, "translations", "translations.json");
+
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
                 TranslationList translationList = JsonUtility.FromJson<TranslationList>(json);
-    
+
                 _translations.Clear();
                 foreach (var translationData in translationList.translations)
                 {
