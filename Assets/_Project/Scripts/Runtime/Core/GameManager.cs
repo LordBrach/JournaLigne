@@ -1,5 +1,6 @@
 using System;
 using _Project.Scripts.Runtime.Core.AudioSystem;
+using _Project.Scripts.Runtime.TransitionSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,8 @@ namespace _Project.Scripts.Runtime.Core
 {
     public class GameManager : MonoBehaviour
     {
+        private string m_sceneNameToBeLoaded;
+        
         #region Singleton
         private static GameManager m_instance;
         public static GameManager Instance => m_instance;
@@ -33,7 +36,21 @@ namespace _Project.Scripts.Runtime.Core
         //Scene must be in build settings
         public void LoadScene(string sceneName)
         {
-            SceneManager.LoadScene(sceneName);
+            m_sceneNameToBeLoaded = sceneName;
+
+            if (TransitionManager.Instance)
+            {
+                TransitionManager.Instance.OnFadeInEnded += OnLoadSceneFadeInEnded;
+                TransitionManager.Instance.FadeIn();
+            }
+            // SceneManager.LoadScene(sceneName);
+        }
+
+        private void OnLoadSceneFadeInEnded()
+        {
+            TransitionManager.Instance.OnFadeInEnded -= OnLoadSceneFadeInEnded;
+            SceneManager.LoadScene(m_sceneNameToBeLoaded);
+            TransitionManager.Instance.FadeOut();
         }
     }
 }

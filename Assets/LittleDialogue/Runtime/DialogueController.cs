@@ -55,7 +55,20 @@ namespace LittleDialogue.Runtime
         }
 
         #endregion
-        
+
+        #region Show/Hide
+
+        public void ShowDialogue()
+        {
+            m_dialogueBox.ShowDialoguePanel();
+        }
+
+        public void HideDialogue()
+        {
+            m_dialogueBox.HideDialoguePanel();
+        }
+
+        #endregion
         
 #if LITTLE_GRAPH
         
@@ -102,14 +115,8 @@ namespace LittleDialogue.Runtime
                 m_currentNode = dialogueNode;
                 if(m_currentNode == null)return;
                 
-                if(LDDialogueNodeActivatorFlag.Starter == (m_currentNode.DialogueNodeActivatorFlag & LDDialogueNodeActivatorFlag.Starter))
-                {
-                    m_dialogueBox.ShowDialoguePanel();
-                }
                 m_dialogueBox.ClearChoiceButtons();
 
-                
-                
                 m_dialogueBox.UpdateText(LocalizationManager.Instance.GetTranslation(dialogueNode.DialogueKey));
                 
                 m_dialogueBox.UpdateInterlocutorImage(m_currentNode.InterlocutorSprite);
@@ -166,13 +173,7 @@ namespace LittleDialogue.Runtime
                     LGConnection connection =
                         m_currentNode.NodeConnections.Find(connection => connection.OutputPort.NodeId == m_currentNode.ID);
                     
-                    if (LDDialogueNodeActivatorFlag.Stopper == (m_currentNode.DialogueNodeActivatorFlag & LDDialogueNodeActivatorFlag.Stopper))
-                    {
-                        m_dialogueBox.HideDialoguePanel();
-                    }
-                    
                     m_currentNode.EmitFlow(connection.InputPort.NodeId);
-                    
                 }
                 
                 return;
@@ -192,11 +193,6 @@ namespace LittleDialogue.Runtime
                         
                         m_dialogueBox.AddChoiceButton(LocalizationManager.Instance.GetTranslation(key), () =>
                         {
-                            if (LDDialogueNodeActivatorFlag.Stopper == (m_currentNode.DialogueNodeActivatorFlag & LDDialogueNodeActivatorFlag.Stopper))
-                            {
-                                m_dialogueBox.HideDialoguePanel();
-                            }
-                            
                             m_currentNode.EmitFlow(connection.InputPort.NodeId);
                             // m_currentNode.EmitFlow(connection.InputPort.NodeId);
                         });
