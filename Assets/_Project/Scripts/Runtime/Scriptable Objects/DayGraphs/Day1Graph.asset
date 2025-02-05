@@ -22,7 +22,6 @@ MonoBehaviour:
   - rid: 8417689088234881027
   - rid: 8417689088234881028
   - rid: 8417689088234881029
-  - rid: 4557232817641619458
   m_connections:
   - InputPort:
       NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
@@ -67,47 +66,14 @@ MonoBehaviour:
       NodeId: 8c6950ea-0fd8-400f-81e9-780d454cf080
       PortIndex: 1
   - InputPort:
-      NodeId: 87bc4563-d5f5-4af4-a5d2-ff16bd6d19b3
+      NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
       PortIndex: 0
     OutputPort:
       NodeId: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
       PortIndex: 0
-  - InputPort:
-      NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
-      PortIndex: 0
-    OutputPort:
-      NodeId: 87bc4563-d5f5-4af4-a5d2-ff16bd6d19b3
-      PortIndex: 1
   references:
     version: 2
     RefIds:
-    - rid: 4557232817641619458
-      type: {class: PlayMusicNode, ns: _Project.Scripts.Runtime.Core.AudioSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
-      data:
-        m_guid: 87bc4563-d5f5-4af4-a5d2-ff16bd6d19b3
-        m_position:
-          serializedVersion: 2
-          x: 113
-          y: 43
-          width: 266
-          height: 98
-        m_outputPortAmount: 1
-        m_nodeConnections:
-        - InputPort:
-            NodeId: 87bc4563-d5f5-4af4-a5d2-ff16bd6d19b3
-            PortIndex: 0
-          OutputPort:
-            NodeId: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
-            PortIndex: 0
-        - InputPort:
-            NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
-            PortIndex: 0
-          OutputPort:
-            NodeId: 87bc4563-d5f5-4af4-a5d2-ff16bd6d19b3
-            PortIndex: 1
-        TypeName: _Project.Scripts.Runtime.Core.AudioSystem.LittleGraphAddOn.PlayMusicNode,
-          JournaLigne.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        MusicAudioClip: {fileID: 8300000, guid: cfb1dfa3d38d7904bb6731cf76f136a3, type: 3}
     - rid: 8417689067631935494
       type: {class: LGStartNode, ns: LittleGraph.Runtime.Types, asm: LittleGraph.Runtime}
       data:
@@ -121,7 +87,7 @@ MonoBehaviour:
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: 87bc4563-d5f5-4af4-a5d2-ff16bd6d19b3
+            NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
             PortIndex: 0
           OutputPort:
             NodeId: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
@@ -150,8 +116,8 @@ MonoBehaviour:
             NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
             PortIndex: 0
           OutputPort:
-            NodeId: 87bc4563-d5f5-4af4-a5d2-ff16bd6d19b3
-            PortIndex: 1
+            NodeId: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
+            PortIndex: 0
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueNodeActivatorFlag: 1

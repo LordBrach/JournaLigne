@@ -14,10 +14,10 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
         
         [Header("Music")] 
         [SerializeField] private AudioSource m_musicSource;
-
+        
         [Space(10)]
-        [SerializeField, Tooltip("In seconds")] private float m_switchFadeOutSpeed = 1;
-        [SerializeField, Tooltip("In seconds")] private float m_switchFadeInSpeed = 1;
+        [SerializeField, Tooltip("In seconds")] private float m_fadeOutSpeed = 1;
+        [SerializeField, Tooltip("In seconds")] private float m_fadeInSpeed = 1;
 
         private Coroutine m_switchMusicCoroutine;
         private Coroutine m_killMusicCoroutine;
@@ -46,7 +46,7 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
         {
             InitSingleton();
         }
-
+        
         public void PlayOneShotSound2D(AudioClip audioClip, AudioMixerGroup audioMixerGroup = null)
         {
             if(audioClip == null) return;
@@ -66,10 +66,14 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
             {
                 audioSource.outputAudioMixerGroup = m_currentMixer.outputAudioMixerGroup;
             }
+
+            audioSource.loop = false;
             
             audioSource.Play();
             Destroy(tGo, audioClip.length);
         }
+
+        #region Music
 
         public void PlayMusic(AudioClip audioClip)
         {
@@ -98,11 +102,11 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
             
             m_musicSource.Play();
             
-            if(m_switchFadeInSpeed != 0)
+            if(m_fadeInSpeed != 0)
             {
                 while (m_musicSource.volume < 1)
                 {
-                    m_musicSource.volume += Time.deltaTime / m_switchFadeInSpeed;
+                    m_musicSource.volume += Time.deltaTime / m_fadeInSpeed;
                     
                     yield return null;
                 }
@@ -122,19 +126,17 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
             StopCoroutine(m_switchMusicCoroutine);
             m_switchMusicCoroutine = null;
         }
-
         
-
         private IEnumerator KillMusic()
         {
             if(m_musicSource.isPlaying)
             {
-                if (m_switchFadeOutSpeed != 0)
+                if (m_fadeOutSpeed != 0)
                 {
                     while (m_musicSource.volume > 0)
                     {
                     
-                        m_musicSource.volume -=  Time.deltaTime / m_switchFadeOutSpeed;
+                        m_musicSource.volume -=  Time.deltaTime / m_fadeOutSpeed;
                         yield return null;
                     }
                 }
@@ -152,5 +154,8 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
             StopCoroutine(m_killMusicCoroutine);
             m_killMusicCoroutine = null;
         }
+
+        #endregion
+        
     }
 }

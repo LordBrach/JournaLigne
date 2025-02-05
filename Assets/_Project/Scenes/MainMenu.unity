@@ -1193,10 +1193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18eafc2db35676a4f92179140960fa3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_currentMixer: {fileID: 0}
+  m_currentMixer: {fileID: 24100000, guid: afcdf711d112ab14aaa3093d9e18ce6a, type: 2}
   m_musicSource: {fileID: 459531982}
-  m_switchFadeOutSpeed: 1
-  m_switchFadeInSpeed: 1
+  m_fadeOutSpeed: 1
+  m_fadeInSpeed: 1
 --- !u!4 &459531981
 Transform:
   m_ObjectHideFlags: 0
@@ -4009,7 +4009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1734304933
 RectTransform:
   m_ObjectHideFlags: 0
