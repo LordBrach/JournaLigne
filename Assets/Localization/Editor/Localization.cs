@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
@@ -437,7 +438,16 @@ public class Localization : EditorWindow
 
         try
         {
-            string[] lines = File.ReadAllLines(path);
+            // Lire tout le fichier en une seule chaîne
+            string fileContent = File.ReadAllText(path);
+
+            // Remplacer les sauts de ligne dans les guillemets par un caractère spécial temporaire
+            fileContent = fileContent.Replace("\r\n", "\n");  // Normalise les fins de ligne pour éviter les problèmes entre différentes plateformes
+            fileContent = HandleLineBreaksInsideQuotes(fileContent);
+
+            // Diviser le contenu en lignes, chaque ligne étant un texte complet
+            string[] lines = fileContent.Split(new string[] { "\n" }, StringSplitOptions.None);
+
             if (lines.Length < 2)
             {
                 Debug.LogError("Invalid CSV format. It must contain headers and at least one row.");
@@ -465,7 +475,8 @@ public class Localization : EditorWindow
             // Parse rows
             for (int i = 1; i < lines.Length; i++)
             {
-                string[] columns = lines[i].Split(',');
+                string[] columns = ParseCsvLineWithLineBreaks(lines[i]);
+
                 if (columns.Length < 2) continue;
 
                 string key = columns[0];
@@ -477,7 +488,7 @@ public class Localization : EditorWindow
                 for (int j = 1; j < columns.Length; j++)
                 {
                     string lang = newLanguages[j - 1];
-                    string translation = columns[j];
+                    string translation = columns[j].Trim('"');
                     _translations[key][lang] = translation;
                 }
             }
@@ -490,7 +501,58 @@ public class Localization : EditorWindow
         }
     }
 
-    
+    private string HandleLineBreaksInsideQuotes(string fileContent)
+    {
+        var regex = new System.Text.RegularExpressions.Regex("\"([^\"]*)\"");
+        fileContent = regex.Replace(fileContent, match =>
+        {
+            string field = match.Groups[1].Value;
+            field = field.Replace("\n", " [LINE_BREAK] ");
+            return $"\"{field}\"";
+        });
+
+        return fileContent;
+    }
+
+    private string[] ParseCsvLineWithLineBreaks(string line)
+    {
+        List<string> result = new List<string>();
+        bool insideQuote = false;
+        string currentField = "";
+
+        for (int i = 0; i < line.Length; i++)
+        {
+            char c = line[i];
+
+            if (c == '"' && (i == 0 || line[i - 1] != '\\'))
+            {
+                insideQuote = !insideQuote;
+            }
+            else if (c == ',' && !insideQuote)
+            {
+                result.Add(currentField);
+                currentField = "";
+            }
+            else
+            {
+                currentField += c;
+            }
+        }
+
+        if (!string.IsNullOrEmpty(currentField))
+        {
+            result.Add(currentField);
+        }
+
+        for (int i = 0; i < result.Count; i++)
+        {
+            result[i] = result[i].Replace(" [LINE_BREAK] ", "\n");
+        }
+
+        return result.ToArray();
+    }
+
+
     private void ExportCsv()
     {
         string path = EditorUtility.SaveFilePanel("Export Localization CSV", "", "Localization.csv", "csv");
@@ -513,7 +575,8 @@ public class Localization : EditorWindow
                 {
                     if (entry.Value.TryGetValue(language, out string translation))
                     {
-                        row.Add(translation);
+                        // Traiter la traduction pour ajouter des guillemets autour de chaque texte, même s'il n'y a pas de caractères spéciaux
+                        row.Add(AddQuotesToTranslation(translation));
                     }
                     else
                     {
@@ -521,6 +584,7 @@ public class Localization : EditorWindow
                     }
                 }
 
+                // Ajouter la ligne au CSV
                 lines.Add(string.Join(",", row));
             }
 
@@ -532,6 +596,13 @@ public class Localization : EditorWindow
         {
             Debug.LogError($"Error exporting CSV: {ex.Message}");
         }
+    }
+
+// Fonction pour ajouter des guillemets autour du texte, et échapper les guillemets internes
+    private string AddQuotesToTranslation(string translation)
+    {
+        translation = "\"" + translation.Replace("\"", "\"\"") + "\"";
+        return translation;
     }
 
     #endregion
