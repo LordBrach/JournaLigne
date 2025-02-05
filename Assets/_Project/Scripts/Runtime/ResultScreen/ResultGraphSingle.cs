@@ -9,7 +9,8 @@ public class ResultGraphSingle : MonoBehaviour
 {
     [SerializeField] private SO_DataFeedback PeopleRef;
     [Space(10)]
-    [SerializeField] GameObject canvas;
+    [SerializeField] GameObject GraphContainer;
+    [SerializeField] GameObject MainContainer;
     [Space(10)]
     // the max value each line may reach (0 to X)
     [SerializeField] int yMax = 100;
@@ -33,7 +34,7 @@ public class ResultGraphSingle : MonoBehaviour
 
     // References
     GameObject lineReference;
-    RectTransform graphContainer;
+    RectTransform graphTransformRef;
 
     // Event Dispatcher
     public event Action OnButtonClickedDispatcher;
@@ -45,11 +46,11 @@ public class ResultGraphSingle : MonoBehaviour
     #region Show/Hide
     public void Show()
     {
-        canvas.SetActive(true);
+        MainContainer.SetActive(true);
     }
     public void Hide()
     {
-        canvas.SetActive(false);
+        MainContainer.SetActive(false);
     }
     #endregion
 
@@ -65,7 +66,10 @@ public class ResultGraphSingle : MonoBehaviour
 
     private void OnDisable()
     {
-        NoteBook.instance.OnNewsPaperValidate -= HandleNewsPaperValidation;
+        if (NoteBook.instance)
+        {
+            NoteBook.instance.OnNewsPaperValidate -= HandleNewsPaperValidation;
+        }
     }
 
     private void Start()
@@ -74,14 +78,14 @@ public class ResultGraphSingle : MonoBehaviour
     }
     private void HandleNewsPaperValidation(Appreciations appreciations)
     {
-        canvas.SetActive(true);
+        MainContainer.SetActive(true);
         AddValue(appreciations.peopleAppreciation);
     }
     private void Awake()
     {
-        graphContainer = canvas.GetComponent<RectTransform>();
-        graphHeight = graphContainer.sizeDelta.y;
-        graphWidth = graphContainer.sizeDelta.x;
+        graphTransformRef = GraphContainer.GetComponent<RectTransform>();
+        graphHeight = graphTransformRef.sizeDelta.y;
+        graphWidth = graphTransformRef.sizeDelta.x;
     }
     #endregion
 
@@ -96,7 +100,7 @@ public class ResultGraphSingle : MonoBehaviour
     {
         lineReference = new GameObject("dotConnexion", typeof(UnityEngine.UI.Image));
         RectTransform _rectTransform = lineReference.GetComponent<RectTransform>();
-        lineReference.transform.SetParent(canvas.transform, false);
+        lineReference.transform.SetParent(GraphContainer.transform, false);
         lineReference.GetComponent<UnityEngine.UI.Image>().color = graphColor;
 
         _rectTransform.pivot = new Vector2(0, 0.5f);
@@ -108,7 +112,7 @@ public class ResultGraphSingle : MonoBehaviour
             AddValue(0);
         //_rectTransform.localEulerAngles = new Vector3(0, 0, MakeAngleFromVector(direction));
     }
-
+    
     private void AddValue(float _inValue)
     {
         float value = CurrentVal + _inValue;
@@ -173,22 +177,22 @@ public class ResultGraphSingle : MonoBehaviour
 #if UNITY_EDITOR
     void Update()
     {
-        DebugKeys();
+        // DebugKeys();
     }
 #endif
-    void DebugKeys()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            float value = UnityEngine.Random.Range(5, 30);
-            AddValue(value);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            float value = UnityEngine.Random.Range(-30, -5);
-            AddValue(value);
-        }
-    }
+    // void DebugKeys()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.G))
+    //     {
+    //         float value = UnityEngine.Random.Range(5, 30);
+    //         AddValue(value);
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.H))
+    //     {
+    //         float value = UnityEngine.Random.Range(-30, -5);
+    //         AddValue(value);
+    //     }
+    // }
 }
 
 
@@ -196,7 +200,7 @@ public class ResultGraphSingle : MonoBehaviour
  private void CreateNode(Vector2 nodePosition)
     {
         originNodeReference = new GameObject("node", typeof(UnityEngine.UI.Image));
-        originNodeReference.transform.SetParent(canvas.transform, false);
+        originNodeReference.transform.SetParent(GraphContainer.transform, false);
         RectTransform rectTransform = originNodeReference.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = nodePosition;
         rectTransform.sizeDelta = new Vector2(0, 0);

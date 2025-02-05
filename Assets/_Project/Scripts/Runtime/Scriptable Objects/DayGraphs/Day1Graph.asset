@@ -14,62 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nodes:
   - rid: 8417689067631935494
-  - rid: 8417689067631935495
   - rid: 8417689067631935496
-  - rid: 8417689088234881024
-  - rid: 8417689088234881025
-  - rid: 8417689088234881026
-  - rid: 8417689088234881027
-  - rid: 8417689088234881028
-  - rid: 8417689088234881029
+  - rid: 8609779800353538048
   m_connections:
   - InputPort:
-      NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
+      NodeId: 811ecead-cf2a-4228-973e-4769e76b5952
       PortIndex: 0
     OutputPort:
       NodeId: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
       PortIndex: 0
   - InputPort:
-      NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-      PortIndex: 0
-    OutputPort:
-      NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
-      PortIndex: 1
-  - InputPort:
-      NodeId: 1aba0325-eebf-4b2f-bd3a-ec6e7b1d9847
-      PortIndex: 0
-    OutputPort:
-      NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-      PortIndex: 2
-  - InputPort:
-      NodeId: bbf71e1e-6e3e-4667-9d4f-11a5513e5060
-      PortIndex: 0
-    OutputPort:
-      NodeId: 1aba0325-eebf-4b2f-bd3a-ec6e7b1d9847
-      PortIndex: 1
-  - InputPort:
-      NodeId: 2b71cb84-dacf-4478-8deb-89da95774b4b
-      PortIndex: 0
-    OutputPort:
-      NodeId: bbf71e1e-6e3e-4667-9d4f-11a5513e5060
-      PortIndex: 1
-  - InputPort:
-      NodeId: 3b21bbc9-3f16-42d6-9bf9-2f2b9f9404d9
-      PortIndex: 0
-    OutputPort:
-      NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-      PortIndex: 1
-  - InputPort:
-      NodeId: 8c6950ea-0fd8-400f-81e9-780d454cf080
-      PortIndex: 0
-    OutputPort:
-      NodeId: 3b21bbc9-3f16-42d6-9bf9-2f2b9f9404d9
-      PortIndex: 1
-  - InputPort:
       NodeId: 8a5a13c0-6405-46c9-a5d9-5e2cdc8c22d8
       PortIndex: 0
     OutputPort:
-      NodeId: 8c6950ea-0fd8-400f-81e9-780d454cf080
+      NodeId: 811ecead-cf2a-4228-973e-4769e76b5952
       PortIndex: 1
   references:
     version: 2
@@ -80,59 +38,29 @@ MonoBehaviour:
         m_guid: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
         m_position:
           serializedVersion: 2
-          x: 255.2
+          x: 59
           y: 160
-          width: 75.20001
-          height: 76.8
+          width: 74
+          height: 77
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
+            NodeId: 811ecead-cf2a-4228-973e-4769e76b5952
             PortIndex: 0
           OutputPort:
             NodeId: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
             PortIndex: 0
         TypeName: LittleGraph.Runtime.Types.LGStartNode, LittleGraph.Runtime, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-    - rid: 8417689067631935495
-      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
-      data:
-        m_guid: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
-        m_position:
-          serializedVersion: 2
-          x: 364.80002
-          y: 160
-          width: 244.80002
-          height: 153.59999
-        m_outputPortAmount: 1
-        m_nodeConnections:
-        - InputPort:
-            NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
-            PortIndex: 0
-          OutputPort:
-            NodeId: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
-            PortIndex: 0
-        - InputPort:
-            NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-            PortIndex: 0
-          OutputPort:
-            NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
-            PortIndex: 1
-        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
-          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        DialogueNodeActivatorFlag: 1
-        DialogueKey: A
-        InterlocutorSprite: {fileID: 0}
-        BackgroundSprite: {fileID: 0}
     - rid: 8417689067631935496
       type: {class: NextDayNode, ns: _Project.Scripts.Runtime.DaysSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
       data:
         m_guid: 8a5a13c0-6405-46c9-a5d9-5e2cdc8c22d8
         m_position:
           serializedVersion: 2
-          x: 1520
-          y: 63.999996
-          width: 101.599976
+          x: 361.6
+          y: 160
+          width: 101.600006
           height: 76.8
         m_outputPortAmount: 1
         m_nodeConnections:
@@ -140,190 +68,37 @@ MonoBehaviour:
             NodeId: 8a5a13c0-6405-46c9-a5d9-5e2cdc8c22d8
             PortIndex: 0
           OutputPort:
-            NodeId: 8c6950ea-0fd8-400f-81e9-780d454cf080
+            NodeId: 811ecead-cf2a-4228-973e-4769e76b5952
             PortIndex: 1
         TypeName: _Project.Scripts.Runtime.DaysSystem.LittleGraphAddOn.NextDayNode,
           JournaLigne.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    - rid: 8417689088234881024
-      type: {class: AddNoteBookEntryNode, ns: _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
-      data:
-        m_guid: 3b21bbc9-3f16-42d6-9bf9-2f2b9f9404d9
-        m_position:
-          serializedVersion: 2
-          x: 955.2
-          y: 47.999996
-          width: 206.40002
-          height: 165.6
-        m_outputPortAmount: 1
-        m_nodeConnections:
-        - InputPort:
-            NodeId: 3b21bbc9-3f16-42d6-9bf9-2f2b9f9404d9
-            PortIndex: 0
-          OutputPort:
-            NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-            PortIndex: 1
-        - InputPort:
-            NodeId: 8c6950ea-0fd8-400f-81e9-780d454cf080
-            PortIndex: 0
-          OutputPort:
-            NodeId: 3b21bbc9-3f16-42d6-9bf9-2f2b9f9404d9
-            PortIndex: 1
-        TypeName: _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn.AddNoteBookEntryNode,
-          JournaLigne.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        NotebookText: Killed Rebel
-        ArticleText: A kill !
-        PeopleAppreciation: 1
-        RebelsAppreciation: 1
-        GovernmentAppreciation: 1
-    - rid: 8417689088234881025
-      type: {class: LDMultipleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
-      data:
-        m_guid: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-        m_position:
-          serializedVersion: 2
-          x: 624
-          y: 140.8
-          width: 264.8
-          height: 153.6
-        m_outputPortAmount: 2
-        m_nodeConnections:
-        - InputPort:
-            NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-            PortIndex: 0
-          OutputPort:
-            NodeId: dc216b81-cb06-4378-8aa8-b101b8b4c0c1
-            PortIndex: 1
-        - InputPort:
-            NodeId: 1aba0325-eebf-4b2f-bd3a-ec6e7b1d9847
-            PortIndex: 0
-          OutputPort:
-            NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-            PortIndex: 2
-        - InputPort:
-            NodeId: 3b21bbc9-3f16-42d6-9bf9-2f2b9f9404d9
-            PortIndex: 0
-          OutputPort:
-            NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-            PortIndex: 1
-        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDMultipleChoiceDialogueNode,
-          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        DialogueNodeActivatorFlag: 0
-        DialogueKey: A
-        InterlocutorSprite: {fileID: 0}
-        BackgroundSprite: {fileID: 0}
-        ChoiceDatas:
-        - OutputIndex: 1
-          ChoiceText: A
-        - OutputIndex: 2
-          ChoiceText: B
-    - rid: 8417689088234881026
+    - rid: 8609779800353538048
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
-        m_guid: 1aba0325-eebf-4b2f-bd3a-ec6e7b1d9847
+        m_guid: 811ecead-cf2a-4228-973e-4769e76b5952
         m_position:
           serializedVersion: 2
-          x: 916.8
-          y: 294.4
-          width: 244.80005
-          height: 153.6
+          x: 134.4
+          y: 268
+          width: 244.8
+          height: 153.59998
         m_outputPortAmount: 1
         m_nodeConnections:
         - InputPort:
-            NodeId: 1aba0325-eebf-4b2f-bd3a-ec6e7b1d9847
+            NodeId: 811ecead-cf2a-4228-973e-4769e76b5952
             PortIndex: 0
           OutputPort:
-            NodeId: ed1b94e6-445f-4f8f-ac72-7654d53089ee
-            PortIndex: 2
-        - InputPort:
-            NodeId: bbf71e1e-6e3e-4667-9d4f-11a5513e5060
+            NodeId: f1dfa700-ebf4-480d-b9d4-1cf78f50af93
             PortIndex: 0
-          OutputPort:
-            NodeId: 1aba0325-eebf-4b2f-bd3a-ec6e7b1d9847
-            PortIndex: 1
-        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
-          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        DialogueNodeActivatorFlag: 2
-        DialogueKey: 
-        InterlocutorSprite: {fileID: 0}
-        BackgroundSprite: {fileID: 0}
-    - rid: 8417689088234881027
-      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
-      data:
-        m_guid: 8c6950ea-0fd8-400f-81e9-780d454cf080
-        m_position:
-          serializedVersion: 2
-          x: 1206.3999
-          y: -12.800001
-          width: 244.80005
-          height: 153.6
-        m_outputPortAmount: 1
-        m_nodeConnections:
-        - InputPort:
-            NodeId: 8c6950ea-0fd8-400f-81e9-780d454cf080
-            PortIndex: 0
-          OutputPort:
-            NodeId: 3b21bbc9-3f16-42d6-9bf9-2f2b9f9404d9
-            PortIndex: 1
         - InputPort:
             NodeId: 8a5a13c0-6405-46c9-a5d9-5e2cdc8c22d8
             PortIndex: 0
           OutputPort:
-            NodeId: 8c6950ea-0fd8-400f-81e9-780d454cf080
+            NodeId: 811ecead-cf2a-4228-973e-4769e76b5952
             PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        DialogueNodeActivatorFlag: 2
-        DialogueKey: 
+        DialogueNodeActivatorFlag: -1
+        DialogueKey: A
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
-    - rid: 8417689088234881028
-      type: {class: NextDayNode, ns: _Project.Scripts.Runtime.DaysSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
-      data:
-        m_guid: 2b71cb84-dacf-4478-8deb-89da95774b4b
-        m_position:
-          serializedVersion: 2
-          x: 1461.6
-          y: 352
-          width: 101.599976
-          height: 76.79999
-        m_outputPortAmount: 1
-        m_nodeConnections:
-        - InputPort:
-            NodeId: 2b71cb84-dacf-4478-8deb-89da95774b4b
-            PortIndex: 0
-          OutputPort:
-            NodeId: bbf71e1e-6e3e-4667-9d4f-11a5513e5060
-            PortIndex: 1
-        TypeName: _Project.Scripts.Runtime.DaysSystem.LittleGraphAddOn.NextDayNode,
-          JournaLigne.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    - rid: 8417689088234881029
-      type: {class: AddNoteBookEntryNode, ns: _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
-      data:
-        m_guid: bbf71e1e-6e3e-4667-9d4f-11a5513e5060
-        m_position:
-          serializedVersion: 2
-          x: 1212.7999
-          y: 305.59998
-          width: 224
-          height: 165.6
-        m_outputPortAmount: 1
-        m_nodeConnections:
-        - InputPort:
-            NodeId: bbf71e1e-6e3e-4667-9d4f-11a5513e5060
-            PortIndex: 0
-          OutputPort:
-            NodeId: 1aba0325-eebf-4b2f-bd3a-ec6e7b1d9847
-            PortIndex: 1
-        - InputPort:
-            NodeId: 2b71cb84-dacf-4478-8deb-89da95774b4b
-            PortIndex: 0
-          OutputPort:
-            NodeId: bbf71e1e-6e3e-4667-9d4f-11a5513e5060
-            PortIndex: 1
-        TypeName: _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn.AddNoteBookEntryNode,
-          JournaLigne.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        NotebookText: No kill on rebel
-        ArticleText: Saved Rebel !
-        PeopleAppreciation: 1
-        RebelsAppreciation: 1
-        GovernmentAppreciation: 1
