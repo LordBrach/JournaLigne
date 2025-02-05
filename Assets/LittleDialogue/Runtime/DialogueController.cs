@@ -96,6 +96,7 @@ namespace LittleDialogue.Runtime
         {
             if(!m_dialogueBox) return;
 
+            
             if (node is LDDialogueNode dialogueNode)
             {
                 m_currentNode = dialogueNode;

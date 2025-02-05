@@ -66,7 +66,10 @@ public class ResultGraphSingle : MonoBehaviour
 
     private void OnDisable()
     {
-        NoteBook.instance.OnNewsPaperValidate -= HandleNewsPaperValidation;
+        if (NoteBook.instance)
+        {
+            NoteBook.instance.OnNewsPaperValidate -= HandleNewsPaperValidation;
+        }
     }
 
     private void Start()
@@ -174,22 +177,22 @@ public class ResultGraphSingle : MonoBehaviour
 #if UNITY_EDITOR
     void Update()
     {
-        DebugKeys();
+        // DebugKeys();
     }
 #endif
-    void DebugKeys()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            float value = UnityEngine.Random.Range(5, 30);
-            AddValue(value);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            float value = UnityEngine.Random.Range(-30, -5);
-            AddValue(value);
-        }
-    }
+    // void DebugKeys()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.G))
+    //     {
+    //         float value = UnityEngine.Random.Range(5, 30);
+    //         AddValue(value);
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.H))
+    //     {
+    //         float value = UnityEngine.Random.Range(-30, -5);
+    //         AddValue(value);
+    //     }
+    // }
 }
 
 
