@@ -53,12 +53,25 @@ public class Localization : EditorWindow
     {
         Label("Localization Table", EditorStyles.boldLabel);
         _scrollPosition = BeginScrollView(_scrollPosition, false, true);
+        
+        float maxKeyWidth = 200;
+        float maxLangWidth = 100; 
+        foreach (var entry in _translations)
+        {
+            maxKeyWidth = Mathf.Max(maxKeyWidth, GUI.skin.label.CalcSize(new GUIContent(entry.Key)).x + 20);
+
+            foreach (var langEntry in entry.Value)
+            {
+                float textWidth = GUI.skin.textField.CalcSize(new GUIContent(langEntry.Value)).x + 20;
+                maxLangWidth = Mathf.Max(maxLangWidth, textWidth);
+            }
+        }
     
         BeginHorizontal();
-        GUILayout.Label("Key", Width(200));
+        GUILayout.Label("Key", Width(220.5f));
         for (int i = 0; i < _languages.Count; i++)
         {
-            _languages[i] = EditorGUILayout.TextField(_languages[i], Width(76.8f));
+            _languages[i] = EditorGUILayout.TextField(_languages[i], GUILayout.Width(maxLangWidth - 23));
     
             if (GUILayout.Button("X", Width(20)))
             {
@@ -67,52 +80,61 @@ public class Localization : EditorWindow
             }
         }
         EndHorizontal();
-    
+        
+        Dictionary<string, string> keysToRename = new Dictionary<string, string>();
         List<string> keysToRemove = new List<string>();
+        Dictionary<string, Dictionary<string, string>> newTranslations = new Dictionary<string, Dictionary<string, string>>();
+
+        // Copie des clés existantes pour éviter de modifier la liste en cours de boucle
         List<string> keys = new List<string>(_translations.Keys);
-        foreach (var t in keys)
+
+        foreach (var key in keys)
         {
-            string key = t;
             BeginHorizontal();
-            
-            // Update and Remove Keys
+
+            // Bouton pour supprimer la clé
             if (GUILayout.Button("X", GUILayout.Width(20)))
             {
-                keysToRemove.Add(key); 
+                keysToRemove.Add(key);
             }
-    
-            // Update and Create Keys
-            string newKey = EditorGUILayout.TextField(key, Width(179));
-            if (newKey != key)
+
+            // Saisie pour modifier la clé
+            string newKey = EditorGUILayout.TextField(key, GUILayout.Width(maxKeyWidth));
+            if (newKey != key && !keysToRename.ContainsKey(key) && !_translations.ContainsKey(newKey))
             {
-                if (!_translations.ContainsKey(newKey))
-                {
-                    _translations[newKey] = new Dictionary<string, string>(_translations[key]);
-                    _translations.Remove(key);
-                    key = newKey;
-                }
+                keysToRename[key] = newKey;
             }
-    
-            // Update and Create Translations
+
+            // Affichage des traductions
             for (int j = 0; j < _languages.Count; j++)
             {
                 string lang = _languages[j];
-                if (_translations[key].ContainsKey(lang))
+                if (!_translations[key].ContainsKey(lang))
                 {
-                    _translations[key][lang] = EditorGUILayout.TextField(_translations[key][lang], Width(100));
+                    _translations[key][lang] = "";
                 }
-                else
-                {
-                    _translations[key][lang] = EditorGUILayout.TextField("", Width(100));
-                }
+                _translations[key][lang] = EditorGUILayout.TextField(_translations[key][lang], GUILayout.Width(maxLangWidth));
             }
+
             EndHorizontal();
         }
+
+        // Suppression des clés marquées
         foreach (var keyToRemove in keysToRemove)
         {
-            RemoveKey(keyToRemove);
+            _translations.Remove(keyToRemove);
         }
-        
+
+        // Application des renommages en recréant un dictionnaire propre
+        foreach (var kvp in _translations)
+        {
+            string actualKey = keysToRename.ContainsKey(kvp.Key) ? keysToRename[kvp.Key] : kvp.Key;
+            newTranslations[actualKey] = new Dictionary<string, string>(kvp.Value);
+        }
+
+        // Remplacement du dictionnaire pour éviter des conflits d'ordre
+        _translations = newTranslations;
+
         EndScrollView();
         
         // NEW KEY
