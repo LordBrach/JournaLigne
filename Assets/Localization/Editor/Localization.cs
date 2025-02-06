@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TMPro;
 using Unity.EditorCoroutines.Editor;
 using UnityEditor;
@@ -54,24 +55,37 @@ public class Localization : EditorWindow
         Label("Localization Table", EditorStyles.boldLabel);
         _scrollPosition = BeginScrollView(_scrollPosition, false, true);
         
-        float maxKeyWidth = 200;
-        float maxLangWidth = 100; 
+        Dictionary<int, float> langWidths = new Dictionary<int, float>();
+
         foreach (var entry in _translations)
         {
-            maxKeyWidth = Mathf.Max(maxKeyWidth, GUI.skin.label.CalcSize(new GUIContent(entry.Key)).x + 20);
-
             foreach (var langEntry in entry.Value)
             {
                 float textWidth = GUI.skin.textField.CalcSize(new GUIContent(langEntry.Value)).x + 20;
-                maxLangWidth = Mathf.Max(maxLangWidth, textWidth);
+
+                if (!langWidths.ContainsKey(entry.Value.Keys.ToList().IndexOf(langEntry.Key)))
+                {
+                    langWidths[entry.Value.Keys.ToList().IndexOf(langEntry.Key)] = textWidth;
+                }
+                else
+                {
+                    langWidths[entry.Value.Keys.ToList().IndexOf(langEntry.Key)] = Mathf.Max(langWidths[entry.Value.Keys.ToList().IndexOf(langEntry.Key)], textWidth);
+                }
             }
         }
-    
+        
+        float maxKeyWidth = 200;
+        foreach (var entry in _translations)
+        {
+            maxKeyWidth = Mathf.Max(maxKeyWidth, GUI.skin.label.CalcSize(new GUIContent(entry.Key)).x + 20);
+            
+        }
+        
         BeginHorizontal();
-        GUILayout.Label("Key", Width(220.5f));
+        GUILayout.Label("Key", Width(maxKeyWidth + 20));
         for (int i = 0; i < _languages.Count; i++)
         {
-            _languages[i] = EditorGUILayout.TextField(_languages[i], GUILayout.Width(maxLangWidth - 23));
+            _languages[i] = EditorGUILayout.TextField(_languages[i], GUILayout.Width(langWidths[i] - 23));
     
             if (GUILayout.Button("X", Width(20)))
             {
@@ -84,8 +98,7 @@ public class Localization : EditorWindow
         Dictionary<string, string> keysToRename = new Dictionary<string, string>();
         List<string> keysToRemove = new List<string>();
         Dictionary<string, Dictionary<string, string>> newTranslations = new Dictionary<string, Dictionary<string, string>>();
-
-        // Copie des clés existantes pour éviter de modifier la liste en cours de boucle
+        
         List<string> keys = new List<string>(_translations.Keys);
 
         foreach (var key in keys)
@@ -113,7 +126,7 @@ public class Localization : EditorWindow
                 {
                     _translations[key][lang] = "";
                 }
-                _translations[key][lang] = EditorGUILayout.TextField(_translations[key][lang], GUILayout.Width(maxLangWidth));
+                _translations[key][lang] = EditorGUILayout.TextField(_translations[key][lang], GUILayout.Width(langWidths[j]));
             }
 
             EndHorizontal();
@@ -137,37 +150,51 @@ public class Localization : EditorWindow
 
         EndScrollView();
         
-        // NEW KEY
-        if (Button("Add New Key"))
-        {
-            AddNewKey();
-        }
-    
-        // NEW LANGUAGE
-        if (Button("Add New Language"))
-        {
-            AddNewLanguage();
-        }
-    
-        // IMPORT CSV
+        // Section : Gestion des Clés et Langues
+        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.LabelField("Keys & Languages", EditorStyles.boldLabel);
+        if (Button("Add New Key")) AddNewKey();
+        if (Button("Add New Language")) AddNewLanguage();
+        EditorGUILayout.EndVertical();
+
         Space(10);
-        if (Button("Import CSV"))
-        {
-            ImportCsv();
-        }
-        
-        // IMPORT CSV
-        if (Button("Export CSV"))
-        {
-            ExportCsv();
-        }
-    
-        // SAVE
-        if (Button("Save All"))
-        {
-            SaveTranslations();
-        }
+
+        // Section : Import / Export
+        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.LabelField("Import / Export", EditorStyles.boldLabel);
+        if (Button("Import CSV")) ImportCsv();
+        if (Button("Export CSV")) ExportCsv();
+        EditorGUILayout.EndVertical();
+
+        Space(10);
+
+        // Section : Sauvegarde et Restauration
+        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.LabelField("Save & Restore", EditorStyles.boldLabel);
+        if (Button("Save All")) SaveTranslations();
+
+        EditorGUILayout.BeginHorizontal();
+        if (Button("Refresh")) RevertAllUnsaved();
+        if (Button("Revert All")) RevertAll();
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.EndVertical();
     }
+    
+    // Revert
+    #region Revert
+
+    private void RevertAll()
+    {
+        _translations.Clear();
+    }
+
+    private void RevertAllUnsaved()
+    {
+        _translations.Clear();
+        LoadTranslations();
+    }
+
+    #endregion
 
     // Text Component
     #region Text Component

@@ -65,7 +65,7 @@ public class Consequences : MonoBehaviour
         return null;
     }
 
-    private void GetConsequences( Days currentDay)
+    private void GetConsequences(Days currentDay)
     {
         if (currentInfluence > currentMaxInfluence/2)
         {
