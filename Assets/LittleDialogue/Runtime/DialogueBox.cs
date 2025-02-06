@@ -166,6 +166,7 @@ namespace LittleDialogue.Runtime
 
         public void UpdateInterlocutorImage(Sprite inNewSprite)
         {
+            if(!inNewSprite) return;
             if(!m_interlocutorImage) return;
 
             m_interlocutorImage.sprite = inNewSprite;
@@ -173,6 +174,7 @@ namespace LittleDialogue.Runtime
         
         public void UpdateBackgroundImage(Sprite inNewSprite)
         {
+            if(!inNewSprite) return;
             if(!m_backgroundImage) return;
 
             m_backgroundImage.sprite = inNewSprite;

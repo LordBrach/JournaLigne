@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using LittleGraph.Editor.Attributes;
 using LittleGraph.Runtime;
+using LittleGraph.Runtime.Types;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
@@ -27,6 +28,11 @@ namespace LittleGraph.Editor
         private Dictionary<Edge, LGConnection> m_connectionDictionary;
 
         private LGWindowSearchProvider m_searchProvider;
+        
+        //Copy&Paste
+        private Vector2 m_mouseCopyPosition;
+        private Vector2 m_mousePastePosition;
+        private LGDebugLogNode m_cachedNode;
         
         public LGGraphView(SerializedObject serializedObject, LGEditorWindow window)
         {
@@ -68,7 +74,14 @@ namespace LittleGraph.Editor
             DrawConnections();
 
             graphViewChanged += OnGraphViewChangedEvent;
+            
+            serializeGraphElements += OnSerializeGraphElementsEvent;
+            canPasteSerializedData += OnCanPasteSerializedDataEvent;
+            unserializeAndPaste += OnUnserializeAndPasteEvent;
         }
+
+
+        #region Minimap
 
         private void AddMinimap()
         {
@@ -82,6 +95,9 @@ namespace LittleGraph.Editor
             
             Add(miniMap);
         }
+
+        #endregion
+        
 
         private void GetCustomEditorNodeTypes()
         {
@@ -118,6 +134,8 @@ namespace LittleGraph.Editor
             
             return ports;
         }
+
+        #region CallbackMethods
 
         private GraphViewChange OnGraphViewChangedEvent(GraphViewChange graphViewChange)
         {
@@ -162,6 +180,57 @@ namespace LittleGraph.Editor
             return graphViewChange;
         }
 
+        private string OnSerializeGraphElementsEvent(IEnumerable<GraphElement> elements)
+        {
+            // Debug.Log("Copy in Graph");
+            //
+            // if (!elements.Any()) return string.Empty;
+            //
+            // foreach (GraphElement graphElement in elements)
+            // {
+            //     if (graphElement is LGEditorNode editorNode)
+            //     {
+            //         if (editorNode.Node is LGDebugLogNode debugLogNode)
+            //         {
+            //             Debug.Log("CopyNode");
+            //             m_cachedNode = debugLogNode;
+            //         }
+            //         
+            //     }
+            // }
+            
+            // var windowMousePosition = GraphView.ChangeCoordinatesTo(GraphView, context.screenMousePosition - GraphView.Window.position.position);
+            // var graphMousePosition = GraphView.contentViewContainer.WorldToLocal(windowMousePosition);
+            
+            return string.Empty;
+        }
+
+        //Tells the graph when to allow paste
+        private bool OnCanPasteSerializedDataEvent(string data)
+        {
+            if (string.IsNullOrEmpty(data)) return false;
+            
+            return true;
+        }
+        
+        private void OnUnserializeAndPasteEvent(string operationname, string data)
+        {
+            // if(string.IsNullOrEmpty(data)) return;
+            // Debug.Log("Paste in Graph");
+            // if(m_cachedNode == null) return;
+            //
+            // LGDebugLogNode debugLogNode = new LGDebugLogNode();
+            //
+            // debugLogNode.TypeName = debugLogNode.GetType().ToString();
+            // debugLogNode.SetPosition(m_cachedNode.Position);
+            // debugLogNode.LogMessage = m_cachedNode.LogMessage;
+            //
+            // Add(debugLogNode);
+        }
+
+        #endregion
+        
+        
         private void CreateEdge(Edge edge)
         {
             LGEditorNode inputNode = (LGEditorNode)edge.input.node;
@@ -177,6 +246,8 @@ namespace LittleGraph.Editor
             inputNode.Node.NodeConnections.Add(connection);
             outputNode.Node.NodeConnections.Add(connection);
         }
+
+        #region Remove Methods
 
         private void RemoveNode(LGEditorNode editorNode)
         {
@@ -208,7 +279,11 @@ namespace LittleGraph.Editor
         {
             DeleteElements(outputPort.connections);
         }
-        
+
+        #endregion
+
+        #region DrawMethods
+
         private void DrawNodes()
         {
             foreach (LGNode node in m_graph.Nodes)
@@ -244,6 +319,9 @@ namespace LittleGraph.Editor
             m_connectionDictionary.Add(edge, connection);
         }
 
+        #endregion
+       
+
         private LGEditorNode GetNode(string nodeId)
         {
             LGEditorNode node = null;
@@ -256,6 +334,8 @@ namespace LittleGraph.Editor
             m_searchProvider.Target = (VisualElement)focusController.focusedElement;
             SearchWindow.Open(new SearchWindowContext(obj.screenMousePosition), m_searchProvider);
         }
+
+        #region AddMethods
 
         public void Add(LGNode node)
         {
@@ -306,5 +386,8 @@ namespace LittleGraph.Editor
             m_serializedObject.Update();
             this.Bind(m_serializedObject);
         }
+
+        #endregion
+        
     }
 }
