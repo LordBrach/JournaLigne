@@ -1064,7 +1064,7 @@ MonoBehaviour:
   daysList:
   - day: 1
     dayType: 1
-    currentGraph: {fileID: 11400000, guid: 5db324e8db98a2547aea29b8f576f97a, type: 2}
+    currentGraph: {fileID: 11400000, guid: 7ae795a37ff26904eb70ba1e1dca935d, type: 2}
     keyFavorable: 
     keyUnfavorable: 
   - day: 2
