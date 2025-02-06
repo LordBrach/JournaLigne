@@ -17,5 +17,21 @@ namespace _Project.Scripts.Runtime.Core.AudioSystem
                 AudioManager.Instance.PlayOneShotSound2D(m_audioClip, m_audioMixerGroup);
             }
         }
+
+        public void PlayMusic()
+        {
+            if (AudioManager.Instance)
+            {
+                AudioManager.Instance.PlayMusic(m_audioClip);
+            }
+        }
+
+        public void StopMusic()
+        {
+            if (AudioManager.Instance)
+            {
+                AudioManager.Instance.StopMusic();
+            }
+        }
     }
 }
