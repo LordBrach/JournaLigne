@@ -214,9 +214,19 @@ MonoBehaviour:
   boxContainer: {fileID: 5411586340241677299}
   consequencesImages:
   - Image: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
-    Key: A
+    Key: "Consequence_Manticore_ProR\xE9bellion_1"
   - Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    Key: B
+    Key: "Consequence_Manticore_ProR\xE9bellion_2"
+  - Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Key: "Consequence_Manticore_ProR\xE9bellion_3"
+  - Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Key: Consequence_Manticore_ProDictateur_1
+  - Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Key: Consequence_Manticore_ProDictateur_2
+  - Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Key: Consequence_Manticore_ProDictateur_3
+  - Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    Key: Consequence_Manticore_ProDictateur_4
 --- !u!1 &4604316958785364961
 GameObject:
   m_ObjectHideFlags: 0
