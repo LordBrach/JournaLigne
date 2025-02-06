@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
-using UnityEngine.Networking;
 
 [DefaultExecutionOrder(-1000)]
 public class LocalizationManager : MonoBehaviour
