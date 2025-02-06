@@ -1148,6 +1148,7 @@ GameObject:
   - component: {fileID: 674477579}
   - component: {fileID: 674477581}
   - component: {fileID: 674477580}
+  - component: {fileID: 674477582}
   m_Layer: 5
   m_Name: LanguageButton
   m_TagString: Untagged
@@ -1214,6 +1215,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674477578}
   m_CullTransparentMesh: 1
+--- !u!114 &674477582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674477578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b37cd91fe5cfb4092dcf1024549434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_englishAnimator: {fileID: 1730302035}
+  m_englishSelectAnimName: Ang_Select
+  m_englishUnselectAnimName: Ang
+  m_frenchAnimator: {fileID: 1525531903}
+  m_frenchSelectAnimName: Fr_Select
+  m_frenchUnselectAnimName: Fr
 --- !u!1001 &692804521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2323,6 +2342,11 @@ MonoBehaviour:
   m_audioMixerGroup: {fileID: 2595871009577895630, guid: afcdf711d112ab14aaa3093d9e18ce6a, type: 2}
   m_audioClip:
   - {fileID: 8300000, guid: f107407311da65040a11af7f97c626be, type: 3}
+--- !u!95 &1525531903 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2211093267416091993, guid: 83db17c6d4c567242a7d5c727e3e0fd6, type: 3}
+  m_PrefabInstance: {fileID: 692804521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1597759001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,9 +2503,14 @@ MonoBehaviour:
   m_musicVolumeSlider: {fileID: 172209283}
   m_sfxVolumeSlider: {fileID: 895598085}
   m_qualityDropdown: {fileID: 302732571}
-  m_englishLanguageKey: 
-  m_frenchLanguageKey: 
-  m_languageButtonUI: {fileID: 0}
+  m_englishLanguageKey: en
+  m_frenchLanguageKey: fr
+  m_languageButtonUI: {fileID: 674477582}
+--- !u!95 &1730302035 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 802529341488991250, guid: 7d4105dd75995ad4bb1d8177eecff105, type: 3}
+  m_PrefabInstance: {fileID: 236361377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1734304932
 GameObject:
   m_ObjectHideFlags: 0
