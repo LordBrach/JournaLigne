@@ -51,8 +51,8 @@ public class NoteBook : MonoBehaviour
     {
         NotebookEntry newEntry = new NotebookEntry
         {
-            dialoguePhrase = dialoguePhrase,
-            associatedText = associatedText,
+            dialoguePhrase = LocalizationManager.Instance.GetTranslation(dialoguePhrase),
+            associatedText = LocalizationManager.Instance.GetTranslation(associatedText),
             rebels = rebels,
             people = people,
             government = government
