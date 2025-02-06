@@ -2174,6 +2174,10 @@ PrefabInstance:
       propertyPath: OnCharacterWrittenEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 288748612}
+    - target: {fileID: 8807559976924265613, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
+      propertyPath: m_Constraint
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

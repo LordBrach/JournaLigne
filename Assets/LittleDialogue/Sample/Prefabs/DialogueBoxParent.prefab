@@ -276,10 +276,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6357871870740311022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00048828125}
-  m_SizeDelta: {x: 0, y: 0.0010376}
+  m_AnchorMin: {x: 0.05655556, y: 0.545}
+  m_AnchorMax: {x: 0.94529635, y: 0.95153934}
+  m_AnchoredPosition: {x: -1.000061, y: 1.0000153}
+  m_SizeDelta: {x: -4.1392975, y: -2.2302017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2963496347869453326
 CanvasRenderer:
@@ -336,10 +336,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -448,10 +448,10 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 500, y: 150}
+  m_CellSize: {x: 1080, y: 150}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
-  m_ConstraintCount: 2
+  m_ConstraintCount: 1
 --- !u!1 &5127992070811687169
 GameObject:
   m_ObjectHideFlags: 0
