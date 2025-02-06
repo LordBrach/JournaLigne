@@ -31,13 +31,13 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (isUsed) return;
+        
         StartDrag(eventData);
     }
 
     public void StartDrag(PointerEventData eventData)
     {
-        if (isUsed) return;
-        
         CreateClone();
         originalPosition = rectTransform.parent;
         canvasGroup.alpha = 0.6f;
@@ -51,6 +51,8 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (isUsed) return;
+        
         UpdateDrag(eventData);
     }
 
@@ -63,24 +65,28 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     
     public void OnEndDrag(PointerEventData eventData)
     {
-        ApplyStrikeThrough();
-        
         if (isUsed) return;
+        
         ResetPosition();
     }
 
     public void EndDrag()
     {
-        ApplyStrikeThrough();
+        StopDrag();
+    }
+
+    public void StopDrag()
+    {
+        ResetPosition();
         
         if (isUsed) return;
         _animator.SetBool("OpenClose", true);
-        ResetPosition();
     }
 
     public void ResetPosition()
     {
         
+        ApplyStrikeThrough();
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         

@@ -18,6 +18,7 @@ namespace LittleDialogue.Runtime
 #if LITTLE_GRAPH
         //Dialogue Nodes
         private List<LDDialogueNode> m_dialogueNodes;
+        private List<LDDisplayNode> m_displayNodes;
         private LDDialogueNode m_currentNode;
 #endif
         //Dialogue Box UI
@@ -82,6 +83,12 @@ namespace LittleDialogue.Runtime
                 {
                     dialogueNode.Executed += OnDialogueNodeExecuted;
                 }
+
+                m_displayNodes = graphObject.GraphInstance.Nodes.OfType<LDDisplayNode>().ToList();
+                foreach (LDDisplayNode displayNode in m_displayNodes)
+                {
+                    displayNode.Executed += OnDisplayNodeExecuted;
+                }
             }
             
             //Subscribe to Dialogue Box Events
@@ -103,6 +110,12 @@ namespace LittleDialogue.Runtime
             {
                 dialogueNode.Executed += OnDialogueNodeExecuted;
             }
+            
+            m_displayNodes = graphInstance.Nodes.OfType<LDDisplayNode>().ToList();
+            foreach (LDDisplayNode displayNode in m_displayNodes)
+            {
+                displayNode.Executed += OnDisplayNodeExecuted;
+            }
         }
 
         private void OnDialogueNodeExecuted(LGNode node)
@@ -121,9 +134,22 @@ namespace LittleDialogue.Runtime
                 
                 m_dialogueBox.UpdateInterlocutorImage(m_currentNode.InterlocutorSprite);
                 m_dialogueBox.UpdateBackgroundImage(m_currentNode.BackgroundSprite);
+                m_dialogueBox.UpdateForegroundImage(m_currentNode.ForegroundSprite);
             }
         }
 
+        private void OnDisplayNodeExecuted(LGNode node)
+        {
+            if(!m_dialogueBox) return;
+
+            if (node is LDDisplayNode displayNode)
+            {
+                m_dialogueBox.ChangeBackgroundDisplay(displayNode.BackgroundDisplayType);
+                m_dialogueBox.ChangeForegroundDisplay(displayNode.ForegroundDisplayType);
+                m_dialogueBox.ChangeInterlocutorDisplay(displayNode.InterlocutorDisplayType);
+            }
+        }
+        
         private void OnTextUpdateEnd()
         {
             if (m_currentNode is LDNoChoiceDialogueNode noChoiceDialogueNode)

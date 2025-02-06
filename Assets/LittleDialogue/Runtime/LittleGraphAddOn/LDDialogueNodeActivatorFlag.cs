@@ -12,7 +12,7 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
         Stopper = 0x02
     }
 
-    public enum LDDialogueDisplay
+    public enum LDDialogueDisplayType
     {
         None,
         Show,
