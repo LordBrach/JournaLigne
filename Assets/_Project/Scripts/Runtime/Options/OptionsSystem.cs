@@ -9,6 +9,7 @@ namespace _Project.Scripts.Runtime.Options
     public class OptionsSystem : MonoBehaviour
     {
         // FIELDS //
+        [Header("Audio Options")]
         //Audio
         [SerializeField] private AudioMixer m_mainAudioMixer;
         
@@ -20,10 +21,16 @@ namespace _Project.Scripts.Runtime.Options
         [SerializeField] private Slider m_musicVolumeSlider;
         [SerializeField] private Slider m_sfxVolumeSlider;
         
+        [Header("Quality Options")]
         //Quality
         [SerializeField] private TMP_Dropdown m_qualityDropdown;
         
         //Language
+        [Header("Language Options")]
+        [SerializeField] private string m_englishLanguageKey;
+        [SerializeField] private string m_frenchLanguageKey;
+        [SerializeField] private LanguageButtonUI m_languageButtonUI;
+        private bool m_isEnglishOn = true;
         
         // METHODS //
         
@@ -52,6 +59,8 @@ namespace _Project.Scripts.Runtime.Options
                 m_mainAudioMixer.GetFloat(m_sfxVolumeParamName, out float sfxVolumeValue);
                 m_sfxVolumeSlider.value = sfxVolumeValue;
             }
+            
+            SwitchToEnglish();
         }
 
         #region SoundOptions
@@ -80,13 +89,38 @@ namespace _Project.Scripts.Runtime.Options
         
         #region LanguagesOptions
 
-        public void SetLanguage(string languageKey)
+        public void SwitchLanguage()
+        {
+            if (m_isEnglishOn)
+            {
+                SwitchToFrench();
+            }
+            else
+            {
+                SwitchToEnglish();
+            }
+        }
+
+        private void SwitchToEnglish()
+        {
+            m_isEnglishOn = true;
+            SetLanguage(m_englishLanguageKey);
+            if(m_languageButtonUI) m_languageButtonUI.SwitchToEnglish();
+        }
+        
+        private void SwitchToFrench()
+        {
+            m_isEnglishOn = false;
+            SetLanguage(m_frenchLanguageKey);
+            if(m_languageButtonUI) m_languageButtonUI.SwitchToFrench();
+        }
+        
+        private void SetLanguage(string languageKey)
         {
             if (LocalizationManager.Instance)
             {
                 LocalizationManager.Instance.SetLanguage(languageKey);
             }
-            
         }
         
         #endregion

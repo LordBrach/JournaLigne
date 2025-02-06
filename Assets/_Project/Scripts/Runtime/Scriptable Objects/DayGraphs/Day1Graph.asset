@@ -98,7 +98,6 @@ MonoBehaviour:
             PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        DialogueNodeActivatorFlag: -1
         DialogueKey: A
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}

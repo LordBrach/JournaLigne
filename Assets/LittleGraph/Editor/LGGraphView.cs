@@ -58,12 +58,29 @@ namespace LittleGraph.Editor
             this.AddManipulator(new RectangleSelector());
             this.AddManipulator(new ClickSelector());
 
+            SetupZoom(0.5f,2.0f);
+
+            AddMinimap();
+            
             GetCustomEditorNodeTypes();
             
             DrawNodes();
             DrawConnections();
 
             graphViewChanged += OnGraphViewChangedEvent;
+        }
+
+        private void AddMinimap()
+        {
+            MiniMap miniMap = new MiniMap()
+            {
+                anchored = false,
+                graphView = this
+            };
+            
+            miniMap.SetPosition(new Rect(15f,15f,200f,100f));
+            
+            Add(miniMap);
         }
 
         private void GetCustomEditorNodeTypes()

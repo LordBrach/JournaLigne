@@ -11,5 +11,12 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
         Starter = 0x01,
         Stopper = 0x02
     }
+
+    public enum LDDialogueDisplay
+    {
+        None,
+        Show,
+        Hide
+    }
 #endif
 }

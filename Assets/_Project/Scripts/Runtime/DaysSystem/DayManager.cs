@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using _Project.Scripts.Runtime.TransitionSystem;
 using LittleGraph.Runtime;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -97,6 +98,17 @@ public class DayManager : MonoBehaviour
     /// </summary>
     public void NextDay()
     {
+        if (TransitionManager.Instance)
+        {
+            TransitionManager.Instance.OnFadeInEnded += OnNextDayFadeInEnded;
+            TransitionManager.Instance.FadeIn();
+        }
+    }
+
+    private void OnNextDayFadeInEnded()
+    {
+        TransitionManager.Instance.OnFadeInEnded -= OnNextDayFadeInEnded;
+        
         EndCurrentDay();
 
         if (_currentDayIndex + 1 < daysList.Count)
@@ -117,6 +129,8 @@ public class DayManager : MonoBehaviour
         {
             Debug.Log("Plus de jours disponibles dans la liste !");
         }
+        
+        TransitionManager.Instance.FadeOut();
     }
 
     /// <summary>
