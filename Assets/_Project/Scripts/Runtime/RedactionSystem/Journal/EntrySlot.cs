@@ -106,12 +106,12 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         
         currentAppreciation = _notebookEntry.people * _multiplier.multiplier;
         
-        if (currentAppreciation > 0)
+        if (currentAppreciation < 0)
         {
             icon.gameObject.SetActive(true);
             icon.sprite = rebelsIcon;
         }
-        else if (currentAppreciation < 0)
+        else if (currentAppreciation > 0)
         {
             icon.gameObject.SetActive(true);
             icon.sprite = governmentIcon;
