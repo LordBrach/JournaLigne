@@ -2166,6 +2166,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueBoxParent
       objectReference: {fileID: 0}
+    - target: {fileID: 2469784889549735965, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722403342411685366, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8480193180386525044, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: OnTextUpdateEndedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
