@@ -133,7 +133,7 @@ namespace LittleGraph.Editor
         
         private void CreateFlowInputPort()
         {
-            Port inputPort = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single,
+            Port inputPort = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi,
                 typeof(PortTypes.FlowPort));
             inputPort.portName = "In";
             inputPort.tooltip = "Flow input";

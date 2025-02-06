@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [DefaultExecutionOrder(-1000)]
 public class LocalizationManager : MonoBehaviour
@@ -69,14 +71,39 @@ public class LocalizationManager : MonoBehaviour
     
     public void LoadTranslations()
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "translations", "translations.json");
+        TextAsset jsonAsset = Resources.Load<TextAsset>("translations");
 
-        if (System.IO.File.Exists(filePath))
+        if (jsonAsset != null)
         {
-            string json = System.IO.File.ReadAllText(filePath);
+            Debug.Log("Loading translations from Resources.");
+            ApplyTranslations(jsonAsset.text);
+        }
+        else
+        {
+            Debug.LogError("Translation file not found in Resources.");
+        }
+    }
+
+    private void ApplyTranslations(string json)
+    {
+        if (string.IsNullOrEmpty(json))
+        {
+            Debug.LogError("Translation JSON is empty or null.");
+            return;
+        }
+
+        try
+        {
             LocalizationData.TranslationList translationList = JsonUtility.FromJson<LocalizationData.TranslationList>(json);
 
+            if (translationList == null || translationList.translations == null)
+            {
+                Debug.LogError("Translation data is not in the expected format.");
+                return;
+            }
+
             _translations.Clear();
+
             foreach (var translationData in translationList.translations)
             {
                 Dictionary<string, string> translationDict = new Dictionary<string, string>();
@@ -87,9 +114,9 @@ public class LocalizationManager : MonoBehaviour
                 _translations[translationData.key] = translationDict;
             }
         }
-        else
+        catch (Exception ex)
         {
-            Debug.LogWarning("No translation file found.");
+            Debug.LogError("Error parsing translation JSON: " + ex.Message);
         }
     }
 }

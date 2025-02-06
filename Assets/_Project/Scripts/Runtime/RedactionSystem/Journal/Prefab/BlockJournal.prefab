@@ -190,7 +190,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 18
+  m_fontSizeMax: 80
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -276,8 +276,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.89300007, y: 0.8853839}
   m_AnchorMax: {x: 0.9912677, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0069999695}
-  m_SizeDelta: {x: 0.000005722, y: 0.0142}
+  m_AnchoredPosition: {x: -2.1807, y: -2.4811}
+  m_SizeDelta: {x: 4.3614, y: 4.9625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7536184924862833660
 CanvasRenderer:
@@ -325,6 +325,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7770694216065121649}
     m_Modifications:
+    - target: {fileID: 958078957991004284, guid: c9bc855c3d1bbf54b9c818726dc28a95, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 958078957991004284, guid: c9bc855c3d1bbf54b9c818726dc28a95, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 1293039755788387373, guid: c9bc855c3d1bbf54b9c818726dc28a95, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
