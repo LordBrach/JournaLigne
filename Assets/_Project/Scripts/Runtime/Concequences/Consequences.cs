@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,7 @@ public class Consequences : MonoBehaviour
     [SerializeField] private Image imageComp;
     [SerializeField] private GameObject boxContainer;
     public List<ConsequenceImage> consequencesImages = new List<ConsequenceImage>();
+    [SerializeField] private TextMeshProUGUI textComp;
 
     private Days _currentDay;
     public event Action<Days> OnConsequencesHide;
@@ -70,10 +72,12 @@ public class Consequences : MonoBehaviour
         if (currentInfluence > currentMaxInfluence/2)
         {
             imageComp.sprite = GetConsequenceImage(currentDay.keyFavorable);
+            textComp.text = currentDay.keyFavorable;
         }
         else if (currentInfluence < currentMaxInfluence/2)
         {
             imageComp.sprite = GetConsequenceImage(currentDay.keyUnfavorable);
+            textComp.text = currentDay.keyUnfavorable;
         }
     }
 }

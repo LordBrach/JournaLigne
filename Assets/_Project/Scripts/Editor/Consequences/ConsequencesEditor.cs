@@ -11,6 +11,7 @@ public class ConsequencesEditor : Editor
     private SerializedProperty containerComp;
     private SerializedProperty consequencesImages;
     private SerializedProperty influenceData;
+    private SerializedProperty consequencesText;
 
     private void OnEnable()
     {
@@ -20,6 +21,7 @@ public class ConsequencesEditor : Editor
         consequencesImages = serializedObject.FindProperty("consequencesImages");
         influenceData = serializedObject.FindProperty("influence");
         containerComp = serializedObject.FindProperty("boxContainer");
+        consequencesText = serializedObject.FindProperty("textComp");
     }
 
     public override void OnInspectorGUI()
@@ -33,6 +35,7 @@ public class ConsequencesEditor : Editor
         EditorGUILayout.LabelField("UI Components", EditorStyles.boldLabel);
         EditorGUILayout.PropertyField(imageComp);
         EditorGUILayout.PropertyField(containerComp);
+        EditorGUILayout.PropertyField(consequencesText);
         EditorGUILayout.Space();
 
         EditorGUILayout.LabelField("Consequences Images", EditorStyles.boldLabel);
