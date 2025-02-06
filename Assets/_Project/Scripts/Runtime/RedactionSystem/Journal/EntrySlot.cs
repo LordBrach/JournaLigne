@@ -64,10 +64,9 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if (draggedEntry)
         {
-            if (_draggableEntry)
+            if (_draggableEntry && _draggableEntry.isUsed && _draggableEntry != draggedEntry)
             {
                 _draggableEntry.isUsed = false;
-                _draggableEntry.ApplyStrikeThrough();
                 _draggableEntry.ResetPosition();
             }
                 
@@ -77,12 +76,11 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
 
         EntrySlot draggedSlot = eventData.pointerDrag.GetComponent<EntrySlot>();
-        if (draggedSlot != null && draggedSlot._draggableEntry != null)
+        if (draggedSlot&& draggedSlot._draggableEntry)
         {
-            if (_draggableEntry)
+            if (_draggableEntry && _draggableEntry.isUsed && _draggableEntry != draggedSlot._draggableEntry)
             {
                 _draggableEntry.isUsed = false;
-                _draggableEntry.ApplyStrikeThrough();
                 _draggableEntry.ResetPosition();
             }
             
@@ -99,8 +97,8 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if (_notebookEntry != null)
         {
             _textMesh.text = _notebookEntry.associatedText;
-            _draggableEntry.EndDrag();
             _draggableEntry.isUsed = true;
+            _draggableEntry.StopDrag();
             haveAppreciation = true;
         }
         
