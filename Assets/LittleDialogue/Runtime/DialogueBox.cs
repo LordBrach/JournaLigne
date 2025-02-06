@@ -253,7 +253,6 @@ namespace LittleDialogue.Runtime
             if(!m_interlocutorImage) return;
 
             m_interlocutorImage.sprite = inNewSprite;
-            m_interlocutorImage.SetNativeSize();
         }
         
         public void UpdateBackgroundImage(Sprite inNewSprite)

@@ -75,10 +75,10 @@ namespace _Project.Scripts.Runtime.Story
                 m_consequences.OnConsequencesValidate += OnConsequenceValidateEvent;
             }
             
+            HideAll();
             
             //Start first day
             DayManager.instance.StartNewDay();
-            
         }
 
         private void OnDayStartedEvent(Days dayStarted)
@@ -86,7 +86,7 @@ namespace _Project.Scripts.Runtime.Story
             switch (dayStarted.dayType)
             {
                 case DayType.Interview:
-                    OnDebateDay.Invoke();
+                    OnDebateDay?.Invoke();
                     m_dayGraphObject.ReplaceGraph(dayStarted.currentGraph);
             
                     m_dialogueController.SubscribeToGraphInstance(m_dayGraphObject.GraphInstance);
@@ -96,11 +96,11 @@ namespace _Project.Scripts.Runtime.Story
                     m_dayGraphObject.ExecuteAsset();
                     break;
                 case DayType.Article:
-                    OnArticleDay.Invoke();
+                    OnArticleDay?.Invoke();
                     NoteBook.instance.ShowNewsPaper();
                     break;
                 case DayType.Review:
-                    OnEndingDay.Invoke();
+                    OnEndingDay?.Invoke();
                     m_consequences.ShowConsequences(dayStarted);
                     break;
                 case DayType.EndGame:
@@ -114,10 +114,7 @@ namespace _Project.Scripts.Runtime.Story
 
         private void EndGame()
         {
-            NoteBook.instance.HideNewsPaper();
-            m_consequences.HideConsequences();
-            m_resultGraph.Hide();
-            m_dialogueController.HideDialogue();
+            HideAll();
             
             if (GameManager.Instance)
             {
@@ -129,6 +126,14 @@ namespace _Project.Scripts.Runtime.Story
             }
         }
 
+        public void HideAll()
+        {
+            NoteBook.instance.HideNewsPaper();
+            m_consequences.HideConsequences();
+            m_resultGraph.Hide();
+            m_dialogueController.HideDialogue(); 
+        }
+        
         private void OnDayChangedEvent(Days newDay)
         {
             

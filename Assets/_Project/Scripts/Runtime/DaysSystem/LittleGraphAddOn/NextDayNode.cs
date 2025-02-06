@@ -1,5 +1,6 @@
 using LittleGraph.Runtime;
 using LittleGraph.Runtime.Attributes;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.DaysSystem.LittleGraphAddOn
 {
@@ -9,8 +10,10 @@ namespace _Project.Scripts.Runtime.DaysSystem.LittleGraphAddOn
     {
         protected override void ExecuteNode()
         {
+            Debug.Log("Execute NextDayNode");
             if (DayManager.instance != null)
             {
+                Debug.Log("Found Day Manager");
                 DayManager.instance.NextDay();
             }
             
