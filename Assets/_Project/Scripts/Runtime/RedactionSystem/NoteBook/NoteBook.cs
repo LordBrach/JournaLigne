@@ -20,6 +20,7 @@ public class NoteBook : MonoBehaviour
     [SerializeField] private GameObject newsPaper;
     
     public event Action<Appreciations> OnNewsPaperValidate;
+    public event Action<int> NewEntryAdded;
 
     private void Awake()
     {
@@ -58,6 +59,8 @@ public class NoteBook : MonoBehaviour
         };
 
         notebookEntries.Add(newEntry);
+        NewEntryAdded?.Invoke(1);
+        
         Debug.Log($"Nouvelle entrée ajoutée : {dialoguePhrase}");
     }
 

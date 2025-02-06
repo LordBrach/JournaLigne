@@ -1,9 +1,13 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TMPro;
+using Unity.EditorCoroutines.Editor;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Networking;
 using static UnityEngine.GUILayout;
 
 public class Localization : EditorWindow
@@ -15,8 +19,8 @@ public class Localization : EditorWindow
     
     private int _selectedTab = 0;
     private Vector2 _textMeshProScrollPosition;
-    private List<TMP_Text> _translateObjects;
-    public List<TMP_Text> GetTexts() => _translateObjects;
+    private List<TextMeshProUGUI> _translateObjects;
+    public List<TextMeshProUGUI> GetTexts() => _translateObjects;
 
     [MenuItem("Tools/Localization Editor")]
     public static void ShowWindow()
@@ -50,12 +54,38 @@ public class Localization : EditorWindow
     {
         Label("Localization Table", EditorStyles.boldLabel);
         _scrollPosition = BeginScrollView(_scrollPosition, false, true);
-    
+        
+        Dictionary<int, float> langWidths = new Dictionary<int, float>();
+
+        foreach (var entry in _translations)
+        {
+            foreach (var langEntry in entry.Value)
+            {
+                float textWidth = GUI.skin.textField.CalcSize(new GUIContent(langEntry.Value)).x + 20;
+
+                if (!langWidths.ContainsKey(entry.Value.Keys.ToList().IndexOf(langEntry.Key)))
+                {
+                    langWidths[entry.Value.Keys.ToList().IndexOf(langEntry.Key)] = textWidth;
+                }
+                else
+                {
+                    langWidths[entry.Value.Keys.ToList().IndexOf(langEntry.Key)] = Mathf.Max(langWidths[entry.Value.Keys.ToList().IndexOf(langEntry.Key)], textWidth);
+                }
+            }
+        }
+        
+        float maxKeyWidth = 200;
+        foreach (var entry in _translations)
+        {
+            maxKeyWidth = Mathf.Max(maxKeyWidth, GUI.skin.label.CalcSize(new GUIContent(entry.Key)).x + 20);
+            
+        }
+        
         BeginHorizontal();
-        GUILayout.Label("Key", Width(200));
+        GUILayout.Label("Key", Width(maxKeyWidth + 20));
         for (int i = 0; i < _languages.Count; i++)
         {
-            _languages[i] = EditorGUILayout.TextField(_languages[i], Width(76.8f));
+            _languages[i] = EditorGUILayout.TextField(_languages[i], GUILayout.Width(langWidths[i] - 23));
     
             if (GUILayout.Button("X", Width(20)))
             {
@@ -64,85 +94,107 @@ public class Localization : EditorWindow
             }
         }
         EndHorizontal();
-    
+        
+        Dictionary<string, string> keysToRename = new Dictionary<string, string>();
         List<string> keysToRemove = new List<string>();
+        Dictionary<string, Dictionary<string, string>> newTranslations = new Dictionary<string, Dictionary<string, string>>();
+        
         List<string> keys = new List<string>(_translations.Keys);
-        foreach (var t in keys)
+
+        foreach (var key in keys)
         {
-            string key = t;
             BeginHorizontal();
-            
-            // Update and Remove Keys
+
+            // Bouton pour supprimer la clé
             if (GUILayout.Button("X", GUILayout.Width(20)))
             {
-                keysToRemove.Add(key); 
+                keysToRemove.Add(key);
             }
-    
-            // Update and Create Keys
-            string newKey = EditorGUILayout.TextField(key, Width(179));
-            if (newKey != key)
+
+            // Saisie pour modifier la clé
+            string newKey = EditorGUILayout.TextField(key, GUILayout.Width(maxKeyWidth));
+            if (newKey != key && !keysToRename.ContainsKey(key) && !_translations.ContainsKey(newKey))
             {
-                if (!_translations.ContainsKey(newKey))
-                {
-                    _translations[newKey] = new Dictionary<string, string>(_translations[key]);
-                    _translations.Remove(key);
-                    key = newKey;
-                }
+                keysToRename[key] = newKey;
             }
-    
-            // Update and Create Translations
+
+            // Affichage des traductions
             for (int j = 0; j < _languages.Count; j++)
             {
                 string lang = _languages[j];
-                if (_translations[key].ContainsKey(lang))
+                if (!_translations[key].ContainsKey(lang))
                 {
-                    _translations[key][lang] = EditorGUILayout.TextField(_translations[key][lang], Width(100));
+                    _translations[key][lang] = "";
                 }
-                else
-                {
-                    _translations[key][lang] = EditorGUILayout.TextField("", Width(100));
-                }
+                _translations[key][lang] = EditorGUILayout.TextField(_translations[key][lang], GUILayout.Width(langWidths[j]));
             }
+
             EndHorizontal();
         }
+
+        // Suppression des clés marquées
         foreach (var keyToRemove in keysToRemove)
         {
-            RemoveKey(keyToRemove);
+            _translations.Remove(keyToRemove);
         }
-        
+
+        // Application des renommages en recréant un dictionnaire propre
+        foreach (var kvp in _translations)
+        {
+            string actualKey = keysToRename.ContainsKey(kvp.Key) ? keysToRename[kvp.Key] : kvp.Key;
+            newTranslations[actualKey] = new Dictionary<string, string>(kvp.Value);
+        }
+
+        // Remplacement du dictionnaire pour éviter des conflits d'ordre
+        _translations = newTranslations;
+
         EndScrollView();
         
-        // NEW KEY
-        if (Button("Add New Key"))
-        {
-            AddNewKey();
-        }
-    
-        // NEW LANGUAGE
-        if (Button("Add New Language"))
-        {
-            AddNewLanguage();
-        }
-    
-        // IMPORT CSV
+        // Section : Gestion des Clés et Langues
+        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.LabelField("Keys & Languages", EditorStyles.boldLabel);
+        if (Button("Add New Key")) AddNewKey();
+        if (Button("Add New Language")) AddNewLanguage();
+        EditorGUILayout.EndVertical();
+
         Space(10);
-        if (Button("Import CSV"))
-        {
-            ImportCsv();
-        }
-        
-        // IMPORT CSV
-        if (Button("Export CSV"))
-        {
-            ExportCsv();
-        }
-    
-        // SAVE
-        if (Button("Save All"))
-        {
-            SaveTranslations();
-        }
+
+        // Section : Import / Export
+        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.LabelField("Import / Export", EditorStyles.boldLabel);
+        if (Button("Import CSV")) ImportCsv();
+        if (Button("Export CSV")) ExportCsv();
+        EditorGUILayout.EndVertical();
+
+        Space(10);
+
+        // Section : Sauvegarde et Restauration
+        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.LabelField("Save & Restore", EditorStyles.boldLabel);
+        if (Button("Save All")) SaveTranslations();
+
+        EditorGUILayout.BeginHorizontal();
+        if (Button("Refresh")) RevertAllUnsaved();
+        if (Button("Revert All")) RevertAll();
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.EndVertical();
     }
+    
+    // Revert
+    #region Revert
+
+    private void RevertAll()
+    {
+        _translations.Clear();
+    }
+
+    private void RevertAllUnsaved()
+    {
+        _translations.Clear();
+        LoadTranslations();
+    }
+
+    #endregion
 
     // Text Component
     #region Text Component
@@ -218,32 +270,11 @@ public class Localization : EditorWindow
         /*- Find all text -*/
         private void FindAllTranslateObjects()
         {
-            _translateObjects = new List<TMP_Text>();
+            _translateObjects = new List<TextMeshProUGUI>();
 
-            // Trouver les textes dans la scène
-            var allObjects = Resources.FindObjectsOfTypeAll<TextMeshProUGUI>();
+            Dictionary<string, TextMeshProUGUI> prefabTexts = new Dictionary<string, TextMeshProUGUI>();
 
-            foreach (var obj in allObjects)
-            {
-                if (obj == null || obj.gameObject == null)
-                {
-                    Debug.LogWarning("Found a null or destroyed object while searching for TextMeshProUGUI.");
-                    continue;
-                }
-
-                if (obj.GetComponent<TranslationComponent>())
-                {
-                    if (!_translateObjects.Contains(obj))
-                        _translateObjects.Add(obj);
-                }
-                else if (obj.GetComponent<TextMeshProUGUI>()&& !obj.GetComponent<TranslationComponent>())
-                {
-                    obj.gameObject.AddComponent<TranslationComponent>();
-                    _translateObjects.Add(obj);
-                }
-            }
-
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
             // Trouver les textes dans les prefabs
             string[] prefabGuids = AssetDatabase.FindAssets("t:Prefab");
 
@@ -259,16 +290,26 @@ public class Localization : EditorWindow
 
                     foreach (var text in textsInPrefab)
                     {
-                        if (text.GetComponent<TranslationComponent>())
+                        if (!prefabTexts.ContainsKey(text.text))
                         {
-                            if (!_translateObjects.Contains(text))
-                                _translateObjects.Add(text);
+                            prefabTexts[text.text] = text;
                         }
-                        else
+                        
+                        if (PrefabUtility.IsPartOfPrefabInstance(text.gameObject) == false)
                         {
-                            text.gameObject.AddComponent<TranslationComponent>();
-                            _translateObjects.Add(text);
+                            RemoveDuplicateComponents<TranslationComponent>(text.gameObject);
+                        }
+
+                        if (!text.gameObject.GetComponent<TranslationComponent>())
+                        {
+                            TranslationComponent comp = text.gameObject.AddComponent<TranslationComponent>();
+                            comp._isTranslatable = false;
                             prefabModified = true;
+                        }
+
+                        if (!_translateObjects.Contains(text))
+                        {
+                            _translateObjects.Add(text);
                         }
                     }
 
@@ -280,9 +321,52 @@ public class Localization : EditorWindow
                     }
                 }
             }
-#endif
+        #endif
 
-            Debug.Log($"Found {_translateObjects.Count} TextMeshPro objects with TranslationComponent.");
+            // Trouver les textes dans la scène
+            var allObjects = Resources.FindObjectsOfTypeAll<TextMeshProUGUI>();
+
+            foreach (var obj in allObjects)
+            {
+                if (obj == null || obj.gameObject == null)
+                {
+                    Debug.LogWarning("Found a null or destroyed object while searching for TextMeshProUGUI.");
+                    continue;
+                }
+
+                if (prefabTexts.ContainsKey(obj.text))
+                {
+                    // Si le texte existe aussi dans un prefab, ne pas ajouter le component dans la scène
+                    continue;
+                }
+                
+                RemoveDuplicateComponents<TranslationComponent>(obj.gameObject);
+
+                if (!obj.gameObject.GetComponent<TranslationComponent>())
+                {
+                    TranslationComponent comp = obj.gameObject.AddComponent<TranslationComponent>();
+                    comp._isTranslatable = false;
+                }
+
+                if (!_translateObjects.Contains(obj))
+                {
+                    _translateObjects.Add(obj);
+                }
+            }
+        }
+        
+        private void RemoveDuplicateComponents<T>(GameObject obj) where T : Component
+        {
+            if (PrefabUtility.IsPartOfPrefabAsset(obj)) return;
+
+            T[] components = obj.GetComponents<T>();
+            if (components.Length > 1)
+            {
+                for (int i = 1; i < components.Length; i++)
+                {
+                    GameObject.DestroyImmediate(components[i]);
+                }
+            }
         }
 
     #endregion
@@ -364,64 +448,65 @@ public class Localization : EditorWindow
     #region Save
     
     /*- Saving -*/
-        private void SaveTranslations()
+    private void SaveTranslations()
+    {
+        string resourcesPath = Path.Combine(Application.dataPath, "Resources");
+        if (!Directory.Exists(resourcesPath))
         {
-            string directoryPath = Path.Combine(Application.streamingAssetsPath, "translations");
-            if (!Directory.Exists(directoryPath))
-            {
-                Directory.CreateDirectory(directoryPath);
-            }
-            
-            string filePath = Path.Combine(directoryPath, "translations.json");
-            if (!File.Exists(filePath))
-            {
-                File.Create(filePath).Close();
-            }
-
-    
-            TranslationList translationList = new TranslationList();
-            foreach (var keyValuePair in _translations)
-            {
-                translationList.translations.Add(new TranslationData(keyValuePair.Key, keyValuePair.Value));
-            }
-            
-            string json = JsonUtility.ToJson(translationList, true);
-            File.WriteAllText(filePath, json);
-            
-            EditorApplication.delayCall += () =>
-            {
-                if (!EditorApplication.isCompiling && !EditorApplication.isUpdating)
-                {
-                    AssetDatabase.Refresh();
-                    UnityEditor.Compilation.CompilationPipeline.RequestScriptCompilation();
-                }
-            };
+            Directory.CreateDirectory(resourcesPath);
         }
-    
+
+        string filePath = Path.Combine(resourcesPath, "translations.json");
+        if (!File.Exists(filePath))
+        {
+            File.Create(filePath).Close();
+        }
+
+        TranslationList translationList = new TranslationList();
+        foreach (var keyValuePair in _translations)
+        {
+            translationList.translations.Add(new TranslationData(keyValuePair.Key, keyValuePair.Value));
+        }
+
+        string json = JsonUtility.ToJson(translationList, true);
+        File.WriteAllText(filePath, json);
+
+        #if UNITY_EDITOR
+        AssetDatabase.Refresh();
+        #endif
+
+        Debug.Log("Translations saved to: " + filePath);
+    }
+        
         /*- Load Translation -*/
         private void LoadTranslations()
         {
-            string filePath = Path.Combine(Application.streamingAssetsPath, "translations", "translations.json");
+            TextAsset jsonAsset = Resources.Load<TextAsset>("translations");
 
-            if (File.Exists(filePath))
+            if (jsonAsset != null)
             {
-                string json = File.ReadAllText(filePath);
-                TranslationList translationList = JsonUtility.FromJson<TranslationList>(json);
-
-                _translations.Clear();
-                foreach (var translationData in translationList.translations)
-                {
-                    Dictionary<string, string> translationDict = new Dictionary<string, string>();
-                    foreach (var langData in translationData.translations)
-                    {
-                        translationDict[langData.language] = langData.translation;
-                    }
-                    _translations[translationData.key] = translationDict;
-                }
+                Debug.Log("Loading translations from Resources.");
+                ApplyTranslations(jsonAsset.text);
             }
             else
             {
-                Debug.LogWarning("No translation file found.");
+                Debug.LogError("Translation file not found in Resources.");
+            }
+        }
+
+        private void ApplyTranslations(string json)
+        {
+            TranslationList translationList = JsonUtility.FromJson<TranslationList>(json);
+            _translations.Clear();
+
+            foreach (var translationData in translationList.translations)
+            {
+                Dictionary<string, string> translationDict = new Dictionary<string, string>();
+                foreach (var langData in translationData.translations)
+                {
+                    translationDict[langData.language] = langData.translation;
+                }
+                _translations[translationData.key] = translationDict;
             }
         }
     

@@ -6,12 +6,12 @@ using UnityEditor;
 public class TranslationComponentEditor : Editor
 {
     private TranslationComponent _translationComponent;
-    private TMP_Text _textComponent;
+    private TextMeshProUGUI _textComponent;
 
     private void OnEnable()
     {
         _translationComponent = (TranslationComponent)target;
-        _textComponent = _translationComponent.GetComponent<TMP_Text>();
+        _textComponent = _translationComponent.GetComponent<TextMeshProUGUI>();
         if (_translationComponent._isTranslatable && _translationComponent._localizationKey != null)
         {
             _textComponent.SetText(Localization.GetTranslation(_translationComponent._localizationKey));
