@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76866ca618497ab45ad671e03118e427
+guid: 45251081c2375e14f8fc86d6e70409b7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiles_Background-300pp_0
+      name: Tiles_Background2-300pp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,41 +131,20 @@ TextureImporter:
         width: 1620
         height: 1680
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d32df1d3251576d40aafb8a83c8ad376
-      internalID: 1058637280
+      spriteID: cde17dc4bd614384d82e54b65fc41f12
+      internalID: 102210875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Background-300pp_1
-      rect:
-        serializedVersion: 2
-        x: 1620
-        y: 3360
-        width: 1620
-        height: 1680
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bf3206315c692d4088b38d70ea7ac6d
-      internalID: -53505241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_Background-300pp_2
+      name: Tiles_Background2-300pp_1
       rect:
         serializedVersion: 2
         x: 0
@@ -173,41 +152,20 @@ TextureImporter:
         width: 1620
         height: 1680
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e3e02ed8bdab7341a3d0385e0a46bd3
-      internalID: -733923578
+      spriteID: 8e6221103646041498750c34a4529e3a
+      internalID: 546618148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Background-300pp_3
-      rect:
-        serializedVersion: 2
-        x: 1620
-        y: 1680
-        width: 1620
-        height: 1680
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed8604a0f227dd84099a076d8830e85a
-      internalID: 190222217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_Background-300pp_4
+      name: Tiles_Background2-300pp_2
       rect:
         serializedVersion: 2
         x: 0
@@ -215,35 +173,14 @@ TextureImporter:
         width: 1620
         height: 1680
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8eebfa475356254cbd13e2247f451d5
-      internalID: 2031927724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_Background-300pp_5
-      rect:
-        serializedVersion: 2
-        x: 1620
-        y: 0
-        width: 1620
-        height: 1680
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3776785e4c6d5f94ba59df273ae2b826
-      internalID: -1752090865
+      spriteID: e09414c0b4a3eb043b142fc785808cf5
+      internalID: 1086195642
       vertices: []
       indices: 
       edges: []
@@ -259,12 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tiles_Background-300pp_0: 1058637280
-      Tiles_Background-300pp_1: -53505241
-      Tiles_Background-300pp_2: -733923578
-      Tiles_Background-300pp_3: 190222217
-      Tiles_Background-300pp_4: 2031927724
-      Tiles_Background-300pp_5: -1752090865
+      Tiles_Background2-300pp_0: 102210875
+      Tiles_Background2-300pp_1: 546618148
+      Tiles_Background2-300pp_2: 1086195642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
