@@ -42,7 +42,7 @@ namespace _Project.Scripts.Runtime.Options
                 m_qualityDropdown.RefreshShownValue();
             }
 
-/*            if (m_masterVolumeSlider)
+            if (m_masterVolumeSlider)
             {
                 m_mainAudioMixer.GetFloat(m_masterVolumeParamName, out float masterVolumeValue);
                 m_masterVolumeSlider.value = masterVolumeValue;
@@ -58,7 +58,7 @@ namespace _Project.Scripts.Runtime.Options
             {
                 m_mainAudioMixer.GetFloat(m_sfxVolumeParamName, out float sfxVolumeValue);
                 m_sfxVolumeSlider.value = sfxVolumeValue;
-            }*/
+            }
             
             SwitchToEnglish();
         }
@@ -66,17 +66,17 @@ namespace _Project.Scripts.Runtime.Options
         #region SoundOptions
         public void SetMasterVolume(float newValue)
         {
-            m_mainAudioMixer.SetFloat(m_masterVolumeParamName, newValue - 80);
+            m_mainAudioMixer.SetFloat(m_masterVolumeParamName, newValue);
         }
 
         public void SetMusicVolume(float newValue)
         {
-            m_mainAudioMixer.SetFloat(m_musicVolumeParamName, newValue - 80);
+            m_mainAudioMixer.SetFloat(m_musicVolumeParamName, newValue);
         }
         
         public void SetSFXVolume(float newValue)
         {
-            m_mainAudioMixer.SetFloat(m_sfxVolumeParamName, newValue - 80);
+            m_mainAudioMixer.SetFloat(m_sfxVolumeParamName, newValue);
         }
         #endregion
         

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76866ca618497ab45ad671e03118e427
+guid: 9d2337159d882d94a9e111d509ac062b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -123,127 +123,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiles_Background-300pp_0
+      name: Tiles_Charas-300pp_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3360
-        width: 1620
-        height: 1680
+        y: 1920
+        width: 1080
+        height: 1920
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d32df1d3251576d40aafb8a83c8ad376
-      internalID: 1058637280
+      spriteID: d44f413bce2c6d74093bca5bcd3571a3
+      internalID: 734967745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Background-300pp_1
+      name: Tiles_Charas-300pp_1
       rect:
         serializedVersion: 2
-        x: 1620
-        y: 3360
-        width: 1620
-        height: 1680
+        x: 1080
+        y: 1920
+        width: 1080
+        height: 1920
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bf3206315c692d4088b38d70ea7ac6d
-      internalID: -53505241
+      spriteID: 2e253e613d136a04ab0582d13fe96c3b
+      internalID: 82940048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Background-300pp_2
+      name: Tiles_Charas-300pp_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1680
-        width: 1620
-        height: 1680
+        x: 2160
+        y: 1920
+        width: 1080
+        height: 1920
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e3e02ed8bdab7341a3d0385e0a46bd3
-      internalID: -733923578
+      spriteID: 0ec0b236fc904954db829859636bad88
+      internalID: 1780459376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Background-300pp_3
-      rect:
-        serializedVersion: 2
-        x: 1620
-        y: 1680
-        width: 1620
-        height: 1680
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed8604a0f227dd84099a076d8830e85a
-      internalID: 190222217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_Background-300pp_4
+      name: Tiles_Charas-300pp_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1620
-        height: 1680
+        width: 1080
+        height: 1920
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8eebfa475356254cbd13e2247f451d5
-      internalID: 2031927724
+      spriteID: 8a211c649d7fdb444b61fdb4c809d3eb
+      internalID: -1927605479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Background-300pp_5
+      name: Tiles_Charas-300pp_4
       rect:
         serializedVersion: 2
-        x: 1620
+        x: 1080
         y: 0
-        width: 1620
-        height: 1680
+        width: 1080
+        height: 1920
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3776785e4c6d5f94ba59df273ae2b826
-      internalID: -1752090865
+      spriteID: 40b9e91bcd03f644aabc9c460959dd80
+      internalID: 33422186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Charas-300pp_5
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 1080
+        height: 1920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c393b71003820499ef380a30accad7
+      internalID: -725077850
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tiles_Background-300pp_0: 1058637280
-      Tiles_Background-300pp_1: -53505241
-      Tiles_Background-300pp_2: -733923578
-      Tiles_Background-300pp_3: 190222217
-      Tiles_Background-300pp_4: 2031927724
-      Tiles_Background-300pp_5: -1752090865
+      Tiles_Charas-300pp_0: 734967745
+      Tiles_Charas-300pp_1: 82940048
+      Tiles_Charas-300pp_2: 1780459376
+      Tiles_Charas-300pp_3: -1927605479
+      Tiles_Charas-300pp_4: 33422186
+      Tiles_Charas-300pp_5: -725077850
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
