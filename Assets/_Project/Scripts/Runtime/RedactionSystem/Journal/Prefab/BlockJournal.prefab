@@ -330,8 +330,20 @@ PrefabInstance:
       value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 958078957991004284, guid: c9bc855c3d1bbf54b9c818726dc28a95, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f41ac101cd5efb747ad925884e5c358b, type: 2}
+    - target: {fileID: 958078957991004284, guid: c9bc855c3d1bbf54b9c818726dc28a95, type: 3}
       propertyPath: m_fontSizeMax
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 958078957991004284, guid: c9bc855c3d1bbf54b9c818726dc28a95, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3388794008274856393, guid: f41ac101cd5efb747ad925884e5c358b, type: 2}
+    - target: {fileID: 958078957991004284, guid: c9bc855c3d1bbf54b9c818726dc28a95, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1293039755788387373, guid: c9bc855c3d1bbf54b9c818726dc28a95, type: 3}
       propertyPath: m_Pivot.x
