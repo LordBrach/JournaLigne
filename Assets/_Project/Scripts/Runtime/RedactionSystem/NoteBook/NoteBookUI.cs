@@ -8,6 +8,7 @@ public class NoteBookUI : MonoBehaviour
     [SerializeField] private Transform contentParent;
     
     [SerializeField] private Animator animator;
+    [SerializeField] private TextMeshProUGUI popupText;
 
     private void Awake()
     {
@@ -17,6 +18,21 @@ public class NoteBookUI : MonoBehaviour
 
     private void Start()
     {
+        DisplayNotebook();
+        NoteBook.instance.NewEntryAdded += OnNewEntryAdded;
+    }
+
+    private void OnDisable()
+    {
+        NoteBook.instance.NewEntryAdded -= OnNewEntryAdded;
+    }
+
+    private void OnNewEntryAdded(int number)
+    {
+        popupText.enabled = true;
+        popupText.text = "+" + number;
+        popupText.gameObject.GetComponent<Animator>().SetTrigger("Popup");
+        
         DisplayNotebook();
     }
 
@@ -55,6 +71,9 @@ public class NoteBookUI : MonoBehaviour
         if (!animator) return;
 
          animator.SetBool("OpenCloseInGame", show);
+         
+         if (show)
+             DisplayNotebook();
     }
     
 }
