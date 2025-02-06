@@ -606,26 +606,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1117252061}
     m_Modifications:
-    - target: {fileID: 459481612405847131, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: f41ac101cd5efb747ad925884e5c358b, type: 2}
-    - target: {fileID: 459481612405847131, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -3388794008274856393, guid: f41ac101cd5efb747ad925884e5c358b, type: 2}
-    - target: {fileID: 459481612405847131, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 628720409725893151, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
       propertyPath: m_Name
       value: Consequences
       objectReference: {fileID: 0}
-    - target: {fileID: 628720409725893151, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 3544702987055215175, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d77fa5f82ba60764fb8070080a40175a, type: 3}
     - target: {fileID: 5411586340241677299, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1896,8 +1884,8 @@ MonoBehaviour:
   - day: 3
     dayType: 2
     currentGraph: {fileID: 0}
-    keyFavorable: A
-    keyUnfavorable: B
+    keyFavorable: Consequence_Manticore_ProDictateur_1
+    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion_1"
   - day: 4
     dayType: 1
     currentGraph: {fileID: 11400000, guid: 7ae795a37ff26904eb70ba1e1dca935d, type: 2}
@@ -1911,8 +1899,8 @@ MonoBehaviour:
   - day: 6
     dayType: 2
     currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
-    keyFavorable: A
-    keyUnfavorable: B
+    keyFavorable: Consequence_Manticore_ProDictateur_1
+    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion_1"
   - day: 7
     dayType: 4
     currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
@@ -2125,7 +2113,7 @@ PrefabInstance:
     - target: {fileID: 764919514788542977, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 33422186, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
+      objectReference: {fileID: 21300000, guid: 1026a4495024c2e4b87673b1ada972a2, type: 3}
     - target: {fileID: 845489121739381597, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2273,7 +2261,7 @@ PrefabInstance:
     - target: {fileID: 6619851854966391348, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1086195642, guid: 45251081c2375e14f8fc86d6e70409b7, type: 3}
+      objectReference: {fileID: 21300000, guid: 0a156b90193c0f24b8d64f2b8784642e, type: 3}
     - target: {fileID: 6637372983565060923, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_text
       value: Dialogue
@@ -2324,7 +2312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722403342411685366, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482719981966307605, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_AnchorMax.x

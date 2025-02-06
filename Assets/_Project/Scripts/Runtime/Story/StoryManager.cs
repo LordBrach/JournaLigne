@@ -75,10 +75,10 @@ namespace _Project.Scripts.Runtime.Story
                 m_consequences.OnConsequencesValidate += OnConsequenceValidateEvent;
             }
             
+            HideAll();
             
             //Start first day
             DayManager.instance.StartNewDay();
-            
         }
 
         private void OnDayStartedEvent(Days dayStarted)
@@ -114,10 +114,7 @@ namespace _Project.Scripts.Runtime.Story
 
         private void EndGame()
         {
-            NoteBook.instance.HideNewsPaper();
-            m_consequences.HideConsequences();
-            m_resultGraph.Hide();
-            m_dialogueController.HideDialogue();
+            HideAll();
             
             if (GameManager.Instance)
             {
@@ -129,6 +126,14 @@ namespace _Project.Scripts.Runtime.Story
             }
         }
 
+        public void HideAll()
+        {
+            NoteBook.instance.HideNewsPaper();
+            m_consequences.HideConsequences();
+            m_resultGraph.Hide();
+            m_dialogueController.HideDialogue(); 
+        }
+        
         private void OnDayChangedEvent(Days newDay)
         {
             
