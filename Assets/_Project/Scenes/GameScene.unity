@@ -1061,6 +1061,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1839458050}
+    - target: {fileID: 7213004290190609149, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213004290190609149, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.14475675
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213004290190609149, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 327.357
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213004290190609149, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -509.89398
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213004290190609149, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 164.50002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213004290190609149, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 8934199931722469635, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1078,7 +1102,8 @@ PrefabInstance:
       value: 452.89053
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 20626403374579759, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1cec5906dcaab4438124ddc461edd8a, type: 3}
@@ -2349,7 +2374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722403342411685366, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482719981966307605, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_AnchorMax.x
