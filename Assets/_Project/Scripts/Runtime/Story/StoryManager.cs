@@ -22,7 +22,6 @@ namespace _Project.Scripts.Runtime.Story
         [Header("Events")]
         [SerializeField] UnityEvent OnDebateDay;
         [SerializeField] UnityEvent OnArticleDay;
-        [SerializeField] UnityEvent OnConsequencesDay;
         [SerializeField] UnityEvent OnEndingDay;
 
         #region Singleton
@@ -101,11 +100,10 @@ namespace _Project.Scripts.Runtime.Story
                     NoteBook.instance.ShowNewsPaper();
                     break;
                 case DayType.Review:
-                    OnConsequencesDay.Invoke();
+                    OnEndingDay.Invoke();
                     m_consequences.ShowConsequences(dayStarted);
                     break;
                 case DayType.EndGame:
-                    OnEndingDay.Invoke();
                     EndGame();
                     
                     break;

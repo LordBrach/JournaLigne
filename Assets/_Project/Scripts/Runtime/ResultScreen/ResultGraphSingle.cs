@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -18,7 +19,9 @@ public class ResultGraphSingle : MonoBehaviour
     [SerializeField] private Color ColorBlwTreshhold = Color.blue;
     [SerializeField] float sizeLine = 100.0f;
     [SerializeField] bool showGraphImmediately = false;
-    
+    [Header("Events")]
+    [SerializeField] UnityEvent DrawGraph;
+    [SerializeField] UnityEvent EndDrawGraph;
     // Non visible params
     float graphHeight = 1;
     private float graphWidth = 1;
@@ -79,6 +82,8 @@ public class ResultGraphSingle : MonoBehaviour
     private void HandleNewsPaperValidation(Appreciations appreciations)
     {
         MainContainer.SetActive(true);
+        if(appreciations.peopleAppreciation >= 10 || appreciations.peopleAppreciation <= -10)
+            DrawGraph.Invoke();
         AddValue(appreciations.peopleAppreciation);
     }
     private void Awake()
@@ -142,6 +147,7 @@ public class ResultGraphSingle : MonoBehaviour
         RectTransform _rectTransform = lineReference.GetComponent<RectTransform>();
         if (isCoroutineRunning)
         {
+            EndDrawGraph.Invoke();
             isCoroutineRunning = false;
             StopCoroutine(coroutine);
             _rectTransform.sizeDelta = new Vector2(sizeLine, dist);
@@ -151,7 +157,6 @@ public class ResultGraphSingle : MonoBehaviour
         Vector2 direction = (targetPos - originPos).normalized;
         dist = Vector2.Distance(originPos, targetPos);
         lineReference.GetComponent<UnityEngine.UI.Image>().color = graphColor;
-
         coroutine = StartCoroutine(DrawLine(_rectTransform, dist));
     }
 
@@ -172,6 +177,7 @@ public class ResultGraphSingle : MonoBehaviour
             yield return null;
         }
         _inRectTransform.sizeDelta = new Vector2(sizeLine, dist);
+        EndDrawGraph.Invoke();
     }
 
 #if UNITY_EDITOR
