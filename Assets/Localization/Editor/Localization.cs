@@ -79,7 +79,7 @@ public class Localization : EditorWindow
             }
     
             // Update and Create Keys
-            string newKey = EditorGUILayout.TextField(key, Width(179));
+            string newKey = EditorGUILayout.TextField(key, Width(350));
             if (newKey != key)
             {
                 if (!_translations.ContainsKey(newKey))
@@ -96,7 +96,7 @@ public class Localization : EditorWindow
                 string lang = _languages[j];
                 if (_translations[key].ContainsKey(lang))
                 {
-                    _translations[key][lang] = EditorGUILayout.TextField(_translations[key][lang], Width(100));
+                    _translations[key][lang] = EditorGUILayout.TextField(_translations[key][lang], Width(450));
                 }
                 else
                 {
