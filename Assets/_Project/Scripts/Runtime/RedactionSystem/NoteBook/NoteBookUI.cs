@@ -7,11 +7,12 @@ public class NoteBookUI : MonoBehaviour
     [SerializeField] private GameObject entryPrefab;
     [SerializeField] private Transform contentParent;
     
-    private Animator _animator;
+    [SerializeField] private Animator animator;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        if (!animator)
+            animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -44,7 +45,16 @@ public class NoteBookUI : MonoBehaviour
 
     public void ShowNotebook(bool show)
     {
-        _animator.SetBool("OpenClose", show);
+        if (!animator) return;
+        
+        animator.SetBool("OpenClose", show);
+    }
+
+    public void ShowNotebookInGame(bool show)
+    {
+        if (!animator) return;
+
+         animator.SetBool("OpenCloseInGame", show);
     }
     
 }

@@ -67,6 +67,7 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             if (_draggableEntry)
             {
                 _draggableEntry.isUsed = false;
+                _draggableEntry.ApplyStrikeThrough();
                 _draggableEntry.ResetPosition();
             }
                 
@@ -81,6 +82,7 @@ public class EntrySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             if (_draggableEntry)
             {
                 _draggableEntry.isUsed = false;
+                _draggableEntry.ApplyStrikeThrough();
                 _draggableEntry.ResetPosition();
             }
             
