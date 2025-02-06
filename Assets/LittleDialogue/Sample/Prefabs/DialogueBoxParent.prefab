@@ -52,6 +52,7 @@ MonoBehaviour:
   m_dialogueBoxPanel: {fileID: 6722403342411685366}
   m_interlocutorImage: {fileID: 2472160528106416833}
   m_backgroundImage: {fileID: 6619851854966391348}
+  m_foregroundImage: {fileID: 587737612720161079}
   m_dialogueText: {fileID: 6637372983565060923}
   m_choiceButtonsParent: {fileID: 4972171076315830914}
   m_choiceButtonPrefab: {fileID: 1356797098869766399, guid: cc3c66aa6f8c8cb4e86a7502ef586902, type: 3}
@@ -478,7 +479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1948006834407697881
 RectTransform:
   m_ObjectHideFlags: 0
