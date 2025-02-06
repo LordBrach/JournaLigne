@@ -11,14 +11,14 @@ namespace _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn
         [ExposedProperty] public string NotebookText = "Notebook Text";
         [ExposedProperty] public string ArticleText = "Article Text";
         [ExposedProperty] public float PeopleAppreciation = 1.0f;
-        [ExposedProperty] public float RebelsAppreciation = 1.0f;
-        [ExposedProperty] public float GovernmentAppreciation = 1.0f;
+        // [ExposedProperty] public float RebelsAppreciation = 1.0f;
+        // [ExposedProperty] public float GovernmentAppreciation = 1.0f;
         
         protected override void ExecuteNode()
         {
             if(NoteBook.instance != null)
             {
-                NoteBook.instance.AddEntry(NotebookText, ArticleText, RebelsAppreciation, PeopleAppreciation, GovernmentAppreciation);
+                NoteBook.instance.AddEntry(NotebookText, ArticleText, 1, PeopleAppreciation, 1);
             }
 
             if (m_nodeConnections.Exists(connection => connection.OutputPort.NodeId == ID))
