@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -12,7 +13,7 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [HideInInspector] public bool isUsed = false;
 
     public String text;
-    [SerializeField] private Image image;
+    private TextMeshProUGUI _textMesh;
     
     [HideInInspector] public GameObject cloneInstance;
     private Transform _cloneTransform;
@@ -25,6 +26,7 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         canvasGroup = GetComponent<CanvasGroup>();
         _canvas = GetComponentInParent<Canvas>();
         _animator = GetComponentInParent<Animator>();
+        _textMesh = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -61,13 +63,15 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     
     public void OnEndDrag(PointerEventData eventData)
     {
+        ApplyStrikeThrough();
+        
         if (isUsed) return;
         ResetPosition();
     }
 
     public void EndDrag()
     {
-        image.gameObject.SetActive(isUsed);
+        ApplyStrikeThrough();
         
         if (isUsed) return;
         _animator.SetBool("OpenClose", true);
@@ -76,6 +80,7 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void ResetPosition()
     {
+        
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         
@@ -101,5 +106,13 @@ public class DraggableEntry : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             cloneCanvasGroup.alpha = 1f;
             cloneCanvasGroup.blocksRaycasts = false;
         }
+    }
+    
+    public void ApplyStrikeThrough()
+    {
+        if (isUsed)
+            _textMesh.fontStyle |= FontStyles.Strikethrough;
+        else
+            _textMesh.fontStyle &= ~FontStyles.Strikethrough;
     }
 }
