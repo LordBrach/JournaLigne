@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.TransitionSystem;
 using LittleDialogue.Runtime;
 using LittleGraph.Runtime;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Project.Scripts.Runtime.Story
 {
@@ -17,7 +18,12 @@ namespace _Project.Scripts.Runtime.Story
 
         [Header("EndGame")]
         [SerializeField] private string m_mainMenuSceneName;
-        
+
+        [Header("Events")]
+        [SerializeField] UnityEvent OnDebateDay;
+        [SerializeField] UnityEvent OnArticleDay;
+        [SerializeField] UnityEvent OnEndingDay;
+
         #region Singleton
         private static StoryManager m_instance;
         public static StoryManager Instance => m_instance;
@@ -80,6 +86,7 @@ namespace _Project.Scripts.Runtime.Story
             switch (dayStarted.dayType)
             {
                 case DayType.Interview:
+                    OnDebateDay.Invoke();
                     m_dayGraphObject.ReplaceGraph(dayStarted.currentGraph);
             
                     m_dialogueController.SubscribeToGraphInstance(m_dayGraphObject.GraphInstance);
@@ -89,9 +96,11 @@ namespace _Project.Scripts.Runtime.Story
                     m_dayGraphObject.ExecuteAsset();
                     break;
                 case DayType.Article:
+                    OnArticleDay.Invoke();
                     NoteBook.instance.ShowNewsPaper();
                     break;
                 case DayType.Review:
+                    OnEndingDay.Invoke();
                     m_consequences.ShowConsequences(dayStarted);
                     break;
                 case DayType.EndGame:
