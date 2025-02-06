@@ -16,9 +16,9 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
         {
             base.ExecuteNode();
 
-            if (NodeConnections.Exists(x => x.OutputPort.NodeId == ID))
+            if (m_nodeConnections.Exists(connection => connection.OutputPort.NodeId == ID))
             {
-                LGConnection connection = NodeConnections.Find(x => x.OutputPort.NodeId == ID);
+                LGConnection connection = m_nodeConnections.Find(connection => connection.OutputPort.NodeId == ID);
                 EmitFlow(connection.InputPort.NodeId);
             }
         }

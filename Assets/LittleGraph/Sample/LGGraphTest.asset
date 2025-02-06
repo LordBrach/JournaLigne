@@ -304,7 +304,7 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Question4_2_Description_3
-        InterlocutorSprite: {fileID: 0}
+        InterlocutorSprite: {fileID: -1927605479, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
         BackgroundSprite: {fileID: 0}
         ForegroundSprite: {fileID: 0}
     - rid: 4557232859929378823
@@ -435,8 +435,8 @@ MonoBehaviour:
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 734967745, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
-        BackgroundSprite: {fileID: 102210875, guid: 45251081c2375e14f8fc86d6e70409b7, type: 3}
-        ForegroundSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 21300000, guid: d879483e030d5e74095c977f7e598db2, type: 3}
+        ForegroundSprite: {fileID: 21300000, guid: 189ca39b779d2ab4295abf1a917b54c7, type: 3}
     - rid: 8609779824910663683
       type: {class: LDDisplayNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -494,4 +494,4 @@ MonoBehaviour:
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         InterlocutorDisplayType: 1
         BackgroundDisplayType: 0
-        ForegroundDisplayType: 0
+        ForegroundDisplayType: 1

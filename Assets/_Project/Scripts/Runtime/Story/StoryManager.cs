@@ -86,7 +86,7 @@ namespace _Project.Scripts.Runtime.Story
             switch (dayStarted.dayType)
             {
                 case DayType.Interview:
-                    OnDebateDay.Invoke();
+                    OnDebateDay?.Invoke();
                     m_dayGraphObject.ReplaceGraph(dayStarted.currentGraph);
             
                     m_dialogueController.SubscribeToGraphInstance(m_dayGraphObject.GraphInstance);
@@ -96,11 +96,11 @@ namespace _Project.Scripts.Runtime.Story
                     m_dayGraphObject.ExecuteAsset();
                     break;
                 case DayType.Article:
-                    OnArticleDay.Invoke();
+                    OnArticleDay?.Invoke();
                     NoteBook.instance.ShowNewsPaper();
                     break;
                 case DayType.Review:
-                    OnEndingDay.Invoke();
+                    OnEndingDay?.Invoke();
                     m_consequences.ShowConsequences(dayStarted);
                     break;
                 case DayType.EndGame:
