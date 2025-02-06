@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using LittleDialogue.Runtime.LittleGraphAddOn;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -24,6 +25,8 @@ namespace LittleDialogue.Runtime
         [SerializeField] private Image m_interlocutorImage;
         //Background
         [SerializeField] private Image m_backgroundImage;
+        //ForeGround
+        [SerializeField] private Image m_foregroundImage;
         
         [Header("Dialogue & Choices")]
         //Dialogue and Choices
@@ -82,6 +85,7 @@ namespace LittleDialogue.Runtime
             OnTextUpdateEndedEvent.AddListener(() => OnTextUpdateEnded?.Invoke());
         }
 
+        #region Show/Hide Methods
         public void ShowDialoguePanel()
         {
             m_dialogueBoxPanel.gameObject.SetActive(true);
@@ -91,6 +95,85 @@ namespace LittleDialogue.Runtime
         {
             m_dialogueBoxPanel.gameObject.SetActive(false);
         }
+
+        public void ChangeBackgroundDisplay(LDDialogueDisplayType displayType)
+        {
+            switch (displayType)
+            {
+                case LDDialogueDisplayType.Show:
+                    ShowBackground();
+                    break;
+                case LDDialogueDisplayType.Hide:
+                    HideBackground();
+                    break;
+                case LDDialogueDisplayType.None:
+                    break;
+            }
+        }
+
+        private void ShowBackground()
+        {
+            m_backgroundImage.gameObject.SetActive(true);
+        }
+
+        private void HideBackground()
+        {
+            m_backgroundImage.gameObject.SetActive(false);
+        }
+
+        public void ChangeForegroundDisplay(LDDialogueDisplayType displayType)
+        {
+            switch (displayType)
+            {
+                case LDDialogueDisplayType.Show:
+                    ShowForeground();
+                    break;
+                case LDDialogueDisplayType.Hide:
+                    HideForeground();
+                    break;
+                case LDDialogueDisplayType.None:
+                    break;
+            }
+        }
+
+        private void ShowForeground()
+        {
+            m_foregroundImage.gameObject.SetActive(true);
+        }
+
+        private void HideForeground()
+        {
+            m_foregroundImage.gameObject.SetActive(false);
+        }
+
+        public void ChangeInterlocutorDisplay(LDDialogueDisplayType displayType)
+        {
+            switch (displayType)
+            {
+                case LDDialogueDisplayType.Show:
+                    ShowInterlocutor();
+                    break;
+                case LDDialogueDisplayType.Hide:
+                    HideInterlocutor();
+                    break;
+                case LDDialogueDisplayType.None:
+                    break;
+            }
+        }
+
+        private void ShowInterlocutor()
+        {
+            m_interlocutorImage.gameObject.SetActive(true);
+        }
+
+        private void HideInterlocutor()
+        {
+            m_interlocutorImage.gameObject.SetActive(false);
+        }
+        #endregion
+
+        
+        #region UpdateMethods
         
         public void UpdateText(string newText)
         {
@@ -166,6 +249,7 @@ namespace LittleDialogue.Runtime
 
         public void UpdateInterlocutorImage(Sprite inNewSprite)
         {
+            if(!inNewSprite) return;
             if(!m_interlocutorImage) return;
 
             m_interlocutorImage.sprite = inNewSprite;
@@ -173,9 +257,18 @@ namespace LittleDialogue.Runtime
         
         public void UpdateBackgroundImage(Sprite inNewSprite)
         {
+            if(!inNewSprite) return;
             if(!m_backgroundImage) return;
 
             m_backgroundImage.sprite = inNewSprite;
+        }
+
+        public void UpdateForegroundImage(Sprite inNewSprite)
+        {
+            if(!inNewSprite) return;
+            if(!m_foregroundImage) return;
+
+            m_foregroundImage.sprite = inNewSprite;
         }
         
         // public void UpdateChoiceButtonTexts(params string[] options)
@@ -186,6 +279,7 @@ namespace LittleDialogue.Runtime
         //         m_choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = options[i];
         //     }
         // }
+        #endregion
 
         #region ReactToInputEvent Methods
 
