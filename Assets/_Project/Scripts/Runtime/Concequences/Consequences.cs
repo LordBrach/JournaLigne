@@ -72,12 +72,12 @@ public class Consequences : MonoBehaviour
         if (currentInfluence >= currentMaxInfluence/2)
         {
             imageComp.sprite = GetConsequenceImage(currentDay.keyFavorable);
-            textComp.text = currentDay.keyFavorable;
+            textComp.text = LocalizationManager.Instance.GetTranslation(currentDay.keyFavorable);
         }
         else if (currentInfluence < currentMaxInfluence/2)
         {
             imageComp.sprite = GetConsequenceImage(currentDay.keyUnfavorable);
-            textComp.text = currentDay.keyUnfavorable;
+            textComp.text = LocalizationManager.Instance.GetTranslation(currentDay.keyUnfavorable);
         }
     }
 }

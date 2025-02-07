@@ -16,14 +16,14 @@ namespace _Project.Scripts.Runtime.Options
         
         public void SwitchToFrench()
         {
-            m_englishAnimator.Play(m_englishUnselectAnimName);
-            m_frenchAnimator.Play(m_frenchSelectAnimName);
+            // m_englishAnimator.Play(m_englishUnselectAnimName);
+            // m_frenchAnimator.Play(m_frenchSelectAnimName);
         }
 
         public void SwitchToEnglish()
         {
-            m_frenchAnimator.Play(m_frenchUnselectAnimName);
-            m_englishAnimator.Play(m_englishSelectAnimName);
+            // m_frenchAnimator.Play(m_frenchUnselectAnimName);
+            // m_englishAnimator.Play(m_englishSelectAnimName);
         }
     }
 }
