@@ -366,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1402112406697138013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d77fa5f82ba60764fb8070080a40175a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f504e092afac8844184efd557cad4994, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -827,6 +827,10 @@ PrefabInstance:
     - target: {fileID: 6619105739652734643, guid: 9c9eb5aa246d7a04a96210b3fdc0683f, type: 3}
       propertyPath: m_fontSize
       value: 54.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706318325449531694, guid: 9c9eb5aa246d7a04a96210b3fdc0683f, type: 3}
+      propertyPath: m_Name
+      value: Consequence Skip Text (TMP)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

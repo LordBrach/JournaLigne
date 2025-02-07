@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 911376706640365248, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.49850082
+      value: 0.49850464
       objectReference: {fileID: 0}
     - target: {fileID: 2034631048507331365, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
       propertyPath: ColorAbvTreshhold.b
@@ -243,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 247831975}
     - target: {fileID: 3633801975105942519, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5777180284655450817, guid: c4c407af8bb757a458e037dae1a0e30e, type: 3}
       propertyPath: m_text
@@ -682,6 +682,14 @@ PrefabInstance:
     - target: {fileID: 628720409725893151, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
       propertyPath: m_Name
       value: Consequences
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544702987055215175, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f504e092afac8844184efd557cad4994, type: 3}
+    - target: {fileID: 5411586340241677299, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7348690758234520475, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
       propertyPath: m_Pivot.x
@@ -1366,6 +1374,7 @@ GameObject:
   - component: {fileID: 1207533374}
   - component: {fileID: 1207533376}
   - component: {fileID: 1207533375}
+  - component: {fileID: 1207533377}
   m_Layer: 5
   m_Name: End Title (TMP)
   m_TagString: Untagged
@@ -1489,6 +1498,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207533373}
   m_CullTransparentMesh: 1
+--- !u!114 &1207533377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207533373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3f5703472bbb8479df407079380ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localizationKey: 
+  _isTranslatable: 0
 --- !u!1 &1215730575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,23 +2206,23 @@ MonoBehaviour:
   - day: 1
     dayType: 1
     currentGraph: {fileID: 11400000, guid: 5db324e8db98a2547aea29b8f576f97a, type: 2}
-    keyFavorable: 
-    keyUnfavorable: 
+    keyFavorable: Consequence_Manticore_ProDictateur
+    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion"
   - day: 2
     dayType: 3
     currentGraph: {fileID: 0}
-    keyFavorable: 
-    keyUnfavorable: 
+    keyFavorable: Consequence_Manticore_ProDictateur
+    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion"
   - day: 3
     dayType: 2
     currentGraph: {fileID: 0}
     keyFavorable: Consequence_Manticore_ProDictateur
     keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion"
-  - day: 7
+  - day: 4
     dayType: 4
     currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
-    keyFavorable: 
-    keyUnfavorable: 
+    keyFavorable: Consequence_Manticore_ProDictateur
+    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion"
   graphs: []
 --- !u!1001 &2067270557
 PrefabInstance:

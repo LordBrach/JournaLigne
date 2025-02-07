@@ -69,7 +69,7 @@ public class Consequences : MonoBehaviour
 
     private void GetConsequences(Days currentDay)
     {
-        if (currentInfluence > currentMaxInfluence/2)
+        if (currentInfluence >= currentMaxInfluence/2)
         {
             imageComp.sprite = GetConsequenceImage(currentDay.keyFavorable);
             textComp.text = currentDay.keyFavorable;
