@@ -1,74 +1,6 @@
 {
     "translations": [
         {
-            "key": "Text-Play",
-            "translations": [
-                {
-                    "language": "en",
-                    "translation": "Play"
-                },
-                {
-                    "language": "fr",
-                    "translation": "Jouer"
-                },
-                {
-                    "language": "ja",
-                    "translation": ""
-                }
-            ]
-        },
-        {
-            "key": "Btn-Language",
-            "translations": [
-                {
-                    "language": "en",
-                    "translation": "fr"
-                },
-                {
-                    "language": "fr",
-                    "translation": "en"
-                },
-                {
-                    "language": "ja",
-                    "translation": ""
-                }
-            ]
-        },
-        {
-            "key": "B",
-            "translations": [
-                {
-                    "language": "en",
-                    "translation": "B in english"
-                },
-                {
-                    "language": "fr",
-                    "translation": "B en français"
-                },
-                {
-                    "language": "ja",
-                    "translation": ""
-                }
-            ]
-        },
-        {
-            "key": "A",
-            "translations": [
-                {
-                    "language": "en",
-                    "translation": "A in english"
-                },
-                {
-                    "language": "fr",
-                    "translation": "A en français"
-                },
-                {
-                    "language": "ja",
-                    "translation": ""
-                }
-            ]
-        },
-        {
             "key": "Interview_Manticore_Journal_Question4_1_1",
             "translations": [
                 {
@@ -149,7 +81,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "注意 ！あなたはおそらく反乱軍に監視されているでしょう!"
+                    "translation": "注意 ！おそらく反政府勢力に監視されているでしょう!"
                 }
             ]
         },
@@ -549,7 +481,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "Manticore and the Rebellion plan to stage a coup and impose their government."
+                    "translation": "Manticore and the Rebellion plan to organize a coup d'état and impose their government."
                 },
                 {
                     "language": "fr",
@@ -557,7 +489,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "マンティコアと反乱軍はクーデターを起こして政府を押しつけることを計画している。"
+                    "translation": "マンティコアと反乱軍はクーデターを組織し、政府を押しつけることを計画している。"
                 }
             ]
         },
@@ -744,7 +676,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "あなたは満足してノートを閉じます。"
+                    "translation": "<i>あなたは満足してノートブックを閉じます。"
                 }
             ]
         },
@@ -770,7 +702,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "Other questions?"
+                    "translation": "Any other questions?"
                 },
                 {
                     "language": "fr",
@@ -778,7 +710,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "他にご質問がありますか?"
+                    "translation": "他にご質問はありますか?"
                 }
             ]
         },
@@ -804,7 +736,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "The burden will fall on us, because <b>it will be clear that the people are still victims of his manipulation.</b>"
+                    "translation": "The burden will fall on us, because, <b>it will be clear that the people are still victims of his manipulation.</b>"
                 },
                 {
                     "language": "fr",
@@ -812,7 +744,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "人々が依然として彼の操作の犠牲者であることは明らかであるため、重荷は私たちに降りかかるでしょう。"
+                    "translation": "その負担は私たちに降りかかることになるでしょう、 なぜなら<b>国民が依然として彼の操作の犠牲者であることは明らか</b>だからです。"
                 }
             ]
         },
@@ -855,7 +787,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "<i>Manticore bangs his fist on the table as if waking a sleeping beast, coming to his senses."
+                    "translation": "<i>Manticore bangs his fist on the table as if to wake a sleeping beast, regaining his senses."
                 },
                 {
                     "language": "fr",
@@ -863,7 +795,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "マンティコアは眠っている獣を起こすかのように拳をテーブルに叩きつけ、我に返った。"
+                    "translation": "<i>マンティコアは眠っている獣を目覚めさせるかのように拳をテーブルに叩きつけ、正気に戻ります。"
                 }
             ]
         },
@@ -880,7 +812,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "まるで狼の巣窟に身を投げているような気分です。"
+                    "translation": "まるで狼の巣窟に身を投げているような気分だ。"
                 }
             ]
         },
@@ -897,7 +829,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "たぶん、そうです。"
+                    "translation": "<b>そうかも知れません。"
                 }
             ]
         },
@@ -982,7 +914,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "静かな。ためらいながら。また沈黙してください。"
+                    "translation": "<i>沈黙。ためらいながら。また沈黙してください。"
                 }
             ]
         },
@@ -999,7 +931,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "あなたは満足してノートを閉じます。"
+                    "translation": "<i>あなたは満足してノートブックを閉じます。"
                 }
             ]
         },
@@ -1025,7 +957,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "Other questions?"
+                    "translation": "Any other questions?"
                 },
                 {
                     "language": "fr",
@@ -1033,7 +965,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "他にご質問がありますか?"
+                    "translation": "他にご質問はありますか?"
                 }
             ]
         },
@@ -1042,7 +974,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "<i>He sits back, with ease, in his seat."
+                    "translation": "<i>He sits back, with ease, on his seat."
                 },
                 {
                     "language": "fr",
@@ -1050,7 +982,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "彼は安心して席に腰を下ろした。"
+                    "translation": "<i>彼はゆっくりと座席に座り直しました。"
                 }
             ]
         },
@@ -1084,7 +1016,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "突然首がかゆくなります。軽い不安が襲ってきます。 "
+                    "translation": "<i>首が突然かゆみます。軽い不安が襲ってきます。 "
                 }
             ]
         },
@@ -1118,7 +1050,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "彼は振り返って、不思議そうにあなたを見つめます。マスクから小さな笑い声が漏れる。"
+                    "translation": "<i>彼は振り向いて、不思議そうにあなたを見つめます。マスクから小さな笑い声が漏れる。"
                 }
             ]
         },
@@ -1169,7 +1101,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "そして私がスーパーバイザーになります。 "
+                    "translation": "<b>そして私はスーパーバイザーになります。 "
                 }
             ]
         },
@@ -1220,7 +1152,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "彼は独白を続け、あなたからの応答を妨げます。"
+                    "translation": "<i>彼は独白を続け、あなたからの応答を妨げます。"
                 }
             ]
         },
@@ -1322,7 +1254,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "ソローが言ったように、「最良の政府とは、最も統治が小さい政府である」。"
+                    "translation": "ソローが言ったように<b>「最良の政府とは、最も統治が小さい政府である」</b> のです。"
                 }
             ]
         },
@@ -1339,7 +1271,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "マンティコアは今、怒りに満ちた拳で描かれた旗に向かっています。"
+                    "translation": "<i>マンティコアは今、拳で描かれた旗に直面しており、きっと怒りに満ちています。"
                 }
             ]
         },
@@ -1450,7 +1382,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "Then according to their abilities and specialization, they are sent to different sections where they can carry out the rebellion."
+                    "translation": "Then depending on their abilities and specialization, they are sent to different sections where they can carry out the rebellion."
                 },
                 {
                     "language": "fr",
@@ -1492,7 +1424,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "うーん… うーん… 彼らの過去を掘り下げてみましょうか？彼らの犯罪歴、学業、友情、恋愛生活、指向、性別…。"
+                    "translation": "うーん… うーん… <b>彼らの過去を掘り下げてみませんか?</b> 彼らの犯罪歴、学業、友情、恋愛生活、指向、性別など…。"
                 }
             ]
         },
@@ -1586,7 +1518,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "I learned that certain celebrities and intellectuals propagate your messages to anyone who will listen - or not, for that matter. Is this true?"
+                    "translation": "I learned that certain celebrities and intellectuals propagandize your messages to anyone who will listen - or not, for that matter. Is this true?"
                 },
                 {
                     "language": "fr",
@@ -1594,7 +1526,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "特定の有名人や知識人が、耳を傾けてくれるかどうかは別として、あなたのメッセージを誰にでも広めていることを知りました。これは本当ですか？"
+                    "translation": "特定の有名人や知識人が、耳を傾けてくれるかどうかは別として、あなたのメッセージを誰にでも宣伝していることを知りました。これは本当ですか？"
                 }
             ]
         },
@@ -1628,7 +1560,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "知識人クラブ、アンダーグラウンドシーン、活動家の集会。この男女はすでに自由への愛に溢れています。"
+                    "translation": "知識人クラブ、アンダーグラウンドシーン、活動家の集会。 <b>これらの男性と女性はすでに自由への愛に溢れています。</b>"
                 }
             ]
         },
@@ -1645,7 +1577,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "私たちは人々を集めません。彼らはすでに私たちの側にいますが、まだ気づいていないだけです。 "
+                    "translation": "私たちは人々を集めません。彼らはすでに私たちの味方ですが、まだ気づいていないだけです。 "
                 }
             ]
         },
@@ -1654,7 +1586,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "What do you plan to do with the Dictator?"
+                    "translation": "<i>What do you plan to do with the Dictator?"
                 },
                 {
                     "language": "fr",
@@ -1662,7 +1594,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "独裁者をどうするつもりですか？"
+                    "translation": "<i>独裁者をどうするつもりですか?"
                 }
             ]
         },
@@ -1671,7 +1603,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "If the rebellion succeeds, what kind of leader will you be?"
+                    "translation": "<i>If the rebellion succeeds, what kind of leader will you be?"
                 },
                 {
                     "language": "fr",
@@ -1679,7 +1611,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "もし反乱が成功したら、あなたはどんなリーダーになるでしょうか？"
+                    "translation": "<i>もし反乱が成功したら、あなたはどんなリーダーになるでしょうか?"
                 }
             ]
         },
@@ -1722,7 +1654,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "<i>You hear a growl from the Manticore."
+                    "translation": "<i>You hear something like a growl from the Manticore."
                 },
                 {
                     "language": "fr",
@@ -1730,7 +1662,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "マンティコアのうなり声が聞こえます。"
+                    "translation": "<i>マンティコアからうなり声のようなものが聞こえます。"
                 }
             ]
         },
@@ -1764,7 +1696,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "「集団の自由は個人の自由なしには存在せず、集団の自由は個人の自由よりも劣っているため、集団の自由を後者に強制することはできない。」 "
+                    "translation": "<b>「集団の自由は個人の自由なしには存在しません。個人の自由よりも劣っているため、個人の自由にその法律を押し付けることはできません。」 "
                 }
             ]
         },
@@ -1781,7 +1713,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "文書を注意深くめくると、突然読むのが止まります。"
+                    "translation": "<i>文書を注意深くめくると、突然読むのが止まります。"
                 }
             ]
         },
@@ -1849,7 +1781,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "マンティコアは拳を机に３回叩きつける。部屋のドアが少し開き、ブリーフケースがマンティコアの机の上に、こちらを向いて置かれます。"
+                    "translation": "<i>マンティコアは机を拳で3回叩きます。部屋のドアが少し開き、ブリーフケースがマンティコアの机の上に、こちらを向いて置かれます。"
                 }
             ]
         },
@@ -1900,7 +1832,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "私たちは国民に有利な大きな変化に向けて組織を整えています。\n"
+                    "translation": "<b>私たちは国民に有利な大きな変化に向けて組織を整えています。\n"
                 }
             ]
         },
@@ -2019,7 +1951,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "あなたはしばらくの間、気づくのをやめていました。活力とともに、あなたは正気を取り戻します。"
+                    "translation": "<i>あなたはしばらくの間、気づくのをやめていました。活力とともに、あなたは正気を取り戻します。"
                 }
             ]
         },
@@ -2028,7 +1960,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "Now, I am convinced that such great power is too dangerous for the people... <b>It must be eliminated.</b>"
+                    "translation": "Now, I am convinced that such great power is too dangerous for the people... <b>It must be eliminated</b>."
                 },
                 {
                     "language": "fr",
@@ -2036,7 +1968,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "今、私はこのような強大な権力は人々にとって危険すぎると確信しています...それは排除されなければなりません。"
+                    "translation": "今、私はこのような強大な権力は国民にとって危険すぎる…<b>それは排除されなければならない</b>と確信しています。"
                 }
             ]
         },
@@ -2079,7 +2011,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "And finally, when you realize that you are just a victim. It is too late, <b>your consciousness is only a simulacrum of his.</b>"
+                    "translation": "And finally, when you realize that you are just a victim. It is too late, <b>your consciousness is only a simulacrum of its own</b>."
                 },
                 {
                     "language": "fr",
@@ -2087,7 +2019,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "そして最後に、自分が単なる被害者であることに気づいたとき。もう手遅れです、あなたの意識は彼の模倣にすぎません。"
+                    "translation": "そして最後に、自分が単なる被害者であることに気づいたとき。もう手遅れです、<b>あなたの意識はそれ自体の模倣体にすぎない</b>のです。"
                 }
             ]
         },
@@ -2121,7 +2053,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "しかし、この男には議論の余地はなく、言葉では誰よりも有利です。"
+                    "translation": "しかし、この男には議論の余地はなく、言葉では誰よりも優れています。"
                 }
             ]
         },
@@ -2155,7 +2087,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "言葉の達人である彼は、あなたの理想や信念を難なく払いのけることができます。"
+                    "translation": "言葉の達人である彼は、あなたの理想や信念を難なく押しのけることができます。"
                 }
             ]
         },
@@ -2189,7 +2121,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "彼があなたに答え始めると、あなたは彼のマスク越しに笑顔を感じます。"
+                    "translation": "<i>彼があなたに答え始めると、あなたは彼のマスク越しに笑顔を感じます。"
                 }
             ]
         },
@@ -2308,7 +2240,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "ジャーナリストさん、これであなたの質問に答えるのは十分ですか？"
+                    "translation": "ジャーナリストさん、あなたの質問にはそれだけで十分ですか？"
                 }
             ]
         },
@@ -2325,7 +2257,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "人々を救うという私たちの義務は正当化されており、結局のところ、私たちは彼らの剣であり、彼らの武器なのです！"
+                    "translation": "人々を救うという私たちの義務は正当化され、 結局のところ<b>私たちは彼らの剣であり、 彼らの武器</b>なのです！"
                 }
             ]
         },
@@ -2393,7 +2325,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "マンティコアは彼の肉体からわずかに立ち上がります。マスク越しでも彼のガーゼはより強烈に見える。"
+                    "translation": "<i>マンティコアは肉体からわずかに立ち上がります。マスク越しでも彼のガーゼはより強烈に見える。"
                 }
             ]
         },
@@ -2444,7 +2376,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "あなたは興味をそそられて眉を上げます。"
+                    "translation": "<i>あなたは興味をそそられて眉を上げます。"
                 }
             ]
         },
@@ -2453,7 +2385,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "We take concrete action. This is done through sabotage, espionage, kidnappings and possibly even… <b>deletions.</b>"
+                    "translation": "We take concrete action. This is done through sabotage, espionage, kidnappings and possibly even... <b>deletions.</b>"
                 },
                 {
                     "language": "fr",
@@ -2461,7 +2393,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "私たちは具体的な行動を起こします。これは妨害行為、スパイ活動、誘拐、そして場合によっては削除によっても行われます。"
+                    "translation": "私たちは具体的な行動を起こします。これは妨害行為、スパイ行為、誘拐、そして場合によっては...<b>削除</b>によって行われます。"
                 }
             ]
         },
@@ -2470,7 +2402,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "Hmm… What you are about to hear might sound extremely violent but…\n"
+                    "translation": "Hmm... What you are about to hear might sound extremely violent but...\n"
                 },
                 {
                     "language": "fr",
@@ -2478,7 +2410,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "うーん…これから聞くことは非常に暴力的に聞こえるかもしれませんが…\n"
+                    "translation": "うーん...これから聞くことは非常に暴力的に聞こえるかもしれませんが...\n"
                 }
             ]
         },
@@ -2487,7 +2419,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "<i>How do you organize yourself? What are your methods?"
+                    "translation": "How do you organize yourself? What are your methods?"
                 },
                 {
                     "language": "fr",
@@ -2529,7 +2461,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "彼は立ち止まり、自分の言葉を書き終える時間を与え、それから続けます。"
+                    "translation": "<i>彼は立ち止まり、言葉を書き終える時間を与え、その後続けます。"
                 }
             ]
         },
@@ -2538,7 +2470,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "We will take back power from this breed and <b>make it a country where the order of the people will reign.</b> "
+                    "translation": "We will take back power from this breed and make it <b>a country where the order of the people will reign.</b>"
                 },
                 {
                     "language": "fr",
@@ -2546,7 +2478,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "私たちはこの種族から権力を取り戻し、人民の秩序が統治する国にします。 "
+                    "translation": "この種族から権力を取り戻し、 この国を<b>民衆の秩序が統治する国</b>にします。"
                 }
             ]
         },
@@ -2563,7 +2495,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "そして今、ライオンは卑劣な蛇の手からジャングルを取り戻さなければなりません。"
+                    "translation": "そして今、ライオンは邪悪な蛇の手からジャングルを取り戻さなければなりません。"
                 }
             ]
         },
@@ -2597,7 +2529,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "彼はジャケットからメダルを手で取り出し、ベルベットの手袋をはめた指でそれを愛撫し始めた。"
+                    "translation": "<i>彼はジャケットからメダルを手で取り出し、ベルベットの手袋をはめた指でそれを愛撫し始めました。"
                 }
             ]
         },
@@ -2631,7 +2563,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "操られた人々は彼の味方だった。私たちはファシスト、特権階級、その他愚かな言葉で呼ばれました。"
+                    "translation": "操られた人々は彼の味方だった。 <b>私たちはファシスト、特権階級、その他の愚かな用語で呼ばれていました。</b>"
                 }
             ]
         },
@@ -2648,7 +2580,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "彼らは私たちがテレビ、メディア、ネットワークで話す権利を拒否しました...\n"
+                    "translation": "彼らは、テレビ、メディア、ネットワークで私たちが発言する権利を拒否しました...\n"
                 }
             ]
         },
@@ -2801,7 +2733,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "自由はどんな愚かな幸福よりも価値があります! "
+                    "translation": "<b>自由はどんな愚かな幸福よりも価値があります! "
                 }
             ]
         },
@@ -2818,7 +2750,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "一定の遅れを経て応答が届き、部屋は静まり返ります。"
+                    "translation": "<i>一定の遅れを経て応答が届き、部屋は静まり返ります。"
                 }
             ]
         },
@@ -2852,7 +2784,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "ここが間違っています。私たちは大義を擁護しているのではなく、権利を擁護しています。最も自然な権利、それは自由です。"
+                    "translation": "ここが間違っています。私たちは大義を擁護しているのではなく、権利を擁護しています。 <b>最も自然な権利、それは自由です。</b>"
                 }
             ]
         },
@@ -2920,7 +2852,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "そんな日々はもう終わりました。質問に移ります。"
+                    "translation": "そんな日々は終わりました。質問に移ります。"
                 }
             ]
         },
@@ -2937,7 +2869,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "彼の視線はあなたを離れ、より良い世界への郷愁に阻まれます。"
+                    "translation": "<i>彼の視線はあなたを去り、より良い世界への郷愁に阻まれます。"
                 }
             ]
         },
@@ -2954,7 +2886,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "当時は同じ週に3件も当たり前でした。まあ、まあ... "
+                    "translation": "当時は同じ週に3つ食べるのが普通でした。まあ、まあ... "
                 }
             ]
         },
@@ -3039,7 +2971,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "ためらってノートを取り出すあなたを、野獣の力強い視線が見つめる。"
+                    "translation": "<i>あなたがためらいながらノートを取り出すと、野獣の力強い視線があなたを判断します。"
                 }
             ]
         },
@@ -3073,7 +3005,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "あなたは普段オフィスのドアを閉めています。忙しい一日になるでしょう。"
+                    "translation": "<i>あなたは通常、オフィスのドアを閉めています。忙しい一日になるでしょう。"
                 }
             ]
         },
@@ -3107,7 +3039,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "あなたはそのページとその説明書をポケットに入れ、最後に大使館の 1 階の手すりに寄りかかって微笑んでいる娘の写真をもう一度眺めました。\n"
+                    "translation": "<i>あなたはそのページとその説明書をポケットに入れ、最後に大使館の 1 階の手すりにもたれて微笑んでいる娘の写真をもう一度眺めました。\n"
                 }
             ]
         },
@@ -3124,7 +3056,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "マンティコアによれば、あなたが住んでいる世界、あなたが完璧だと思っている世界は、まったくの独裁的な嘘にほかなりません。"
+                    "translation": "<i>マンティコアによれば、あなたが住んでいる世界、あなたが完璧だと思っている世界は、まったくの独裁的な嘘にほかなりません。"
                 }
             ]
         },
@@ -3141,7 +3073,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "政府を選択し、リーダーを選択し、政党を選択してください。"
+                    "translation": "<i>政府、指導者、政党を選択してください。"
                 }
             ]
         },
@@ -3158,7 +3090,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "独裁者が私たちの基本的な自由、つまり選択の自由を奪っていることを証明する武装集団。"
+                    "translation": "<i>独裁者が私たちの基本的な自由、つまり選択の自由を奪っていることを証明する武装集団。"
                 }
             ]
         },
@@ -3175,7 +3107,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "これはあなたに託された使命、反乱軍とのインタビューを準備することです。"
+                    "translation": "<i>これはあなたに託された使命、反乱軍とのインタビューを準備することです。"
                 }
             ]
         },
@@ -3209,7 +3141,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "別のページはホッチキスで留められており、このページは手書きで、そこには反乱軍のリーダーであるマンティコアの位置が示されています。"
+                    "translation": "<i>別のページはホッチキスで留められており、このページは手書きで、反乱軍のリーダーであるマンティコアの位置が示されています。"
                 }
             ]
         },
@@ -3243,7 +3175,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "この文書は要するに編集長への昇進に関するものである。"
+                    "translation": "<i>この文書は要するに編集長への昇進に関するものです。"
                 }
             ]
         },
@@ -3260,7 +3192,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "あなたのオフィスが混乱している真ん中に、新聞の編集者がスタンプを押した文書があります。"
+                    "translation": "<i>あなたのオフィスの混乱の真ん中に、新聞の編集者がスタンプを押した文書があります。"
                 }
             ]
         },
@@ -3277,7 +3209,7 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "椅子の革は体重で垂れ下がります。娘さんの写真に温かい視線が注がれます。"
+                    "translation": "<i>椅子の革は体重でたわみます。娘さんの写真に温かい視線が注がれます。"
                 }
             ]
         },
@@ -3286,7 +3218,7 @@
             "translations": [
                 {
                     "language": "en",
-                    "translation": "<i>You open the door to your office with habit. It's a pleasant day.</i>"
+                    "translation": "<i>You open the door to your office with habit. It's a pleasant day."
                 },
                 {
                     "language": "fr",
@@ -3294,7 +3226,313 @@
                 },
                 {
                     "language": "ja",
-                    "translation": "あなたは習慣的にオフィスのドアを開けます。楽しい一日です。"
+                    "translation": "<i>あなたは習慣的にオフィスのドアを開けます。楽しい一日です。"
+                }
+            ]
+        },
+        {
+            "key": "Consequence_Manticore_ProDictateur",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "Après la sortie de votre journal, la population se rendit compte du danger des idéologies rebelles. Elle se mit à soutenir le Dictateur avec encore plus de ferveur. Le peuple refusant la vision du monde du Manticore. Les rebelles furent capturés en grand nombre. Ces rebelles furent placés en centre de réhabilitation afin de les déradicaliser. Les idéologies rebelles sont maintenant tournées au ridicule. La rébellion est au plus bas. Cependant, vous savez que quelque chose arrive. Manticore et ses rebelles n’ont maintenant plus rien à perdre. \n"
+                },
+                {
+                    "language": "en",
+                    "translation": "After the publication of your newspaper, the population realized the danger of rebellious ideologies. She began to support the Dictator with even more fervor. The people refusing the Manticore's worldview. The rebels were captured in large numbers. These rebels were placed in a rehabilitation center in order to deradicalize them. Rebel ideologies are now ridiculed. The rebellion is at an all-time low. However, you know something is coming. Manticore and his rebels now have nothing to lose. \n"
+                },
+                {
+                    "language": "ja",
+                    "translation": "あなたの新聞の発行後、国民は反逆的なイデオロギーの危険性を認識しました。彼女はさらに熱心に独裁者を支持し始めた。マンティコアの世界観を拒否する人々。反乱軍は多数捕らえられた。これらの反政府勢力は、脱過激化を図るためにリハビリテーションセンターに入れられました。反乱軍のイデオロギーは今やばかげている。反乱は史上最低水準にある。ただし、何かが近づいていることはわかっています。マンティコアとその反乱軍にはもう失うものは何もありません。 \n"
+                }
+            ]
+        },
+        {
+            "key": "Consequence_Manticore_ProRébellion",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "Après la sortie de votre journal, la population se rendit compte du potentiel des idéologies rebelles. La rébellion était maintenant sur toutes les bouches, les médias se mirent à débattre sur le sujet. La population se mit à remettre réellement en cause la place du Dictateur et ses pleins pouvoirs. Des attroupements se formèrent à la place de l’Ambassade, ralliée par une cause. Cependant, vous savez que ce n’est qu’un début, quelque chose de plus grand arrive. Manticore et ses rebelles sont plus forts que jamais."
+                },
+                {
+                    "language": "en",
+                    "translation": "After the publication of your newspaper, the population realized the potential of rebel ideologies. The rebellion was now on everyone's lips, the media began to debate the subject. The population began to really question the place of the Dictator and his full powers. Crowds formed at the Embassy Square, rallied by a cause. However, you know this is just the beginning, something bigger is coming. Manticore and its rebels are stronger than ever."
+                },
+                {
+                    "language": "ja",
+                    "translation": "あなたの新聞の発行後、国民は反逆者のイデオロギーの可能性に気づきました。反乱は今や誰もが口にしており、メディアはこの主題について議論し始めた。国民は独裁者の地位とその全権に真の疑問を持ち始めた。大使館広場には大義のもとに集まった群衆が形成された。ただし、これは単なる始まりにすぎず、さらに大きなことが起こることはご存知のとおりです。マンティコアとその反乱軍はかつてないほど強力になっています。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Dialogue_Journalist_3",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "Au travail."
+                },
+                {
+                    "language": "en",
+                    "translation": "At work."
+                },
+                {
+                    "language": "ja",
+                    "translation": "仕事で。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Description_8",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "<i>Finalement. Vous voilà devant les prémices de la une du journal hebdomadaire."
+                },
+                {
+                    "language": "en",
+                    "translation": "<i>Finally. Here you are, in front of the beginnings of the front page of the weekly newspaper."
+                },
+                {
+                    "language": "ja",
+                    "translation": "<i>最後に。さあ、あなたは週刊新聞の一面の冒頭の前にいます。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Description_7",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "<i>Le chemin jusqu’à votre bureau vous semble plus long que d’habitude."
+                },
+                {
+                    "language": "en",
+                    "translation": "<i>The walk to your office seems longer than usual."
+                },
+                {
+                    "language": "ja",
+                    "translation": "<i>あなたのオフィスまで歩くのがいつもより長いようです。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Description_6",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "<i>Vous êtes raccompagné jusqu’à la sortie, où on vous remercie une nouvelle fois."
+                },
+                {
+                    "language": "en",
+                    "translation": "<i>You are escorted to the exit, where we thank you once again."
+                },
+                {
+                    "language": "ja",
+                    "translation": "<i>出口までご案内いたします。そこで改めてお礼を申し上げます。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Description_5",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "<i>Sa main se détend et vous reculez légèrement, manquant de tomber au sol."
+                },
+                {
+                    "language": "en",
+                    "translation": "<i>His hand relaxes and you step back slightly, almost falling to the ground."
+                },
+                {
+                    "language": "ja",
+                    "translation": "<i>彼の手が緩むと、あなたはわずかに後ずさりして、地面に落ちそうになります。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Dialogue_Manticore_5",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "Protégez votre fille."
+                },
+                {
+                    "language": "en",
+                    "translation": "Protect your daughter."
+                },
+                {
+                    "language": "ja",
+                    "translation": "娘を守ってください。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Dialogue_Manticore_4",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "N’allez pas à l’Ambassade, restez chez vous."
+                },
+                {
+                    "language": "en",
+                    "translation": "Do not go to the Embassy, ​​stay at home."
+                },
+                {
+                    "language": "ja",
+                    "translation": "大使館には行かず、家にいてください。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Dialogue_Manticore_3",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "La semaine prochaine, lors du discours du Dictateur pour l’anniversaire de son investiture."
+                },
+                {
+                    "language": "en",
+                    "translation": "Next week, during the Dictator's speech for the anniversary of his inauguration."
+                },
+                {
+                    "language": "ja",
+                    "translation": "来週、独裁者の就任記念日の演説中。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Dialogue_Manticore_2",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "J’ai oublié de vous dire quelque chose."
+                },
+                {
+                    "language": "en",
+                    "translation": "I forgot to tell you something."
+                },
+                {
+                    "language": "ja",
+                    "translation": "何か言い忘れてました。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Description_4",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "<i>Alors que vous vous dirigez vers la porte, il vous retient."
+                },
+                {
+                    "language": "en",
+                    "translation": "<i>As you walk towards the door, he stops you."
+                },
+                {
+                    "language": "ja",
+                    "translation": "<i>あなたがドアに向かって歩いていると、彼はあなたを呼び止めました。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Description_3",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "<i>Le Manticore se lève à son tour et vous serre la main."
+                },
+                {
+                    "language": "en",
+                    "translation": "<i>The Manticore gets up and shakes your hand."
+                },
+                {
+                    "language": "ja",
+                    "translation": "<i>マンティコアは立ち上がってあなたと握手をします。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Description_2",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "<i>Un homme armé entre dans la pièce, prêt à vous raccompagner."
+                },
+                {
+                    "language": "en",
+                    "translation": "<i>An armed man enters the room, ready to take you home."
+                },
+                {
+                    "language": "ja",
+                    "translation": "<i>武装した男が部屋に入ってきて、あなたを家に連れて帰ろうとしています。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Description_1",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "<i>Vous rangez vos affaires puis vous vous levez."
+                },
+                {
+                    "language": "en",
+                    "translation": "<i>You put away your things then you get up."
+                },
+                {
+                    "language": "ja",
+                    "translation": "<i>物を片付けてから起きます。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Dialogue_Journalist_2",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "Et moi de vous les poser."
+                },
+                {
+                    "language": "en",
+                    "translation": "And I’m asking them for you."
+                },
+                {
+                    "language": "ja",
+                    "translation": "そして、私は彼らにあなたのためにお願いしています。"
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Dialogue_Manticore_1",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "Ce fut un plaisir de répondre à vos questions. "
+                },
+                {
+                    "language": "en",
+                    "translation": "It was a pleasure to answer your questions. "
+                },
+                {
+                    "language": "ja",
+                    "translation": "ご質問にお答えできて嬉しかったです。 "
+                }
+            ]
+        },
+        {
+            "key": "Conclusion_Dialogue_Journalist_1",
+            "translations": [
+                {
+                    "language": "fr",
+                    "translation": "Il est temps pour moi de vous dire au revoir."
+                },
+                {
+                    "language": "en",
+                    "translation": "It's time for me to say goodbye."
+                },
+                {
+                    "language": "ja",
+                    "translation": "さよならを言う時が来ました。"
                 }
             ]
         }
