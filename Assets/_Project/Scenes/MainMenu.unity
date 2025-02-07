@@ -226,7 +226,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1211997515220742651, guid: 7d4105dd75995ad4bb1d8177eecff105, type: 3}
+    - {fileID: 802529341488991250, guid: 7d4105dd75995ad4bb1d8177eecff105, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -638,6 +640,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.16500092
       objectReference: {fileID: 0}
+    - target: {fileID: 4758077683364487344, guid: 9c9eb5aa246d7a04a96210b3fdc0683f, type: 3}
+      propertyPath: _isTranslatable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758077683364487344, guid: 9c9eb5aa246d7a04a96210b3fdc0683f, type: 3}
+      propertyPath: _localizationKey
+      value: Start_Title
+      objectReference: {fileID: 0}
     - target: {fileID: 6110825088884229899, guid: 9c9eb5aa246d7a04a96210b3fdc0683f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -955,10 +965,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b37cd91fe5cfb4092dcf1024549434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_englishAnimator: {fileID: 1730302035}
+  m_englishAnimator: {fileID: 0}
   m_englishSelectAnimName: Ang_Select
   m_englishUnselectAnimName: Ang
-  m_frenchAnimator: {fileID: 1525531903}
+  m_frenchAnimator: {fileID: 0}
   m_frenchSelectAnimName: Fr_Select
   m_frenchUnselectAnimName: Fr
 --- !u!114 &674477583
@@ -1122,7 +1132,9 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.1254902
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 544270584993006668, guid: 83db17c6d4c567242a7d5c727e3e0fd6, type: 3}
+    - {fileID: 2211093267416091993, guid: 83db17c6d4c567242a7d5c727e3e0fd6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1190,7 +1202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Options
+  m_text: Missing[Options_Title]
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f41ac101cd5efb747ad925884e5c358b, type: 2}
   m_sharedMaterial: {fileID: -3388794008274856393, guid: f41ac101cd5efb747ad925884e5c358b, type: 2}
@@ -1217,7 +1229,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 96
+  m_fontSize: 32.95
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1279,8 +1291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3f5703472bbb8479df407079380ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localizationKey: 
-  _isTranslatable: 0
+  _localizationKey: Options_Title
+  _isTranslatable: 1
 --- !u!1 &995131769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music Slider Text (TMP)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956838733843860369, guid: 6ce567b40d798ba4dab8854afa0433bb, type: 3}
+      propertyPath: _localizationKey
+      value: Music_Slider
+      objectReference: {fileID: 0}
     - target: {fileID: 8296620254768050033, guid: 6ce567b40d798ba4dab8854afa0433bb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -1608,7 +1624,6 @@ GameObject:
   - component: {fileID: 1418300452}
   - component: {fileID: 1418300451}
   - component: {fileID: 1418300454}
-  - component: {fileID: 1418300455}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1768,27 +1783,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_audioMixerGroup: {fileID: 2595871009577895630, guid: afcdf711d112ab14aaa3093d9e18ce6a, type: 2}
   m_audioClip: []
---- !u!95 &1418300455
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418300449}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 061b05059fcb19449870d0dc52b4fa99, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1446824624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,11 +1830,6 @@ MonoBehaviour:
   m_audioMixerGroup: {fileID: 2595871009577895630, guid: afcdf711d112ab14aaa3093d9e18ce6a, type: 2}
   m_audioClip:
   - {fileID: 8300000, guid: f107407311da65040a11af7f97c626be, type: 3}
---- !u!95 &1525531903 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2211093267416091993, guid: 83db17c6d4c567242a7d5c727e3e0fd6, type: 3}
-  m_PrefabInstance: {fileID: 692804521}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1597759001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,6 +2140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 6956838733843860369, guid: 6ce567b40d798ba4dab8854afa0433bb, type: 3}
+      propertyPath: _localizationKey
+      value: SFX_Slider
+      objectReference: {fileID: 0}
     - target: {fileID: 8296620254768050033, guid: 6ce567b40d798ba4dab8854afa0433bb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -2188,11 +2181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1730302035 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 802529341488991250, guid: 7d4105dd75995ad4bb1d8177eecff105, type: 3}
-  m_PrefabInstance: {fileID: 236361377}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1760873981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,6 +2486,10 @@ PrefabInstance:
     - target: {fileID: 6451015404529916846, guid: 6ce567b40d798ba4dab8854afa0433bb, type: 3}
       propertyPath: m_Name
       value: Master Slider Text (TMP)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956838733843860369, guid: 6ce567b40d798ba4dab8854afa0433bb, type: 3}
+      propertyPath: _localizationKey
+      value: Master_Slider
       objectReference: {fileID: 0}
     - target: {fileID: 8236950657663414489, guid: 6ce567b40d798ba4dab8854afa0433bb, type: 3}
       propertyPath: m_AnchoredPosition.x

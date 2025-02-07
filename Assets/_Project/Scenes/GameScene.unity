@@ -683,14 +683,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Consequences
       objectReference: {fileID: 0}
-    - target: {fileID: 3544702987055215175, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f504e092afac8844184efd557cad4994, type: 3}
-    - target: {fileID: 5411586340241677299, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7348690758234520475, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

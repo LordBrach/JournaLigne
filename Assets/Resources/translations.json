@@ -3535,6 +3535,91 @@
                     "translation": "さよならを言う時が来ました。"
                 }
             ]
+        },
+        {
+            "key": "Master_Slider",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "Master"
+                },
+                {
+                    "language": "fr",
+                    "translation": "Principal"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
+        },
+        {
+            "key": "Music_Slider",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "Music"
+                },
+                {
+                    "language": "fr",
+                    "translation": "Musique"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
+        },
+        {
+            "key": "SFX_Slider",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "Sound Effects"
+                },
+                {
+                    "language": "fr",
+                    "translation": "Effets sonores"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
+        },
+        {
+            "key": "Start_Title",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "The Line"
+                },
+                {
+                    "language": "fr",
+                    "translation": "La Ligne"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
+        },
+        {
+            "key": "Options_Title",
+            "translations": [
+                {
+                    "language": "en",
+                    "translation": "Options"
+                },
+                {
+                    "language": "fr",
+                    "translation": "Options"
+                },
+                {
+                    "language": "ja",
+                    "translation": ""
+                }
+            ]
         }
     ]
 }
