@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,7 +97,7 @@ TextureImporter:
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: 74
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d44f413bce2c6d74093bca5bcd3571a3
-      internalID: 734967745
+      spriteID: 8e5365c6390297e4dbe35bfa76fdd62c
+      internalID: -991345315
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e253e613d136a04ab0582d13fe96c3b
-      internalID: 82940048
+      spriteID: 6687ea549ecf8d346b0022b490852ba3
+      internalID: 240163776
       vertices: []
       indices: 
       edges: []
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ec0b236fc904954db829859636bad88
-      internalID: 1780459376
+      spriteID: 7423b83d66214c94bb1876c5f8752559
+      internalID: -1132788107
       vertices: []
       indices: 
       edges: []
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a211c649d7fdb444b61fdb4c809d3eb
-      internalID: -1927605479
+      spriteID: 1939e44dde6c6df4ab385c1c1dde03f9
+      internalID: 882958483
       vertices: []
       indices: 
       edges: []
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40b9e91bcd03f644aabc9c460959dd80
-      internalID: 33422186
+      spriteID: 028e0d6feb754ae47af94899c616b6f4
+      internalID: 1373041473
       vertices: []
       indices: 
       edges: []
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52c393b71003820499ef380a30accad7
-      internalID: -725077850
+      spriteID: 6a16cc7aab35d8e46a8db9341cadeb51
+      internalID: 1419781691
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tiles_Charas-300pp_0: 734967745
-      Tiles_Charas-300pp_1: 82940048
-      Tiles_Charas-300pp_2: 1780459376
-      Tiles_Charas-300pp_3: -1927605479
-      Tiles_Charas-300pp_4: 33422186
-      Tiles_Charas-300pp_5: -725077850
+      Tiles_Charas-300pp_0: -991345315
+      Tiles_Charas-300pp_1: 240163776
+      Tiles_Charas-300pp_2: -1132788107
+      Tiles_Charas-300pp_3: 882958483
+      Tiles_Charas-300pp_4: 1373041473
+      Tiles_Charas-300pp_5: 1419781691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
