@@ -630,26 +630,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Consequences
       objectReference: {fileID: 0}
-    - target: {fileID: 3544702987055215175, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d77fa5f82ba60764fb8070080a40175a, type: 3}
-    - target: {fileID: 4783206546430493216, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_Color.b
-      value: 0.65882355
-      objectReference: {fileID: 0}
-    - target: {fileID: 4783206546430493216, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_Color.g
-      value: 0.65882355
-      objectReference: {fileID: 0}
-    - target: {fileID: 4783206546430493216, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_Color.r
-      value: 0.65882355
-      objectReference: {fileID: 0}
-    - target: {fileID: 5411586340241677299, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7348690758234520475, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2153,7 +2133,7 @@ MonoBehaviour:
   daysList:
   - day: 1
     dayType: 1
-    currentGraph: {fileID: 11400000, guid: 7ae795a37ff26904eb70ba1e1dca935d, type: 2}
+    currentGraph: {fileID: 11400000, guid: 5db324e8db98a2547aea29b8f576f97a, type: 2}
     keyFavorable: 
     keyUnfavorable: 
   - day: 2
@@ -2164,23 +2144,8 @@ MonoBehaviour:
   - day: 3
     dayType: 2
     currentGraph: {fileID: 0}
-    keyFavorable: Consequence_Manticore_ProDictateur_1
-    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion_1"
-  - day: 4
-    dayType: 1
-    currentGraph: {fileID: 11400000, guid: 7ae795a37ff26904eb70ba1e1dca935d, type: 2}
-    keyFavorable: 
-    keyUnfavorable: 
-  - day: 5
-    dayType: 3
-    currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
-    keyFavorable: 
-    keyUnfavorable: 
-  - day: 6
-    dayType: 2
-    currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
-    keyFavorable: Consequence_Manticore_ProDictateur_1
-    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion_1"
+    keyFavorable: Consequence_Manticore_ProDictateur
+    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion"
   - day: 7
     dayType: 4
     currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
