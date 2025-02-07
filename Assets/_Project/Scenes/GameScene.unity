@@ -823,6 +823,46 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d77fa5f82ba60764fb8070080a40175a, type: 3}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[0].Key
+      value: "Consequence_Manticore_ProR\xE9bellion"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[1].Key
+      value: Consequence_Manticore_ProDictateur
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[2].Key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[3].Key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[4].Key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[5].Key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[6].Key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[1].Image
+      value: 
+      objectReference: {fileID: 21300000, guid: cff0801ce780fe441a4e5261a40e5ecb, type: 3}
+    - target: {fileID: 3620977845833389083, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
+      propertyPath: consequencesImages.Array.data[2].Image
+      value: 
+      objectReference: {fileID: 21300000, guid: cff0801ce780fe441a4e5261a40e5ecb, type: 3}
     - target: {fileID: 5411586340241677299, guid: f61c63c9da5a4e1459154624c10583cb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1670,7 +1710,7 @@ PrefabInstance:
       objectReference: {fileID: 2141344392}
     - target: {fileID: 2802568060457514240, guid: 135c62b17a238aa4ebb0ba6d577f0af7, type: 3}
       propertyPath: m_timeBeforeNextNode
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2802568060457514240, guid: 135c62b17a238aa4ebb0ba6d577f0af7, type: 3}
       propertyPath: m_localizationDatabase
@@ -1915,7 +1955,7 @@ MonoBehaviour:
   daysList:
   - day: 1
     dayType: 1
-    currentGraph: {fileID: 11400000, guid: 7ae795a37ff26904eb70ba1e1dca935d, type: 2}
+    currentGraph: {fileID: 11400000, guid: 5db324e8db98a2547aea29b8f576f97a, type: 2}
     keyFavorable: 
     keyUnfavorable: 
   - day: 2
@@ -1926,11 +1966,11 @@ MonoBehaviour:
   - day: 3
     dayType: 2
     currentGraph: {fileID: 0}
-    keyFavorable: Consequence_Manticore_ProDictateur_1
-    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion_1"
+    keyFavorable: Consequence_Manticore_ProDictateur
+    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion"
   - day: 4
     dayType: 1
-    currentGraph: {fileID: 11400000, guid: 7ae795a37ff26904eb70ba1e1dca935d, type: 2}
+    currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
     keyFavorable: 
     keyUnfavorable: 
   - day: 5
@@ -1941,8 +1981,8 @@ MonoBehaviour:
   - day: 6
     dayType: 2
     currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
-    keyFavorable: Consequence_Manticore_ProDictateur_1
-    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion_1"
+    keyFavorable: Consequence_Manticore_ProDictateur
+    keyUnfavorable: "Consequence_Manticore_ProR\xE9bellion"
   - day: 7
     dayType: 4
     currentGraph: {fileID: 11400000, guid: 2443fcb71c702614f97a326e1c263680, type: 2}
@@ -2479,6 +2519,10 @@ PrefabInstance:
     - target: {fileID: 8480193180386525044, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: m_whiteColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480193180386525044, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
+      propertyPath: m_textWritingSpeed
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8480193180386525044, guid: c35dcacfa20c55941b7071b45ff694c1, type: 3}
       propertyPath: OnTextUpdateEndedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
