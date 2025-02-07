@@ -172,6 +172,22 @@ MonoBehaviour:
   - rid: 9183660024576868502
   - rid: 9183660024576868503
   - rid: 9183660024576868504
+  - rid: 6100067578818854914
+  - rid: 6100067578818854915
+  - rid: 6100067578818854916
+  - rid: 6100067578818854917
+  - rid: 6100067578818854918
+  - rid: 6100067578818854919
+  - rid: 6100067578818854920
+  - rid: 6100067578818854921
+  - rid: 6100067578818854922
+  - rid: 6100067578818854923
+  - rid: 6100067578818854924
+  - rid: 6100067578818854925
+  - rid: 6100067578818854926
+  - rid: 6100067578818854927
+  - rid: 6100067578818854928
+  - rid: 6100067578818854929
   m_connections:
   - InputPort:
       NodeId: 6f687a3a-fcfe-4acf-881f-6f70a6013a1d
@@ -1145,9 +1161,591 @@ MonoBehaviour:
     OutputPort:
       NodeId: 20e38610-cefc-476b-afbd-de43c5a252b2
       PortIndex: 1
+  - InputPort:
+      NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+      PortIndex: 0
+    OutputPort:
+      NodeId: 35ed2d32-cdeb-4ac7-9fcc-9e9dc53f4b7b
+      PortIndex: 1
+  - InputPort:
+      NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+      PortIndex: 0
+    OutputPort:
+      NodeId: 962c3ed8-4410-4874-bcef-e70d7bffa0c3
+      PortIndex: 1
+  - InputPort:
+      NodeId: 035bf6b3-5570-476b-8b4d-bf93b082b47b
+      PortIndex: 0
+    OutputPort:
+      NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+      PortIndex: 1
+  - InputPort:
+      NodeId: 02f9ccc1-3ffa-4578-ab5e-6da383cc9607
+      PortIndex: 0
+    OutputPort:
+      NodeId: 035bf6b3-5570-476b-8b4d-bf93b082b47b
+      PortIndex: 1
+  - InputPort:
+      NodeId: 0b8afb06-62bc-4d45-9dde-0d70cd2ed00e
+      PortIndex: 0
+    OutputPort:
+      NodeId: 02f9ccc1-3ffa-4578-ab5e-6da383cc9607
+      PortIndex: 1
+  - InputPort:
+      NodeId: d28f601a-8ec3-44ec-9cbf-91e91fe6cf94
+      PortIndex: 0
+    OutputPort:
+      NodeId: 0b8afb06-62bc-4d45-9dde-0d70cd2ed00e
+      PortIndex: 1
+  - InputPort:
+      NodeId: 0912426f-58cb-40b7-ad64-b4f3d16d8dc9
+      PortIndex: 0
+    OutputPort:
+      NodeId: d28f601a-8ec3-44ec-9cbf-91e91fe6cf94
+      PortIndex: 1
+  - InputPort:
+      NodeId: 017102dc-6d1e-4ea6-ac47-f333487a056a
+      PortIndex: 0
+    OutputPort:
+      NodeId: 0912426f-58cb-40b7-ad64-b4f3d16d8dc9
+      PortIndex: 1
+  - InputPort:
+      NodeId: 40d07021-2be4-418d-ade5-245feec4f82d
+      PortIndex: 0
+    OutputPort:
+      NodeId: 017102dc-6d1e-4ea6-ac47-f333487a056a
+      PortIndex: 1
+  - InputPort:
+      NodeId: 8225d615-dec3-4924-9ad4-7bae08bdf621
+      PortIndex: 0
+    OutputPort:
+      NodeId: 40d07021-2be4-418d-ade5-245feec4f82d
+      PortIndex: 1
+  - InputPort:
+      NodeId: 69364dfe-3202-4121-8e4e-c386bd214ce0
+      PortIndex: 0
+    OutputPort:
+      NodeId: 8225d615-dec3-4924-9ad4-7bae08bdf621
+      PortIndex: 1
+  - InputPort:
+      NodeId: ca3082b7-5d2a-4774-9e65-736f749b4a6a
+      PortIndex: 0
+    OutputPort:
+      NodeId: 69364dfe-3202-4121-8e4e-c386bd214ce0
+      PortIndex: 1
+  - InputPort:
+      NodeId: ce80c3d5-b13a-4585-a1f4-0fbbde7cb6e8
+      PortIndex: 0
+    OutputPort:
+      NodeId: ca3082b7-5d2a-4774-9e65-736f749b4a6a
+      PortIndex: 1
+  - InputPort:
+      NodeId: db5c0cee-5c70-4412-943d-c5cb25791d71
+      PortIndex: 0
+    OutputPort:
+      NodeId: ce80c3d5-b13a-4585-a1f4-0fbbde7cb6e8
+      PortIndex: 1
+  - InputPort:
+      NodeId: 583fed64-62ae-4020-ab56-a814f0442e0d
+      PortIndex: 0
+    OutputPort:
+      NodeId: db5c0cee-5c70-4412-943d-c5cb25791d71
+      PortIndex: 1
+  - InputPort:
+      NodeId: b53111e8-3b6e-4fb1-9cf1-3be9dcebf984
+      PortIndex: 0
+    OutputPort:
+      NodeId: 583fed64-62ae-4020-ab56-a814f0442e0d
+      PortIndex: 1
+  - InputPort:
+      NodeId: 7b3b1abb-6491-4738-9e1e-736981f41cb8
+      PortIndex: 0
+    OutputPort:
+      NodeId: b53111e8-3b6e-4fb1-9cf1-3be9dcebf984
+      PortIndex: 1
   references:
     version: 2
     RefIds:
+    - rid: 6100067578818854914
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 2dc23a04-2509-4726-8f2a-54cfc724107b
+        m_position:
+          serializedVersion: 2
+          x: 49565
+          y: 178
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+            PortIndex: 0
+          OutputPort:
+            NodeId: 35ed2d32-cdeb-4ac7-9fcc-9e9dc53f4b7b
+            PortIndex: 1
+        - InputPort:
+            NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+            PortIndex: 0
+          OutputPort:
+            NodeId: 962c3ed8-4410-4874-bcef-e70d7bffa0c3
+            PortIndex: 1
+        - InputPort:
+            NodeId: 035bf6b3-5570-476b-8b4d-bf93b082b47b
+            PortIndex: 0
+          OutputPort:
+            NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Dialogue_Journalist_1
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854915
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 035bf6b3-5570-476b-8b4d-bf93b082b47b
+        m_position:
+          serializedVersion: 2
+          x: 49967
+          y: 170
+          width: 320
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 035bf6b3-5570-476b-8b4d-bf93b082b47b
+            PortIndex: 0
+          OutputPort:
+            NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+            PortIndex: 1
+        - InputPort:
+            NodeId: 02f9ccc1-3ffa-4578-ab5e-6da383cc9607
+            PortIndex: 0
+          OutputPort:
+            NodeId: 035bf6b3-5570-476b-8b4d-bf93b082b47b
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Dialogue_Manticore_1
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854916
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 02f9ccc1-3ffa-4578-ab5e-6da383cc9607
+        m_position:
+          serializedVersion: 2
+          x: 50397
+          y: 170
+          width: 320
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 02f9ccc1-3ffa-4578-ab5e-6da383cc9607
+            PortIndex: 0
+          OutputPort:
+            NodeId: 035bf6b3-5570-476b-8b4d-bf93b082b47b
+            PortIndex: 1
+        - InputPort:
+            NodeId: 0b8afb06-62bc-4d45-9dde-0d70cd2ed00e
+            PortIndex: 0
+          OutputPort:
+            NodeId: 02f9ccc1-3ffa-4578-ab5e-6da383cc9607
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Dialogue_Journalist_2
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854917
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 0b8afb06-62bc-4d45-9dde-0d70cd2ed00e
+        m_position:
+          serializedVersion: 2
+          x: 50757
+          y: 171
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 0b8afb06-62bc-4d45-9dde-0d70cd2ed00e
+            PortIndex: 0
+          OutputPort:
+            NodeId: 02f9ccc1-3ffa-4578-ab5e-6da383cc9607
+            PortIndex: 1
+        - InputPort:
+            NodeId: d28f601a-8ec3-44ec-9cbf-91e91fe6cf94
+            PortIndex: 0
+          OutputPort:
+            NodeId: 0b8afb06-62bc-4d45-9dde-0d70cd2ed00e
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Description_1
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854918
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: d28f601a-8ec3-44ec-9cbf-91e91fe6cf94
+        m_position:
+          serializedVersion: 2
+          x: 51123
+          y: 171
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: d28f601a-8ec3-44ec-9cbf-91e91fe6cf94
+            PortIndex: 0
+          OutputPort:
+            NodeId: 0b8afb06-62bc-4d45-9dde-0d70cd2ed00e
+            PortIndex: 1
+        - InputPort:
+            NodeId: 0912426f-58cb-40b7-ad64-b4f3d16d8dc9
+            PortIndex: 0
+          OutputPort:
+            NodeId: d28f601a-8ec3-44ec-9cbf-91e91fe6cf94
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Description_2
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854919
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 0912426f-58cb-40b7-ad64-b4f3d16d8dc9
+        m_position:
+          serializedVersion: 2
+          x: 51512
+          y: 173
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 0912426f-58cb-40b7-ad64-b4f3d16d8dc9
+            PortIndex: 0
+          OutputPort:
+            NodeId: d28f601a-8ec3-44ec-9cbf-91e91fe6cf94
+            PortIndex: 1
+        - InputPort:
+            NodeId: 017102dc-6d1e-4ea6-ac47-f333487a056a
+            PortIndex: 0
+          OutputPort:
+            NodeId: 0912426f-58cb-40b7-ad64-b4f3d16d8dc9
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Description_3
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854920
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 017102dc-6d1e-4ea6-ac47-f333487a056a
+        m_position:
+          serializedVersion: 2
+          x: 51944
+          y: 174
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 017102dc-6d1e-4ea6-ac47-f333487a056a
+            PortIndex: 0
+          OutputPort:
+            NodeId: 0912426f-58cb-40b7-ad64-b4f3d16d8dc9
+            PortIndex: 1
+        - InputPort:
+            NodeId: 40d07021-2be4-418d-ade5-245feec4f82d
+            PortIndex: 0
+          OutputPort:
+            NodeId: 017102dc-6d1e-4ea6-ac47-f333487a056a
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Description_4
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854921
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 40d07021-2be4-418d-ade5-245feec4f82d
+        m_position:
+          serializedVersion: 2
+          x: 52344
+          y: 177
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 40d07021-2be4-418d-ade5-245feec4f82d
+            PortIndex: 0
+          OutputPort:
+            NodeId: 017102dc-6d1e-4ea6-ac47-f333487a056a
+            PortIndex: 1
+        - InputPort:
+            NodeId: 8225d615-dec3-4924-9ad4-7bae08bdf621
+            PortIndex: 0
+          OutputPort:
+            NodeId: 40d07021-2be4-418d-ade5-245feec4f82d
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Dialogue_Manticore_2
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854922
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 8225d615-dec3-4924-9ad4-7bae08bdf621
+        m_position:
+          serializedVersion: 2
+          x: 52799
+          y: 170
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 8225d615-dec3-4924-9ad4-7bae08bdf621
+            PortIndex: 0
+          OutputPort:
+            NodeId: 40d07021-2be4-418d-ade5-245feec4f82d
+            PortIndex: 1
+        - InputPort:
+            NodeId: 69364dfe-3202-4121-8e4e-c386bd214ce0
+            PortIndex: 0
+          OutputPort:
+            NodeId: 8225d615-dec3-4924-9ad4-7bae08bdf621
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Dialogue_Manticore_3
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854923
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 69364dfe-3202-4121-8e4e-c386bd214ce0
+        m_position:
+          serializedVersion: 2
+          x: 53219
+          y: 178
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 69364dfe-3202-4121-8e4e-c386bd214ce0
+            PortIndex: 0
+          OutputPort:
+            NodeId: 8225d615-dec3-4924-9ad4-7bae08bdf621
+            PortIndex: 1
+        - InputPort:
+            NodeId: ca3082b7-5d2a-4774-9e65-736f749b4a6a
+            PortIndex: 0
+          OutputPort:
+            NodeId: 69364dfe-3202-4121-8e4e-c386bd214ce0
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Dialogue_Manticore_4
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854924
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: ca3082b7-5d2a-4774-9e65-736f749b4a6a
+        m_position:
+          serializedVersion: 2
+          x: 53670
+          y: 182
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: ca3082b7-5d2a-4774-9e65-736f749b4a6a
+            PortIndex: 0
+          OutputPort:
+            NodeId: 69364dfe-3202-4121-8e4e-c386bd214ce0
+            PortIndex: 1
+        - InputPort:
+            NodeId: ce80c3d5-b13a-4585-a1f4-0fbbde7cb6e8
+            PortIndex: 0
+          OutputPort:
+            NodeId: ca3082b7-5d2a-4774-9e65-736f749b4a6a
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Dialogue_Manticore_5
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854925
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: ce80c3d5-b13a-4585-a1f4-0fbbde7cb6e8
+        m_position:
+          serializedVersion: 2
+          x: 54061
+          y: 186
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: ce80c3d5-b13a-4585-a1f4-0fbbde7cb6e8
+            PortIndex: 0
+          OutputPort:
+            NodeId: ca3082b7-5d2a-4774-9e65-736f749b4a6a
+            PortIndex: 1
+        - InputPort:
+            NodeId: db5c0cee-5c70-4412-943d-c5cb25791d71
+            PortIndex: 0
+          OutputPort:
+            NodeId: ce80c3d5-b13a-4585-a1f4-0fbbde7cb6e8
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Description_5
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854926
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: db5c0cee-5c70-4412-943d-c5cb25791d71
+        m_position:
+          serializedVersion: 2
+          x: 54443
+          y: 186
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: db5c0cee-5c70-4412-943d-c5cb25791d71
+            PortIndex: 0
+          OutputPort:
+            NodeId: ce80c3d5-b13a-4585-a1f4-0fbbde7cb6e8
+            PortIndex: 1
+        - InputPort:
+            NodeId: 583fed64-62ae-4020-ab56-a814f0442e0d
+            PortIndex: 0
+          OutputPort:
+            NodeId: db5c0cee-5c70-4412-943d-c5cb25791d71
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Description_6
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854927
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 583fed64-62ae-4020-ab56-a814f0442e0d
+        m_position:
+          serializedVersion: 2
+          x: 54820
+          y: 184
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 583fed64-62ae-4020-ab56-a814f0442e0d
+            PortIndex: 0
+          OutputPort:
+            NodeId: db5c0cee-5c70-4412-943d-c5cb25791d71
+            PortIndex: 1
+        - InputPort:
+            NodeId: b53111e8-3b6e-4fb1-9cf1-3be9dcebf984
+            PortIndex: 0
+          OutputPort:
+            NodeId: 583fed64-62ae-4020-ab56-a814f0442e0d
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Description_7
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854928
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: b53111e8-3b6e-4fb1-9cf1-3be9dcebf984
+        m_position:
+          serializedVersion: 2
+          x: 55184
+          y: 186
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: b53111e8-3b6e-4fb1-9cf1-3be9dcebf984
+            PortIndex: 0
+          OutputPort:
+            NodeId: 583fed64-62ae-4020-ab56-a814f0442e0d
+            PortIndex: 1
+        - InputPort:
+            NodeId: 7b3b1abb-6491-4738-9e1e-736981f41cb8
+            PortIndex: 0
+          OutputPort:
+            NodeId: b53111e8-3b6e-4fb1-9cf1-3be9dcebf984
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Description_8
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
+    - rid: 6100067578818854929
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 7b3b1abb-6491-4738-9e1e-736981f41cb8
+        m_position:
+          serializedVersion: 2
+          x: 55538
+          y: 189
+          width: 244
+          height: 157
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 7b3b1abb-6491-4738-9e1e-736981f41cb8
+            PortIndex: 0
+          OutputPort:
+            NodeId: b53111e8-3b6e-4fb1-9cf1-3be9dcebf984
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Conclusion_Dialogue_Journalist_3
+        InterlocutorSprite: {fileID: 0}
+        BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 8417689067631935494
       type: {class: LGStartNode, ns: LittleGraph.Runtime.Types, asm: LittleGraph.Runtime}
       data:
@@ -1197,6 +1795,7 @@ MonoBehaviour:
         DialogueKey: Intro_1
         InterlocutorSprite: {fileID: -1927605479, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
         BackgroundSprite: {fileID: 2031927724, guid: 76866ca618497ab45ad671e03118e427, type: 3}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660020417429506
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1226,6 +1825,7 @@ MonoBehaviour:
         DialogueKey: Intro_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660020417429507
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1255,6 +1855,7 @@ MonoBehaviour:
         DialogueKey: Intro_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660020417429508
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1284,6 +1885,7 @@ MonoBehaviour:
         DialogueKey: Intro_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660020417429509
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1313,6 +1915,7 @@ MonoBehaviour:
         DialogueKey: Intro_Dialogue_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660020417429511
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1342,6 +1945,7 @@ MonoBehaviour:
         DialogueKey: Intro_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660021987672064
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1371,6 +1975,7 @@ MonoBehaviour:
         DialogueKey: Intro_Dialogue_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660021987672065
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1400,6 +2005,7 @@ MonoBehaviour:
         DialogueKey: Intro_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660021987672066
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1429,6 +2035,7 @@ MonoBehaviour:
         DialogueKey: Intro_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660021987672067
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1458,6 +2065,7 @@ MonoBehaviour:
         DialogueKey: Intro_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660022186115072
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1487,6 +2095,7 @@ MonoBehaviour:
         DialogueKey: Intro_9
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660022186115074
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1516,6 +2125,7 @@ MonoBehaviour:
         DialogueKey: Intro_10
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660022186115075
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1545,6 +2155,7 @@ MonoBehaviour:
         DialogueKey: Intro_Dialogue 3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660022186115076
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1574,6 +2185,7 @@ MonoBehaviour:
         DialogueKey: Intro_11
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660022186115077
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1603,6 +2215,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 734967745, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
         BackgroundSprite: {fileID: 1058637280, guid: 76866ca618497ab45ad671e03118e427, type: 3}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660022186115078
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1632,6 +2245,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Description_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660022186115079
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1661,6 +2275,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Journalist_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660022186115080
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1690,6 +2305,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Journalist_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868356
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1719,6 +2335,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Journalist_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868357
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1748,6 +2365,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868358
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1777,6 +2395,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868359
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1806,6 +2425,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Description_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868360
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1835,6 +2455,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868361
       type: {class: LDMultipleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1870,6 +2491,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
         ChoiceDatas:
         - OutputIndex: 1
           ChoiceText: Interview_Manticore_Introduction_Question1_1
@@ -1904,6 +2526,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868363
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1933,6 +2556,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868364
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1962,6 +2586,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868365
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -1991,6 +2616,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Description_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868366
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2020,6 +2646,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868367
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2049,6 +2676,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868368
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2078,6 +2706,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868369
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2107,6 +2736,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Journalist_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868370
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2136,6 +2766,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868371
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2165,6 +2796,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868372
       type: {class: LDMultipleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2206,6 +2838,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
         ChoiceDatas:
         - OutputIndex: 1
           ChoiceText: Interview_Manticore_Question1_1_Question2_1
@@ -2240,6 +2873,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868374
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2269,6 +2903,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868375
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2298,6 +2933,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868376
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2327,6 +2963,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868377
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2356,6 +2993,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Description_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868378
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2385,6 +3023,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868379
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2414,6 +3053,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868380
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2443,6 +3083,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868382
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2472,6 +3113,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Description_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868383
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2501,6 +3143,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868384
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2530,6 +3173,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868385
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2559,6 +3203,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Manticore_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868386
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2588,6 +3233,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Description_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868387
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2617,6 +3263,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868388
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2646,6 +3293,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Journalist_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868389
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2675,6 +3323,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question1_1_Description_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868390
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2704,6 +3353,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Journalist_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868391
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2733,6 +3383,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868392
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2762,6 +3413,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Manticore_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868393
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2791,6 +3443,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Manticore_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868394
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2820,6 +3473,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Manticore_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868395
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2849,6 +3503,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Journalist_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868396
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2878,6 +3533,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_1_Dialogue_Manticore_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868397
       type: {class: LDMultipleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2919,6 +3575,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Journalist_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
         ChoiceDatas:
         - OutputIndex: 1
           ChoiceText: Interview_Manticore_Question2_1_Question3_1
@@ -2953,6 +3610,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868399
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -2982,6 +3640,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Journalist_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868400
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3011,6 +3670,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Description_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868401
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3040,6 +3700,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868402
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3069,6 +3730,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868403
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3098,6 +3760,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868404
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3127,6 +3790,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868405
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3156,6 +3820,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868406
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3185,6 +3850,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868407
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3214,6 +3880,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868408
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3243,6 +3910,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_9
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868409
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3272,6 +3940,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Manticore_10
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868410
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3301,6 +3970,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Description_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868411
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3330,6 +4000,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question2_2_Dialogue_Journalist_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868412
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3359,6 +4030,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868413
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3388,6 +4060,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Journalist_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868414
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3417,6 +4090,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Manticore_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868415
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3446,6 +4120,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868417
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3475,6 +4150,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868418
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3504,6 +4180,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Journalist_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868419
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3533,6 +4210,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Description_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868420
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3562,6 +4240,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Manticore_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868421
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3591,6 +4270,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Journalist_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868422
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3620,6 +4300,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Manticore_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868423
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3649,6 +4330,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Description_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868424
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3678,6 +4360,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Journalist_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868425
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3707,6 +4390,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Journalist_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868426
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3736,6 +4420,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Description_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868427
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3765,6 +4450,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Journalist_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868428
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3794,6 +4480,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_1_Dialogue_Manticore_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868429
       type: {class: LDMultipleChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3835,6 +4522,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_11
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
         ChoiceDatas:
         - OutputIndex: 1
           ChoiceText: Interview_Manticore_Question3_1_Question4_1
@@ -3869,6 +4557,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868432
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3898,6 +4587,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868433
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3927,6 +4617,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868434
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3956,6 +4647,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Journalist_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868435
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -3985,6 +4677,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868436
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4014,6 +4707,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Journalist_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868437
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4043,6 +4737,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868438
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4072,6 +4767,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868439
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4101,6 +4797,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Journalist_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868440
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4130,6 +4827,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868441
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4159,6 +4857,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868442
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4188,6 +4887,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_9
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868443
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4217,6 +4917,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_10
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868444
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4246,6 +4947,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Journalist_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868445
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4275,6 +4977,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question3_2_Dialogue_Manticore_11
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868446
       type: {class: AddNoteBookEntryNode, ns: _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
       data:
@@ -4676,6 +5379,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868463
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4705,6 +5409,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Description_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868464
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4734,6 +5439,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_2+
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868465
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4763,6 +5469,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868466
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4792,6 +5499,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868467
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4821,6 +5529,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868468
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4850,6 +5559,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Journalist_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868469
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4879,6 +5589,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868470
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4908,6 +5619,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Description_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868471
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4937,6 +5649,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868472
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4966,6 +5679,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868473
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -4995,6 +5709,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_9+
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868474
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5024,6 +5739,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_10
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868475
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5053,6 +5769,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_11
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868476
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5082,6 +5799,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Description_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868477
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5111,6 +5829,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_12
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868478
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5140,6 +5859,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Description_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868479
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5169,6 +5889,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_13
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868480
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5198,6 +5919,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Description_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868481
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5227,6 +5949,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Manticore_14
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868482
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5256,6 +5979,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_1_Dialogue_Journalist_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868483
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5274,11 +5998,18 @@ MonoBehaviour:
           OutputPort:
             NodeId: faf90773-9338-4a28-bd5a-aa38d61ba8e4
             PortIndex: 1
+        - InputPort:
+            NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+            PortIndex: 0
+          OutputPort:
+            NodeId: 35ed2d32-cdeb-4ac7-9fcc-9e9dc53f4b7b
+            PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Question4_1_Description_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868486
       type: {class: AddNoteBookEntryNode, ns: _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
       data:
@@ -5370,6 +6101,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Description_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868489
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5399,6 +6131,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868490
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5428,6 +6161,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Journalist_1
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868491
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5457,6 +6191,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Manticore_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868492
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5486,6 +6221,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Journalist_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868493
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5515,6 +6251,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Manticore_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868494
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5544,6 +6281,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868495
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5573,6 +6311,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Description_2
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868496
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5602,6 +6341,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Manticore_5
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868497
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5631,6 +6371,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Journalist_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868498
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5660,6 +6401,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Manticore_6
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868499
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5689,6 +6431,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Manticore_7
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868500
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5718,6 +6461,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Manticore_8
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868501
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5747,6 +6491,7 @@ MonoBehaviour:
         DialogueKey: Interview_Manticore_Question4_2_Dialogue_Journalist_4
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868502
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -5765,11 +6510,18 @@ MonoBehaviour:
           OutputPort:
             NodeId: 95d2ff9c-0ca2-4cef-96db-8820adb68853
             PortIndex: 1
+        - InputPort:
+            NodeId: 2dc23a04-2509-4726-8f2a-54cfc724107b
+            PortIndex: 0
+          OutputPort:
+            NodeId: 962c3ed8-4410-4874-bcef-e70d7bffa0c3
+            PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Question4_2_Description_3
         InterlocutorSprite: {fileID: 0}
         BackgroundSprite: {fileID: 0}
+        ForegroundSprite: {fileID: 0}
     - rid: 9183660024576868503
       type: {class: AddNoteBookEntryNode, ns: _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
       data:
