@@ -23,6 +23,9 @@ namespace LittleDialogue.Runtime
         [Header("Environment")]
         //Interlocutor
         [SerializeField] private Image m_interlocutorImage;
+
+        [SerializeField] private Color m_whiteColor;
+        [SerializeField] private Color m_greyColor;
         //Background
         [SerializeField] private Image m_backgroundImage;
         //ForeGround
@@ -247,12 +250,27 @@ namespace LittleDialogue.Runtime
         }
 
 
-        public void UpdateInterlocutorImage(Sprite inNewSprite)
+        public void UpdateInterlocutorImage(Sprite inNewSprite, LDInterlocutorColorType interlocutorColorType)
         {
             if(!inNewSprite) return;
             if(!m_interlocutorImage) return;
 
             m_interlocutorImage.sprite = inNewSprite;
+            Debug.Log(interlocutorColorType);
+            switch (interlocutorColorType)
+            {
+                case LDInterlocutorColorType.White:
+                    m_interlocutorImage.color = m_whiteColor;
+                    Debug.Log("White");
+                    break;
+                case LDInterlocutorColorType.Grey:
+                    Debug.Log("Grey");
+                    m_interlocutorImage.color = m_greyColor;
+                    break;
+                case LDInterlocutorColorType.None:
+                    Debug.Log("None");
+                    break;
+            }
         }
         
         public void UpdateBackgroundImage(Sprite inNewSprite)

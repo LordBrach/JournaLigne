@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nodes:
   - rid: 8417689067631935488
-  - rid: 8417689067631935489
   - rid: 8609779824910663681
   - rid: 8609779824910663682
   - rid: 8609779824910663683
@@ -26,25 +25,14 @@ MonoBehaviour:
   - rid: 4557232859929378821
   - rid: 4557232859929378822
   - rid: 4557232859929378823
+  - rid: 4557232863738593280
   m_connections:
-  - InputPort:
-      NodeId: 8eebc864-8967-4470-ba9d-8c415619dd60
-      PortIndex: 0
-    OutputPort:
-      NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
-      PortIndex: 1
   - InputPort:
       NodeId: 17a8c711-1fc3-4210-b27f-f67be9ac98b3
       PortIndex: 0
     OutputPort:
       NodeId: e9f330d6-d693-494b-aaba-65e993f03fe4
       PortIndex: 0
-  - InputPort:
-      NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
-      PortIndex: 0
-    OutputPort:
-      NodeId: 17a8c711-1fc3-4210-b27f-f67be9ac98b3
-      PortIndex: 1
   - InputPort:
       NodeId: 6cf70265-85b9-4462-9224-41bd02b5c475
       PortIndex: 0
@@ -105,6 +93,18 @@ MonoBehaviour:
     OutputPort:
       NodeId: aefc1b15-8fad-494d-865a-574ed6c3ba76
       PortIndex: 1
+  - InputPort:
+      NodeId: 0af650ab-7170-4c52-8688-06924500998d
+      PortIndex: 0
+    OutputPort:
+      NodeId: 17a8c711-1fc3-4210-b27f-f67be9ac98b3
+      PortIndex: 1
+  - InputPort:
+      NodeId: 8eebc864-8967-4470-ba9d-8c415619dd60
+      PortIndex: 0
+    OutputPort:
+      NodeId: 0af650ab-7170-4c52-8688-06924500998d
+      PortIndex: 1
   references:
     version: 2
     RefIds:
@@ -142,6 +142,7 @@ MonoBehaviour:
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_4
         InterlocutorSprite: {fileID: 82940048, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
+        InterlocutorColorType: 2
         BackgroundSprite: {fileID: 0}
         ForegroundSprite: {fileID: 0}
         ChoiceDatas:
@@ -177,6 +178,7 @@ MonoBehaviour:
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Question1_1_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
+        InterlocutorColorType: 0
         BackgroundSprite: {fileID: 0}
         ForegroundSprite: {fileID: 0}
     - rid: 4557232859929378819
@@ -207,6 +209,7 @@ MonoBehaviour:
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Question1_2_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 0}
+        InterlocutorColorType: 0
         BackgroundSprite: {fileID: 0}
         ForegroundSprite: {fileID: 0}
     - rid: 4557232859929378820
@@ -238,8 +241,6 @@ MonoBehaviour:
         NotebookText: Interview_Manticore_Journal_Question1_1_1
         ArticleText: Interview_Manticore_Journal_Question1_1_1
         PeopleAppreciation: 1
-        RebelsAppreciation: 1
-        GovernmentAppreciation: 1
     - rid: 4557232859929378821
       type: {class: AddNoteBookEntryNode, ns: _Project.Scripts.Runtime.RedactionSystem.LittleGraphAddOn, asm: JournaLigne.Runtime}
       data:
@@ -269,8 +270,6 @@ MonoBehaviour:
         NotebookText: Interview_Manticore_Journal_Question1_2_1
         ArticleText: Interview_Manticore_Journal_Question1_2_1
         PeopleAppreciation: 1
-        RebelsAppreciation: 1
-        GovernmentAppreciation: 1
     - rid: 4557232859929378822
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
@@ -305,6 +304,7 @@ MonoBehaviour:
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Question4_2_Description_3
         InterlocutorSprite: {fileID: -1927605479, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
+        InterlocutorColorType: 0
         BackgroundSprite: {fileID: 0}
         ForegroundSprite: {fileID: 0}
     - rid: 4557232859929378823
@@ -327,6 +327,37 @@ MonoBehaviour:
             PortIndex: 1
         TypeName: _Project.Scripts.Runtime.DaysSystem.LittleGraphAddOn.NextDayNode,
           JournaLigne.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - rid: 4557232863738593280
+      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
+      data:
+        m_guid: 0af650ab-7170-4c52-8688-06924500998d
+        m_position:
+          serializedVersion: 2
+          x: -61
+          y: 199
+          width: 435
+          height: 177
+        m_outputPortAmount: 1
+        m_nodeConnections:
+        - InputPort:
+            NodeId: 0af650ab-7170-4c52-8688-06924500998d
+            PortIndex: 0
+          OutputPort:
+            NodeId: 17a8c711-1fc3-4210-b27f-f67be9ac98b3
+            PortIndex: 1
+        - InputPort:
+            NodeId: 8eebc864-8967-4470-ba9d-8c415619dd60
+            PortIndex: 0
+          OutputPort:
+            NodeId: 0af650ab-7170-4c52-8688-06924500998d
+            PortIndex: 1
+        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
+          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_1
+        InterlocutorSprite: {fileID: 0}
+        InterlocutorColorType: 0
+        BackgroundSprite: {fileID: 1086195642, guid: 45251081c2375e14f8fc86d6e70409b7, type: 3}
+        ForegroundSprite: {fileID: 0}
     - rid: 8417689067631935488
       type: {class: LGStartNode, ns: LittleGraph.Runtime.Types, asm: LittleGraph.Runtime}
       data:
@@ -347,64 +378,35 @@ MonoBehaviour:
             PortIndex: 0
         TypeName: LittleGraph.Runtime.Types.LGStartNode, LittleGraph.Runtime, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-    - rid: 8417689067631935489
-      type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
-      data:
-        m_guid: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
-        m_position:
-          serializedVersion: 2
-          x: -67.200005
-          y: 84.8
-          width: 244.79999
-          height: 153.6
-        m_outputPortAmount: 1
-        m_nodeConnections:
-        - InputPort:
-            NodeId: 8eebc864-8967-4470-ba9d-8c415619dd60
-            PortIndex: 0
-          OutputPort:
-            NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
-            PortIndex: 1
-        - InputPort:
-            NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
-            PortIndex: 0
-          OutputPort:
-            NodeId: 17a8c711-1fc3-4210-b27f-f67be9ac98b3
-            PortIndex: 1
-        TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
-          LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        DialogueKey: Intro_1
-        InterlocutorSprite: {fileID: 0}
-        BackgroundSprite: {fileID: 1086195642, guid: 45251081c2375e14f8fc86d6e70409b7, type: 3}
-        ForegroundSprite: {fileID: 0}
     - rid: 8609779824910663681
       type: {class: LDNoChoiceDialogueNode, ns: LittleDialogue.Runtime.LittleGraphAddOn, asm: LittleDialogue.Runtime}
       data:
         m_guid: 8eebc864-8967-4470-ba9d-8c415619dd60
         m_position:
           serializedVersion: 2
-          x: 382
-          y: 94
-          width: 244
-          height: 157
+          x: 321
+          y: 22
+          width: 435
+          height: 177
         m_outputPortAmount: 1
         m_nodeConnections:
-        - InputPort:
-            NodeId: 8eebc864-8967-4470-ba9d-8c415619dd60
-            PortIndex: 0
-          OutputPort:
-            NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
-            PortIndex: 1
         - InputPort:
             NodeId: 6cf70265-85b9-4462-9224-41bd02b5c475
             PortIndex: 0
           OutputPort:
             NodeId: 8eebc864-8967-4470-ba9d-8c415619dd60
             PortIndex: 1
+        - InputPort:
+            NodeId: 8eebc864-8967-4470-ba9d-8c415619dd60
+            PortIndex: 0
+          OutputPort:
+            NodeId: 0af650ab-7170-4c52-8688-06924500998d
+            PortIndex: 1
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDNoChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Intro_2
         InterlocutorSprite: {fileID: 0}
+        InterlocutorColorType: 0
         BackgroundSprite: {fileID: 0}
         ForegroundSprite: {fileID: 0}
     - rid: 8609779824910663682
@@ -435,6 +437,7 @@ MonoBehaviour:
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_1
         InterlocutorSprite: {fileID: 734967745, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
+        InterlocutorColorType: 1
         BackgroundSprite: {fileID: 21300000, guid: d879483e030d5e74095c977f7e598db2, type: 3}
         ForegroundSprite: {fileID: 21300000, guid: 189ca39b779d2ab4295abf1a917b54c7, type: 3}
     - rid: 8609779824910663683
@@ -456,7 +459,7 @@ MonoBehaviour:
             NodeId: e9f330d6-d693-494b-aaba-65e993f03fe4
             PortIndex: 0
         - InputPort:
-            NodeId: 4ee1ba10-4301-4b8c-83bd-1dda54681e1d
+            NodeId: 0af650ab-7170-4c52-8688-06924500998d
             PortIndex: 0
           OutputPort:
             NodeId: 17a8c711-1fc3-4210-b27f-f67be9ac98b3
@@ -472,8 +475,8 @@ MonoBehaviour:
         m_guid: 6cf70265-85b9-4462-9224-41bd02b5c475
         m_position:
           serializedVersion: 2
-          x: 658
-          y: 85
+          x: 684
+          y: 253
           width: 207
           height: 138
         m_outputPortAmount: 1
