@@ -141,7 +141,7 @@ MonoBehaviour:
         TypeName: LittleDialogue.Runtime.LittleGraphAddOn.LDMultipleChoiceDialogueNode,
           LittleDialogue.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         DialogueKey: Interview_Manticore_Introduction_Dialogue_Manticore_4
-        InterlocutorSprite: {fileID: 82940048, guid: 9d2337159d882d94a9e111d509ac062b, type: 3}
+        InterlocutorSprite: {fileID: 0}
         InterlocutorColorType: 2
         BackgroundSprite: {fileID: 0}
         ForegroundSprite: {fileID: 0}

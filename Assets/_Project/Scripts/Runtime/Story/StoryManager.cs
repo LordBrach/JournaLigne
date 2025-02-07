@@ -16,7 +16,8 @@ namespace _Project.Scripts.Runtime.Story
         [SerializeField] private ResultGraphSingle m_resultGraph;
         [SerializeField] private Consequences m_consequences;
 
-        [Header("EndGame")]
+        [Header("EndGame")] 
+        [SerializeField] private GameObject m_endGamePanel;
         [SerializeField] private string m_mainMenuSceneName;
 
         [Header("Events")]
@@ -104,7 +105,7 @@ namespace _Project.Scripts.Runtime.Story
                     m_consequences.ShowConsequences(dayStarted);
                     break;
                 case DayType.EndGame:
-                    EndGame();
+                    m_endGamePanel.SetActive(true);
                     
                     break;
                 default:
@@ -112,9 +113,9 @@ namespace _Project.Scripts.Runtime.Story
             }
         }
 
-        private void EndGame()
+        public void EndGame()
         {
-            HideAll();
+            // HideAll();
             
             if (GameManager.Instance)
             {
@@ -131,7 +132,8 @@ namespace _Project.Scripts.Runtime.Story
             NoteBook.instance.HideNewsPaper();
             m_consequences.HideConsequences();
             m_resultGraph.Hide();
-            m_dialogueController.HideDialogue(); 
+            m_dialogueController.HideDialogue();
+            m_endGamePanel.SetActive(false);
         }
         
         private void OnDayChangedEvent(Days newDay)
