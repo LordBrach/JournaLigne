@@ -131,7 +131,7 @@ namespace LittleDialogue.Runtime
                 m_dialogueBox.ClearChoiceButtons();
 
                 m_dialogueBox.UpdateText(LocalizationManager.Instance.GetTranslation(dialogueNode.DialogueKey));
-                Debug.Log(m_currentNode.InterlocutorColorType);
+                // Debug.Log(m_currentNode.InterlocutorColorType);
 
                 m_dialogueBox.UpdateInterlocutorImage(m_currentNode.InterlocutorSprite, m_currentNode.InterlocutorColorType);
                 m_dialogueBox.UpdateBackgroundImage(m_currentNode.BackgroundSprite);

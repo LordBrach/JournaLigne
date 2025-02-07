@@ -256,19 +256,19 @@ namespace LittleDialogue.Runtime
             if(!m_interlocutorImage) return;
 
             m_interlocutorImage.sprite = inNewSprite;
-            Debug.Log(interlocutorColorType);
+            // Debug.Log(interlocutorColorType);
             switch (interlocutorColorType)
             {
                 case LDInterlocutorColorType.White:
                     m_interlocutorImage.color = m_whiteColor;
-                    Debug.Log("White");
+                    // Debug.Log("White");
                     break;
                 case LDInterlocutorColorType.Grey:
-                    Debug.Log("Grey");
+                    // Debug.Log("Grey");
                     m_interlocutorImage.color = m_greyColor;
                     break;
                 case LDInterlocutorColorType.None:
-                    Debug.Log("None");
+                    // Debug.Log("None");
                     break;
             }
         }
