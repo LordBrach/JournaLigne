@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d2337159d882d94a9e111d509ac062b
+guid: 41a8ddd66732f4d40b0aa8498625d699
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 74
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiles_Charas-300pp_0
+      name: Tiles_Transi_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1920
-        width: 1080
-        height: 1920
+        y: 3360
+        width: 1620
+        height: 1680
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e5365c6390297e4dbe35bfa76fdd62c
-      internalID: -991345315
+      spriteID: 4ee5cb5abec0a9f4ebc66de2583e0a46
+      internalID: 1106930156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Charas-300pp_1
+      name: Tiles_Transi_1
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 1920
-        width: 1080
-        height: 1920
+        x: 1620
+        y: 3360
+        width: 1620
+        height: 1680
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6687ea549ecf8d346b0022b490852ba3
-      internalID: 240163776
+      spriteID: 46c1ef981397ecc4eaa188c05fb92e6a
+      internalID: -1503127050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Charas-300pp_2
+      name: Tiles_Transi_2
       rect:
         serializedVersion: 2
-        x: 2160
-        y: 1920
-        width: 1080
-        height: 1920
+        x: 0
+        y: 1680
+        width: 1620
+        height: 1680
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7423b83d66214c94bb1876c5f8752559
-      internalID: -1132788107
+      spriteID: 89c7ae11bf27fcd4690b81f005798d3a
+      internalID: 1679437933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Charas-300pp_3
+      name: Tiles_Transi_3
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1680
+        width: 1620
+        height: 1680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3d112a7d2147845a6ca32b3854e725
+      internalID: -654100828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Transi_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1080
-        height: 1920
+        width: 1620
+        height: 1680
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1939e44dde6c6df4ab385c1c1dde03f9
-      internalID: 882958483
+      spriteID: cbc10b3cca5b17042a0a2ba30518db41
+      internalID: 1465232202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_Charas-300pp_4
+      name: Tiles_Transi_5
       rect:
         serializedVersion: 2
-        x: 1080
+        x: 1620
         y: 0
-        width: 1080
-        height: 1920
+        width: 1620
+        height: 1680
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,29 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 028e0d6feb754ae47af94899c616b6f4
-      internalID: 1373041473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_Charas-300pp_5
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 1080
-        height: 1920
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a16cc7aab35d8e46a8db9341cadeb51
-      internalID: 1419781691
+      spriteID: ba21bae60e628d44ba8deeaa96b77825
+      internalID: 866696673
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tiles_Charas-300pp_0: -991345315
-      Tiles_Charas-300pp_1: 240163776
-      Tiles_Charas-300pp_2: -1132788107
-      Tiles_Charas-300pp_3: 882958483
-      Tiles_Charas-300pp_4: 1373041473
-      Tiles_Charas-300pp_5: 1419781691
+      Tiles_Transi_0: 1106930156
+      Tiles_Transi_1: -1503127050
+      Tiles_Transi_2: 1679437933
+      Tiles_Transi_3: -654100828
+      Tiles_Transi_4: 1465232202
+      Tiles_Transi_5: 866696673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

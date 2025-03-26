@@ -1,6 +1,6 @@
-using UnityEditor;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1000)]
 public static class LocalizationManagerInitializer
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]

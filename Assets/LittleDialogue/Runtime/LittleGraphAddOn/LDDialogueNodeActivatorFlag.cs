@@ -18,5 +18,12 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
         Show,
         Hide
     }
+
+    public enum LDInterlocutorColorType
+    {
+        None,
+        Grey,
+        White
+    }
 #endif
 }

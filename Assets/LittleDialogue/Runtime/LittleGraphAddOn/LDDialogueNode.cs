@@ -14,6 +14,8 @@ namespace LittleDialogue.Runtime.LittleGraphAddOn
         [ExposedProperty] public string DialogueKey = "Key";
         
         [ExposedProperty] public Sprite InterlocutorSprite;
+        [ExposedProperty] public LDInterlocutorColorType InterlocutorColorType;
+        
         [ExposedProperty] public Sprite BackgroundSprite;
         [ExposedProperty] public Sprite ForegroundSprite;
 
